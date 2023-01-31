@@ -1,0 +1,95 @@
+#achievements {
+    height: calc(100vh);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    .achievements-container {
+        height: 100%;
+        width: 25%;
+
+        .achievements-title {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                margin-bottom: 20px;
+
+                rect {
+                    opacity: 0;
+                }            
+            }
+
+            .diamond-active rect{
+
+                &:nth-child(1) {
+                    animation: diamondActive 1s linear forwards 1.40s;
+                }
+                &:nth-child(2) {
+                    animation: diamondActive 1s linear forwards 1.05s;
+                }
+                &:nth-child(3) {
+                    animation: diamondActive 1s linear forwards 0.7s;
+                }
+                &:nth-child(4) {
+                    animation: diamondActive 1s linear forwards 0.35s;
+                }
+                &:nth-child(5) {
+                    animation: diamondActive 1s linear forwards 0s;
+                }
+            }
+        }
+
+        .achievements-nav {
+            height: calc(100% - 200px);
+            width: 100%;
+            padding: 0 25px;
+
+            ul {
+                list-style-type: none;
+                padding-top: 60px;
+
+                li {
+                    height: 30px;
+                    width: fit-content;
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.1em;
+                    cursor: pointer;
+
+                    &:nth-child(1) {
+                        margin-bottom: 25px;
+                    }
+
+                    &::before {
+                        display: inline-block;
+                        content: "";
+                        width: 5px;
+                        height: 15px;
+                        background-color: #857B47;
+                        margin: 0 25px;
+                    }
+
+                    &:hover {
+                        &::before {
+                            display: inline-block;
+                            content: "";
+                            animation: rotateElt 1s ease-out forwards;
+                            width: 15px;
+                            height: 15px;
+                            background-color: $color_secondary;
+                            margin: 0 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

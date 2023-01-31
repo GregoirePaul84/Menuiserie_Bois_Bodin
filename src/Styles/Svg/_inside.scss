@@ -1,0 +1,285 @@
+.inside-svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    image {
+        opacity: 0;
+        height: 100%;
+        width: 100%; 
+    }
+
+    .img-appears {
+        animation: imgAppears 3s ease forwards 3s;
+    }
+
+    line:nth-child(1) {
+        stroke-dasharray: 375;
+        stroke-dashoffset: 375;
+    }
+    line:nth-child(2) {
+        stroke-dasharray: 367;
+        stroke-dashoffset: 367;
+    }
+    line:nth-child(3) {
+        stroke-dasharray: 438;
+        stroke-dashoffset: 438;
+    }
+    line:nth-child(4) {
+        stroke-dasharray: 416;
+        stroke-dashoffset: 416;
+    }
+    line:nth-child(5) {
+        stroke-dasharray: 219;
+        stroke-dashoffset: 219;
+    }
+    line:nth-child(6) {
+        stroke-dasharray: 248;
+        stroke-dashoffset: 248;
+    }
+    line:nth-child(7) {
+        stroke-dasharray: 218;
+        stroke-dashoffset: 218;
+    }
+    line:nth-child(8) {
+        stroke-dasharray: 218;
+        stroke-dashoffset: 218;
+    }
+    line:nth-child(9) {
+        stroke-dasharray: 217;
+        stroke-dashoffset: 217;
+    }
+    line:nth-child(10) {
+        stroke-dasharray: 217;
+        stroke-dashoffset: 217;
+    }
+    line:nth-child(11) {
+        stroke-dasharray: 218;
+        stroke-dashoffset: 218;
+    }
+    line:nth-child(12) {
+        stroke-dasharray: 218;
+        stroke-dashoffset: 218;
+    }
+    line:nth-child(13) {
+        stroke-dasharray: 249;
+        stroke-dashoffset: 249;
+    }
+    line:nth-child(14) {
+        stroke-dasharray: 218;
+        stroke-dashoffset: 218;
+    }
+    line:nth-child(15) {
+        stroke-dasharray: 609;
+        stroke-dashoffset: 609;
+    }
+    line:nth-child(16) {
+        stroke-dasharray: 1148;
+        stroke-dashoffset: 1148;
+    }
+    line:nth-child(17) {
+        stroke-dasharray: 30;
+        stroke-dashoffset: 30;
+    }
+    line:nth-child(18) {
+        stroke-dasharray: 71;
+        stroke-dashoffset: 71;
+    }
+    line:nth-child(19) {
+        stroke-dasharray: 16;
+        stroke-dashoffset: 16;
+    }
+    line:nth-child(20) {
+        stroke-dasharray: 65;
+        stroke-dashoffset: 65;
+    }
+    line:nth-child(21) {
+        stroke-dasharray: 39;
+        stroke-dashoffset: 39;
+    }
+    line:nth-child(22) {
+        stroke-dasharray: 72;
+        stroke-dashoffset: 72;
+    }
+    line:nth-child(23) {
+        stroke-dasharray: 57;
+        stroke-dashoffset: 57;
+    }
+    line:nth-child(24) {
+        stroke-dasharray: 65;
+        stroke-dashoffset: 65;
+    }
+    line:nth-child(25) {
+        stroke-dasharray: 82;
+        stroke-dashoffset: 82;
+    }
+    line:nth-child(26) {
+        stroke-dasharray: 86;
+        stroke-dashoffset: 86;
+    }
+    line:nth-child(27) {
+        stroke-dasharray: 78;
+        stroke-dashoffset: 78;
+    }
+    line:nth-child(28) {
+        stroke-dasharray: 104;
+        stroke-dashoffset: 104;
+    }
+    line:nth-child(29) {
+        stroke-dasharray: 137;
+        stroke-dashoffset: 137;
+    }
+    line:nth-child(30) {
+        stroke-dasharray: 78;
+        stroke-dashoffset: 78;
+    }
+    line:nth-child(31) {
+        stroke-dasharray: 97;
+        stroke-dashoffset: 97;
+    }
+    line:nth-child(32) {
+        stroke-dasharray: 149;
+        stroke-dashoffset: 149;
+    }
+    line:nth-child(33) {
+        stroke-dasharray: 112;
+        stroke-dashoffset: 112;
+    }
+    line:nth-child(34) {
+        stroke-dasharray: 114;
+        stroke-dashoffset: 114;
+    }
+    line:nth-child(35) {
+        stroke-dasharray: 81;
+        stroke-dashoffset: 81;
+    }
+    line:nth-child(36) {
+        stroke-dasharray: 252;
+        stroke-dashoffset: 252;
+    }
+    line:nth-child(37) {
+        stroke-dasharray: 81;
+        stroke-dashoffset: 81;
+    }
+    line:nth-child(38) {
+        stroke-dasharray: 132;
+        stroke-dashoffset: 132;
+    }
+    line:nth-child(39) {
+        stroke-dasharray: 86;
+        stroke-dashoffset: 86;
+    }
+    line:nth-child(40) {
+        stroke-dasharray: 138;
+        stroke-dashoffset: 138;
+    }
+    line:nth-child(41) {
+        stroke-dasharray: 136;
+        stroke-dashoffset: 136;
+    }
+    line:nth-child(42) {
+        stroke-dasharray: 267;
+        stroke-dashoffset: 267;
+    }
+    line:nth-child(43) {
+        stroke-dasharray: 104;
+        stroke-dashoffset: 104;
+    }
+    line:nth-child(44) {
+        stroke-dasharray: 104;
+        stroke-dashoffset: 104;
+    }
+    line:nth-child(45) {
+        stroke-dasharray: 104;
+        stroke-dashoffset: 104;
+    }
+    line:nth-child(46) {
+        stroke-dasharray: 104;
+        stroke-dashoffset: 104;
+    }
+    line:nth-child(47) {
+        stroke-dasharray: 181;
+        stroke-dashoffset: 181;
+    }
+    line:nth-child(48) {
+        stroke-dasharray: 12;
+        stroke-dashoffset: 12;
+    }
+    line:nth-child(49) {
+        stroke-dasharray: 12;
+        stroke-dashoffset: 12;
+    }
+    line:nth-child(50) {
+        stroke-dasharray: 181;
+        stroke-dashoffset: 181;
+    }
+    line:nth-child(51) {
+        stroke-dasharray: 636;
+        stroke-dashoffset: 636;
+    }
+    line:nth-child(52) {
+        stroke-dasharray: 1143;
+        stroke-dashoffset: 1143;
+    }
+    line:nth-child(53) {
+        stroke-dasharray: 1142;
+        stroke-dashoffset: 1142;
+    }
+    line:nth-child(54) {
+        stroke-dasharray: 1144;
+        stroke-dashoffset: 1144;
+    }
+    line:nth-child(55) {
+        stroke-dasharray: 366;
+        stroke-dashoffset: 366;
+    }
+    line:nth-child(56) {
+        stroke-dasharray: 765;
+        stroke-dashoffset: 765;
+    }
+    line:nth-child(57) {
+        stroke-dasharray: 1312;
+        stroke-dashoffset: 1312;
+    }
+    line:nth-child(58) {
+        stroke-dasharray: 1130;
+        stroke-dashoffset: 1130;
+    }
+    line:nth-child(59) {
+        stroke-dasharray: 999;
+        stroke-dashoffset: 999;
+    }
+    line:nth-child(60) {
+        stroke-dasharray: 899;
+        stroke-dashoffset: 899;
+    }
+    line:nth-child(61) {
+        stroke-dasharray: 77;
+        stroke-dashoffset: 77;
+    }
+    line:nth-child(62) {
+        stroke-dasharray: 62;
+        stroke-dashoffset: 62;
+    }
+    line:nth-child(63) {
+        stroke-dasharray: 60;
+        stroke-dashoffset: 60;
+    }
+    line:nth-child(64) {
+        stroke-dasharray: 63;
+        stroke-dashoffset: 63;
+    }
+}
+
+@keyframes strokeAnim {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        stroke-dashoffset: 0;
+    }
+}

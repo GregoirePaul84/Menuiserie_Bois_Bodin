@@ -1,0 +1,43 @@
+html {
+    background-color: $color_primary;
+    overflow-y: scroll;
+    overflow-y: overlay;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: auto;
+    width: calc(100vw - 17px);
+    &::-webkit-scrollbar {
+        width: 17px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $transparent_tertiary;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $transparent_beige;   
+        border-radius: 20px;     
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+img, video {
+    object-fit: cover;
+    display: block;
+}
+
+p, li, a, h4, label {
+    font-family: "Abel", sans-serif;
+}
+
+h1, h2, h3, h5, button {
+    font-family: 'Arapey', serif;
+    font-weight: normal;
+}
+
