@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Menuiserie_Bois_Bodin/static/css/main.6488f521.css",
+    "main.js": "/Menuiserie_Bois_Bodin/static/js/main.65550154.js",
+    "static/media/forest.mp4": "/Menuiserie_Bois_Bodin/static/media/forest.d97eefd1176c59c0001b.mp4",
+    "static/media/about_img.png": "/Menuiserie_Bois_Bodin/static/media/about_img.9e26f897d2b25d032c6c.png",
+    "static/media/services_img_transparent.png": "/Menuiserie_Bois_Bodin/static/media/services_img_transparent.a7177c303def8e45e309.png",
+    "static/media/porte.gif": "/Menuiserie_Bois_Bodin/static/media/porte.5b2339fcf0fc17af44cc.gif",
+    "static/media/swiss_ambassy.gif": "/Menuiserie_Bois_Bodin/static/media/swiss_ambassy.15ee7a147723a7bc58ca.gif",
+    "static/media/gate.png": "/Menuiserie_Bois_Bodin/static/media/gate.e198961b66bb700be145.png",
+    "static/media/volets.gif": "/Menuiserie_Bois_Bodin/static/media/volets.3198c5e6bbb865fc645c.gif",
+    "static/media/exterior.png": "/Menuiserie_Bois_Bodin/static/media/exterior.fd160c912cda23f9826c.png",
+    "static/media/floor.png": "/Menuiserie_Bois_Bodin/static/media/floor.453d0a161517626c3066.png",
+    "static/media/door.png": "/Menuiserie_Bois_Bodin/static/media/door.e60557289612d84e3b4a.png",
+    "static/media/window.png": "/Menuiserie_Bois_Bodin/static/media/window.f25bf8c750e0c39d0e58.png",
+    "static/media/shutter.png": "/Menuiserie_Bois_Bodin/static/media/shutter.1d34e33869d62a074a99.png",
+    "static/media/marchepied.jpg": "/Menuiserie_Bois_Bodin/static/media/marchepied.2ca546c949ad917d2489.jpg",
+    "static/media/escalier.jpg": "/Menuiserie_Bois_Bodin/static/media/escalier.047bc0cd2956a8570474.jpg",
+    "static/media/kitchen.jpg": "/Menuiserie_Bois_Bodin/static/media/kitchen.3b9c3a405ccd7f335ef8.jpg",
+    "static/media/interior.jpg": "/Menuiserie_Bois_Bodin/static/media/interior.1c10a76cfd4060bdb3a6.jpg",
+    "static/media/stairs.jpg": "/Menuiserie_Bois_Bodin/static/media/stairs.19b2882feaa62d530fe6.jpg",
+    "static/media/dressing.jpg": "/Menuiserie_Bois_Bodin/static/media/dressing.32d5ddb9680a27382a4b.jpg",
+    "index.html": "/Menuiserie_Bois_Bodin/index.html",
+    "main.6488f521.css.map": "/Menuiserie_Bois_Bodin/static/css/main.6488f521.css.map",
+    "main.65550154.js.map": "/Menuiserie_Bois_Bodin/static/js/main.65550154.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6488f521.css",
+    "static/js/main.65550154.js"
+  ]
+}
