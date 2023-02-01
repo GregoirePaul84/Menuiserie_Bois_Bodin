@@ -144,7 +144,7 @@
 }
 
 
-@keyframes slide1 {
+@keyframes slide1-up {
     from {
         transform: translateX(0);
     }
@@ -153,7 +153,16 @@
     }
 }
 
-@keyframes slide2 {
+@keyframes slide1-down {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide2-up {
     from {
         transform: translateX(-100%);
     }
@@ -161,8 +170,16 @@
         transform: translateX(-200%);
     }
 }
+@keyframes slide2-down {
+    from {
+        transform: translateX(-300%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
 
-@keyframes slide3 {
+@keyframes slide3-up {
     from {
         transform: translateX(-200%);
     }
@@ -171,7 +188,16 @@
     }
 }
 
-@keyframes slide4 {
+@keyframes slide3-down {
+    from {
+        transform: translateX(-400%);
+    }
+    to {
+        transform: translateX(-300%);
+    }
+}
+
+@keyframes slide4-up {
     from {
         transform: translateX(-300%);
     }
@@ -180,12 +206,30 @@
     }
 }
 
-@keyframes slide5 {
+@keyframes slide4-down {
+    from {
+        transform: translateX(-500%);
+    }
+    to {
+        transform: translateX(-400%);
+    }
+}
+
+@keyframes slide5-up {
     from {
         transform: translateX(-400%);
     }
     to {
         transform: translateX(-500%);
+    }
+}
+
+@keyframes slide5-down {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
     }
 }
 

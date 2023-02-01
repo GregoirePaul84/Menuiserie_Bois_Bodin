@@ -90,61 +90,97 @@ const Works = () => {
         }, 7000);
     }
 
-    function displaySlide1() {
+    function displaySlide1(newTime) {
         sethandleImg(10);
 
-        pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1';
-        imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1';
-        filledCircle2.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        if(newTime === undefined || newTime.method === 'increase') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1-up';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1-up';
+            filledCircle2.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
+        if (newTime.method === 'decrease') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1-down';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1-down';
+            filledCircle2.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
         
     }
 
-    function displaySlide2() {
+    function displaySlide2(newTime) {
         sethandleImg(15);
 
-        pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2';
-        imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2';
-        filledCircle3.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        if(newTime === undefined || newTime.method === 'increase') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2-up';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2-up';
+            filledCircle3.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
+        else if(newTime.method === 'decrease') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2-down';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2-down';
+            filledCircle3.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
 
     }
 
-    function displaySlide3() {
+    function displaySlide3(newTime) {
         sethandleImg(20);
 
-        pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3';
-        imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3';
-        filledCircle4.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        if(newTime === undefined || newTime.method === 'increase') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3-up';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3-up';
+            filledCircle4.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
+        else if(newTime.method === 'decrease') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3-down';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3-down';
+            filledCircle4.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
         
     }
 
-    function displaySlide4() {
+    function displaySlide4(newTime) {
         sethandleImg(0);
 
-        pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4';
-        imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4';
-        filledCircle5.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        if(newTime === undefined || newTime.method === 'increase') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4-up';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4-up';
+            filledCircle5.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
+        else if (newTime.method === 'decrease') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4-down';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4-down';
+            filledCircle5.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
     }
 
-    function displaySlide5() {
+    function displaySlide5(newTime) {
         sethandleImg(5);
-
-        pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5';
-        imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5';
-        filledCircle1.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        console.log(newTime);
+        if(newTime === undefined || newTime.method === 'increase') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5-up';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5-up';
+            filledCircle1.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
+        else if (newTime.method === 'decrease') {
+            pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5-down';
+            imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5-down';
+            filledCircle1.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
+        }
+        
     }
 
     function cutCarousel(newTime) {
         clearTimeout(timer);
-        reviveTimer(newTime.id);
+        // reviveTimer(newTime.id);
         console.log('timer coupé');
-        console.log(newTime);
+        // console.log(newTime);
 
         // Affichage du premier élément lors du clic
         if(newTime.id === 0) {
             
             if(newTime.method === 'increase') {
                 // Premier élément
-                displaySlide5();
+                displaySlide5(newTime);
 
                 // Supprime toutes les anims en cours excepté la première
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(10)').forEach((e) => e.style.animation = 'none');
@@ -156,7 +192,7 @@ const Works = () => {
             
             if(newTime.method === 'decrease') {
                 // 3e élément
-                displaySlide3();
+                displaySlide3(newTime);
 
                 // Supprime toutes les anims en cours excepté la deuxième
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(13)').forEach((e) => e.style.animation = 'none');
@@ -172,7 +208,7 @@ const Works = () => {
             
             if(newTime.method === 'increase') {
                 // 2e élément
-                displaySlide1();
+                displaySlide1(newTime);
 
                 // Supprime toutes les anims en cours excepté la deuxième
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(11)').forEach((e) => e.style.animation = 'none');
@@ -183,7 +219,7 @@ const Works = () => {
 
             if(newTime.method === 'decrease') {
                 // 3e élément
-                displaySlide4();
+                displaySlide4(newTime);
 
                 // Supprime toutes les anims en cours excepté la deuxième
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(14)').forEach((e) => e.style.animation = 'none');
@@ -197,7 +233,7 @@ const Works = () => {
 
             if(newTime.method === 'increase') {
                 // 3e élément
-                displaySlide2();
+                displaySlide2(newTime);
 
                 // Supprime toutes les anims en cours excepté la deuxième
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(12)').forEach((e) => e.style.animation = 'none');
@@ -208,7 +244,7 @@ const Works = () => {
 
             if(newTime.method === 'decrease') {
                 // Premier élément
-                displaySlide5();
+                displaySlide5(newTime);
 
                 // Supprime toutes les anims en cours excepté la première
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(10)').forEach((e) => e.style.animation = 'none');
@@ -223,7 +259,7 @@ const Works = () => {
 
             if(newTime.method === 'increase') {
                 // 3e élément
-                displaySlide3();
+                displaySlide3(newTime);
 
                 // Supprime toutes les anims en cours excepté la deuxième
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(13)').forEach((e) => e.style.animation = 'none');
@@ -234,7 +270,7 @@ const Works = () => {
 
             if(newTime.method === 'decrease') {
                 // 2e élément
-                displaySlide1();
+                displaySlide1(newTime);
 
                 // Supprime toutes les anims en cours excepté la deuxième
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(11)').forEach((e) => e.style.animation = 'none');
@@ -249,7 +285,7 @@ const Works = () => {
 
             if(newTime.method === 'increase') {
                 // 3e élément
-                displaySlide4();
+                displaySlide4(newTime);
 
                 // Supprime toutes les anims en cours excepté la deuxième
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(14)').forEach((e) => e.style.animation = 'none');
@@ -260,7 +296,7 @@ const Works = () => {
 
             if(newTime.method === 'decrease') {
                 // 3e élément
-                displaySlide2();
+                displaySlide2(newTime);
 
                 // Supprime toutes les anims en cours excepté la deuxième
                 document.querySelectorAll('#circle-nav .filled-circle:not(circle:nth-child(12)').forEach((e) => e.style.animation = 'none');
