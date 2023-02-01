@@ -1,0 +1,52 @@
+footer {
+    height: fit-content;
+    min-height: 300px;
+    width: 100%;
+    background-color: $color_tertiary;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .footer-column {
+        height: 200px;
+        width: 20%;
+
+        h4 {
+            font-weight: normal;
+            font-size: 1.5em;
+            margin: 27px 0;
+        }
+
+        ul {
+            list-style-type: none;
+
+            li {
+                margin-bottom: 10px;
+
+                &:nth-child(3) {
+                    word-break: break-all;
+                }
+            }
+        }
+
+        &:nth-child(2) p, &:nth-child(3) p {
+            line-height: 27px;
+        }
+
+        .social-networks {
+            display: flex;
+            gap: 25px;
+            margin-top: 16px;
+
+            img {
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+
+    .signature {
+        height: 15%;
+        width: 100%;
+    }
+}

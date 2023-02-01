@@ -6,8 +6,8 @@
     overflow: hidden;
 
     .contact-container {
-        height: 100%;
         width: 25%;
+        border-right: 1px solid $transparent_beige;
 
         .contact-title {
             height: 200px;
@@ -16,6 +16,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-bottom: 60px;
 
             svg {
                 margin-bottom: 20px;
@@ -45,42 +46,52 @@
             }
         }
 
+        .contact-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+
+            svg {
+                width: 25%;
+                height: 25%;
+                opacity: 0.75;
+            }
+        }
+
         .contact-nav {
             height: calc(100% - 150px);
             width: 100%;
-            padding: 0 25px;
 
             h4 {
                 font-weight: normal;
-                font-size: 1em;
-
-                &::before {
-                    display: inline-block;
-                    content: "";
-                    width: 5px;
-                    height: 15px;
-                    background-color: $color_secondary;
-                    margin-right: 25px;
-                }
+                font-size: 1.2em;
+                text-align: center;
+                margin-bottom: 50px;
             }
 
             ul {
                 list-style-type: none;
-                padding-top: 60px;
+                font-size: 0.95em;
+                padding: 0 8%;
 
                 li {
-                    height: 30px;
+                    height: fit-content;
                     width: 100%;
+                    margin-bottom: 25px;
                     display: flex;
                     align-items: center;
                     font-size: 1.1em;
                     cursor: pointer;
 
-                    &:nth-child(1) {
-                        margin-bottom: 25px;
+                    svg {
+                        height: 28px;
+                        width: 28px;
+                        margin-right: 12px;
                     }
 
-                    
+                    &:nth-child(3) {
+                        word-break: break-all;
+                    }
                 }
             }
         }
@@ -88,10 +99,13 @@
 
     .form-container {
         width: 75%;
-        margin: 0 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .contact-us {
             height: 150px;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -113,6 +127,7 @@
             flex-wrap: wrap;
             background-color: $color_tertiary;
             padding: 5%;
+            max-width: 800px;
 
             h4 {
                 width: 100%;
