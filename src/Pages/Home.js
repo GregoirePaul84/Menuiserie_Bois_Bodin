@@ -24,7 +24,7 @@ const Home = () => {
     const serviceOpacityRef = useRef({isActive: false, value: 999});
 
     useEffect(() => {
-        console.log(scrollY);
+        // console.log(scrollY);
 
         // Gestion du scroll et de l'opacité sur la section d'ACCUEIL
         if(scrollY >= 0 && scrollY <= 700) {
