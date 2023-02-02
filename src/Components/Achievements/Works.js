@@ -56,8 +56,7 @@ const Works = () => {
     const [time, setTime] = useState(1);
     const [category, setCategory] = useState(0);
     const [handleImg, sethandleImg] = useState(0);
-
-    // const imgIdRef = useRef({decrease: false, increase: false, id: 0});
+    const imgIdRef = useRef(0);
 
     const filledCircle1 = document.querySelector('#circle-nav circle:nth-child(10)');
     const filledCircle2 = document.querySelector('#circle-nav circle:nth-child(11)');
@@ -80,25 +79,29 @@ const Works = () => {
         }, 1000);
     }
 
-    function reviveTimer(newTime) {
+    function reviveTimer(imgId) {
         clearTimeout(timeCut);
-       
+        console.log(imgId);
+
         timeCut = setTimeout(() => {
             document.querySelectorAll('#circle-nav .filled-circle').forEach((e) => e.style.animation = 'none');
-            setTime(newTime);
+            setTime(imgId);
             console.log('reprise timer');
         }, 7000);
     }
 
     function displaySlide1(newTime) {
-        sethandleImg(10);
+        console.log('SLIDE 1');
+        imgIdRef.current = 10;
 
-        if(newTime === undefined || newTime.method === 'increase') {
+        if(newTime.method === 'increase') {
+            
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1-up';
             imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1-up';
             filledCircle2.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
         }
         if (newTime.method === 'decrease') {
+           
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1-down';
             imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide1-down';
             filledCircle2.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
@@ -107,9 +110,10 @@ const Works = () => {
     }
 
     function displaySlide2(newTime) {
-        sethandleImg(15);
+        console.log('SLIDE 2');
+        imgIdRef.current = 15;
 
-        if(newTime === undefined || newTime.method === 'increase') {
+        if(newTime.method === 'increase') {
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2-up';
             imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2-up';
             filledCircle3.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
@@ -123,14 +127,17 @@ const Works = () => {
     }
 
     function displaySlide3(newTime) {
-        sethandleImg(20);
+        console.log('SLIDE 3');
+        imgIdRef.current = 20;
 
-        if(newTime === undefined || newTime.method === 'increase') {
+        if(newTime.method === 'increase') {
+
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3-up';
             imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3-up';
             filledCircle4.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
         }
         else if(newTime.method === 'decrease') {
+
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3-down';
             imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide3-down';
             filledCircle4.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
@@ -139,9 +146,10 @@ const Works = () => {
     }
 
     function displaySlide4(newTime) {
-        sethandleImg(0);
+        console.log('SLIDE 4');
+        imgIdRef.current = 0;
 
-        if(newTime === undefined || newTime.method === 'increase') {
+        if(newTime.method === 'increase') {
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4-up';
             imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4-up';
             filledCircle5.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
@@ -154,9 +162,10 @@ const Works = () => {
     }
 
     function displaySlide5(newTime) {
-        sethandleImg(5);
-        console.log(newTime);
-        if(newTime === undefined || newTime.method === 'increase') {
+        console.log('SLIDE 0');
+        imgIdRef.current = 5;
+        
+        if(newTime.method === 'increase') {
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5-up';
             imgSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5-up';
             filledCircle1.style.animation = '1s ease-out 0s 1 normal forwards running fillCircle';
@@ -171,14 +180,14 @@ const Works = () => {
 
     function cutCarousel(newTime) {
         clearTimeout(timer);
-        // reviveTimer(newTime.id);
         console.log('timer coupé');
-        // console.log(newTime);
 
         // Affichage du premier élément lors du clic
         if(newTime.id === 0) {
-            
+
             if(newTime.method === 'increase') {
+                reviveTimer(0);
+
                 // Premier élément
                 displaySlide5(newTime);
 
@@ -191,6 +200,8 @@ const Works = () => {
             }
             
             if(newTime.method === 'decrease') {
+                reviveTimer(15);
+
                 // 3e élément
                 displaySlide3(newTime);
 
@@ -207,6 +218,8 @@ const Works = () => {
         if(newTime.id === 5) {
             
             if(newTime.method === 'increase') {
+                reviveTimer(5);
+
                 // 2e élément
                 displaySlide1(newTime);
 
@@ -218,6 +231,8 @@ const Works = () => {
             }
 
             if(newTime.method === 'decrease') {
+                reviveTimer(20);
+
                 // 3e élément
                 displaySlide4(newTime);
 
@@ -232,6 +247,8 @@ const Works = () => {
         if(newTime.id === 10) {
 
             if(newTime.method === 'increase') {
+                reviveTimer(10);
+
                 // 3e élément
                 displaySlide2(newTime);
 
@@ -243,6 +260,8 @@ const Works = () => {
             }
 
             if(newTime.method === 'decrease') {
+                reviveTimer(0);
+
                 // Premier élément
                 displaySlide5(newTime);
 
@@ -258,6 +277,8 @@ const Works = () => {
         if(newTime.id === 15) {
 
             if(newTime.method === 'increase') {
+                reviveTimer(15);
+
                 // 3e élément
                 displaySlide3(newTime);
 
@@ -269,6 +290,8 @@ const Works = () => {
             }
 
             if(newTime.method === 'decrease') {
+                reviveTimer(5);
+
                 // 2e élément
                 displaySlide1(newTime);
 
@@ -284,6 +307,8 @@ const Works = () => {
         if(newTime.id === 20) {
 
             if(newTime.method === 'increase') {
+                reviveTimer(20);
+
                 // 3e élément
                 displaySlide4(newTime);
 
@@ -295,6 +320,8 @@ const Works = () => {
             }
 
             if(newTime.method === 'decrease') {
+                reviveTimer(10);
+
                 // 3e élément
                 displaySlide2(newTime);
 
@@ -308,48 +335,46 @@ const Works = () => {
     }
 
     useEffect(() => {
-        // console.log(time);
+        console.log(time);
 
         if(time === 5) {
-            displaySlide1();
+            displaySlide1({method: 'increase', id: 5});
             filledCircle1.style.animation = 'none';
             filledline1.style.animation = 'none';
             filledline2.style.animation = '5s linear 0s 1 normal forwards running fillLine';
         }
 
         if(time === 10) {
-            displaySlide2();
+            displaySlide2({method: 'increase', id: 10});
             filledCircle2.style.animation = 'none';
             filledline2.style.animation = 'none';
             filledline3.style.animation = '5s linear 0s 1 normal forwards running fillLine';
         }
 
         if(time === 15) {
-            displaySlide3();
+            displaySlide3({method: 'increase', id: 15});
             filledCircle3.style.animation = 'none';
             filledline3.style.animation = 'none';
             filledline4.style.animation = '5s linear 0s 1 normal forwards running fillLine';
         }
 
         if(time === 20) {
-            displaySlide4();
+            displaySlide4({method: 'increase', id: 20});
             filledCircle4.style.animation = 'none';
             filledline4.style.animation = 'none';
         }
 
-        if(time === 25) {
-            displaySlide5();
+        if(time === 25 || time === 0) {
+            displaySlide5({method: 'increase', id: 0});
             filledCircle5.style.animation = 'none';
             filledline1.style.animation = '5s linear 0s 1 normal forwards running fillLine';
-            setTime(0);      
+            setTime(0);   
         }
             
         incrementTimer();
     }, [time]);
 
-   useEffect(() => {
-    console.log(handleImg);
-   }, [handleImg])
+
     return (
         <div className='works-container'>
             <div className="works-all-img">
@@ -363,7 +388,7 @@ const Works = () => {
                         <p key={e.id}>{e.legend}</p>
                     )}
                 </div>
-                <div className="left-arrow" onClick={() => cutCarousel({method: 'decrease', id: handleImg})}>
+                <div className="left-arrow" onClick={() => cutCarousel({method: 'decrease', id: imgIdRef.current})}>
                     <svg width="37" height="64" viewBox="0 0 37 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" clipRule="evenodd" d="M31.1373 0.831344L0.895726 29.5785C-0.298541 30.7141 -0.298541 32.5512 0.895726 33.6868L31.1161 62.411C33.0379 64.3085 36.4146 62.8767 36.3388 60.3007L36.3388 2.96459C36.4085 0.397217 33.0561 -0.994278 31.1373 0.831344ZM7.37326 31.6312L30.2583 9.87896L30.2583 53.3835L7.37326 31.6312Z" fill="white"/>
                     </svg>
@@ -375,7 +400,7 @@ const Works = () => {
                         )}
                     </div>
                 </div>
-                <div className="right-arrow" onClick={() => cutCarousel({method: 'increase', id: handleImg})}>
+                <div className="right-arrow" onClick={() => cutCarousel({method: 'increase', id: imgIdRef.current})}>
                     <svg width="37" height="64" viewBox="0 0 37 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" clipRule="evenodd" d="M5.20288 62.4501L35.4457 33.703C36.64 32.5674 36.64 30.7302 35.4457 29.5946L5.2241 0.870478C3.30229 -1.02702 -0.0745272 0.404728 0.00125406 2.98073V60.3169C-0.0684647 62.8842 3.2841 64.2757 5.20288 62.4501ZM28.9679 31.6502L6.08194 53.4025V9.89798L28.9679 31.6502Z" fill="white"/>
                     </svg>
