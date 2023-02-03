@@ -13,7 +13,28 @@ const Achievements = ({scrollY}) => {
         if(scrollY >= 2000) {
             document.querySelector('.achievements-title svg').classList.add('diamond-active');
         } 
-    })
+    });
+
+    useEffect(() => {
+
+        const inside = document.getElementById('achievement-inside');
+        const outside = document.getElementById('achievement-outside');
+
+        if(category === 0) {
+            inside.style.color = '#C2B887';
+            outside.style.color = 'inherit';
+
+            inside.classList.add('active-nav');
+            inside.classList.remove('inactive-nav');
+
+            outside.classList.add('inactive-nav');
+            outside.classList.remove('active-nav');
+        }
+
+        if(category === 1) {
+            return;
+        }
+    }, [category]);
 
     return (
         <>
@@ -32,8 +53,8 @@ const Achievements = ({scrollY}) => {
                 </div>
                 <div className="achievements-nav">
                     <ul>
-                        <li >Menuiserie d'intérieur</li>
-                        <li >Menuiserie d'extérieur</li>
+                        <li id='achievement-inside'>Menuiserie intérieure</li>
+                        <li id='achievement-outside'>Menuiserie extérieure</li>
                     </ul>     
                 </div>
             </div>

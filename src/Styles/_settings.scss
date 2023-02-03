@@ -41,3 +41,38 @@ h1, h2, h3, h5, button {
     font-weight: normal;
 }
 
+ul {
+    list-style-type: none;
+}
+
+.inactive-nav {
+    &::before {
+        display: inline-block;
+        content: "";
+        width: 5px;
+        height: 15px;
+        background-color: #857B47;
+    }
+
+    &:hover {   
+        &::before {
+            display: inline-block;
+            content: "";
+            animation: rotateElt 1s ease-out forwards;
+            width: 15px;
+            height: 15px;
+            background-color: $color_secondary;
+        }
+    }
+}
+
+.active-nav {
+    &::before {
+        display: inline-block;
+        content: "";
+        animation: rotateElt 1s ease-out forwards;
+        width: 15px;
+        height: 15px;
+        background-color: $color_secondary;
+    }
+}

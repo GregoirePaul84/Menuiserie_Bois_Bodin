@@ -28,8 +28,31 @@ const About = ({scrollY}) => {
         if (homeNav === undefined) return;
 
         const aboutContent = document.querySelector('.about-content');
+        const company = document.getElementById('company');
+        const values = document.getElementById('values');
 
         aboutContent.classList.remove('content-appears'); 
+
+        if(homeNav === 'company') {
+            company.style.color = '#C2B887';
+            values.style.color = 'inherit';
+
+            company.classList.add('active-nav');
+            company.classList.remove('inactive-nav');
+
+            values.classList.add('inactive-nav');
+            values.classList.remove('active-nav');
+        }
+        if(homeNav === 'values') {
+            values.style.color = '#C2B887';
+            company.style.color = 'inherit';
+
+            values.classList.add('active-nav');
+            values.classList.remove('inactive-nav');
+
+            company.classList.add('inactive-nav');
+            company.classList.remove('active-nav');
+        }
 
         setTimeout(() => {
             aboutContent.classList.add('content-appears'); 
@@ -54,8 +77,12 @@ const About = ({scrollY}) => {
                 </div>
                 <div className="about-nav">
                     <ul>
-                        <li onClick={() => {setHomeNav('company')}}>La société</li>
-                        <li onClick={() => {setHomeNav('values')}}>Les valeurs</li>
+                        <li onClick={() => {setHomeNav('company')}} id='company'>
+                            La société
+                        </li>
+                        <li onClick={() => {setHomeNav('values')}} id='values'>
+                            Les valeurs
+                        </li>
                     </ul>     
                 </div>
             </div>   
