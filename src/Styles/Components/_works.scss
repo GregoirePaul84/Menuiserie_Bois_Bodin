@@ -5,22 +5,42 @@
     align-items: center;
     flex-wrap: wrap;
     padding-left: 3%;
+    position: relative;
+
+    .works-background {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+       
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }   
 
     .works-all-img {
-        height: 80%;
-        width: 20%;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        height: 70%;
+        width: 15%;
         background-color: $color_tertiary;
+        overflow: hidden;
 
-        img {
-            height: 20%;
-            width: 70%;
-            cursor: pointer;
-        }
+        .all-img-slider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            transform-origin: center;
+            
+
+            img {
+                height: 130px;
+                width: 115px;
+                cursor: pointer;
+            }
+        }       
     }
 
     .works-description {
@@ -162,6 +182,15 @@
     }
 }
 
+@keyframes slide1-Y {
+    from {
+        transform: translateY(-75px);
+    }
+    to {
+        transform: translateY(-230px);
+    }
+}
+
 @keyframes slide2-up {
     from {
         transform: translateX(-100%);
@@ -176,6 +205,15 @@
     }
     to {
         transform: translateX(-200%);
+    }
+}
+
+@keyframes slide2-Y {
+    from {
+        transform: translateY(-230px);
+    }
+    to {
+        transform: translateY(-385px);
     }
 }
 
@@ -197,6 +235,15 @@
     }
 }
 
+@keyframes slide3-Y {
+    from {
+        transform: translateY(-385px);
+    }
+    to {
+        transform: translateY(-540px);
+    }
+}
+
 @keyframes slide4-up {
     from {
         transform: translateX(-300%);
@@ -215,6 +262,15 @@
     }
 }
 
+@keyframes slide4-Y {
+    from {
+        transform: translateY(-540px);
+    }
+    to {
+        transform: translateY(-695px);
+    }
+}
+
 @keyframes slide5-up {
     from {
         transform: translateX(-400%);
@@ -230,6 +286,24 @@
     }
     to {
         transform: translateX(0%);
+    }
+}
+
+@keyframes slide5-Y {
+    from {
+        transform: translateY(-695px);
+    }
+    to {
+        transform: translateY(-850px);
+    }
+}
+
+@keyframes slide-repeat {
+    from {
+        transform: translateY(-850px);
+    }
+    to {
+        transform: translateY(-75px);
     }
 }
 

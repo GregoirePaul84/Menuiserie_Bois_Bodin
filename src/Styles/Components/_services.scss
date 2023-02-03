@@ -90,8 +90,9 @@
         background-repeat: no-repeat;
 
         .products-list {
-            height: 65%;
+            height: 100%;
             width: 37%;
+            min-width: 575px;
             margin-left: 7%;
             display: flex;
             flex-wrap: wrap;
@@ -123,6 +124,7 @@
                 justify-content: center;
                 align-content: flex-start;
                 background-color: #232B33;
+                padding: 0 25px;
             }
         }
     }

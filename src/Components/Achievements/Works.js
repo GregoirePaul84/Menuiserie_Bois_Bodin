@@ -1,5 +1,7 @@
 import React, {useEffect, useRef, useState } from 'react';
 
+import achievementImg from '../../Media/Img/main/achievements_img2-2.png';
+
 import ambassyImg from '../../Media/Img/Works/swiss_ambassy.gif';
 import marchepied from '../../Media/Img/Works/marchepied.jpg';
 import volets from '../../Media/Img/Works/volets.gif';
@@ -10,33 +12,33 @@ const worksArray = [
     // Intérieur
     [
         {
-            'id' : 0,
+            'id' : 'img0',
             'img' : ambassyImg,
             'legend' : 'Légende 1'
         },
         {
-            'id' : 1,
+            'id' : 'img1',
             'img' : marchepied,
             'legend' : 'Légende 2'
         },
         {
-            'id' : 2,
+            'id' : 'img2',
             'img' : volets,
             'legend' : 'Légende 3'
         },
         {
-            'id' : 3,
+            'id' : 'img3',
             'img' : escaliers,
             'legend' : 'Légende 4'
         },
         ,
         {
-            'id' : 4,
+            'id' : 'img4',
             'img' : porte,
             'legend' : 'Légende 5'
         },
         {
-            'id' : 5,
+            'id' : 'img5',
             'img' : ambassyImg,
             'legend' : 'Légende 6'
         }
@@ -55,7 +57,6 @@ const Works = () => {
 
     const [time, setTime] = useState(1);
     const [category, setCategory] = useState(0);
-    const [handleImg, sethandleImg] = useState(0);
     const imgIdRef = useRef(0);
 
     const filledCircle1 = document.querySelector('#circle-nav circle:nth-child(10)');
@@ -70,18 +71,20 @@ const Works = () => {
     const filledline4 = document.querySelector('#circle-nav line:nth-child(18)');
 
     const pSlider = document.querySelector('.work-title');
-
+    const imgContainer = document.querySelector('.works-img');
     const imgSlider = document.querySelector('.img-slider');
+    
 
+    // Incrémente le timer toutes les secondes
     function incrementTimer() {
         timer = setTimeout(() => {
             setTime(time + 1);
         }, 1000);
     }
 
+    // Relance le timer après 7 secondes d'inactivité
     function reviveTimer(imgId) {
         clearTimeout(timeCut);
-        console.log(imgId);
 
         timeCut = setTimeout(() => {
             document.querySelectorAll('#circle-nav .filled-circle').forEach((e) => e.style.animation = 'none');
@@ -90,9 +93,15 @@ const Works = () => {
         }, 7000);
     }
 
+    // ==== Affichage des slides ==== //
+
     function displaySlide1(newTime) {
-        console.log('SLIDE 1');
+        // console.log('SLIDE 1');
         imgIdRef.current = 10;
+
+        document.querySelector('.all-img-slider').style.animation = 'slide1-Y 1s ease-in-out forwards';
+        document.querySelector('.all-img-slider #img1').style.outline = '4px solid #ffae36';
+        document.querySelectorAll('.all-img-slider img:not(#img1)').forEach((e) => e.style.outline = 'none');
 
         if(newTime.method === 'increase') {
             
@@ -110,8 +119,12 @@ const Works = () => {
     }
 
     function displaySlide2(newTime) {
-        console.log('SLIDE 2');
+        // console.log('SLIDE 2');
         imgIdRef.current = 15;
+
+        document.querySelector('.all-img-slider').style.animation = 'slide2-Y 1s ease-in-out forwards';
+        document.querySelector('.all-img-slider #img2').style.outline = '4px solid #ffae36';
+        document.querySelectorAll('.all-img-slider img:not(#img2)').forEach((e) => e.style.outline = 'none');
 
         if(newTime.method === 'increase') {
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide2-up';
@@ -127,8 +140,12 @@ const Works = () => {
     }
 
     function displaySlide3(newTime) {
-        console.log('SLIDE 3');
+        // console.log('SLIDE 3');
         imgIdRef.current = 20;
+
+        document.querySelector('.all-img-slider').style.animation = 'slide3-Y 1s ease-in-out forwards';
+        document.querySelector('.all-img-slider #img3').style.outline = '4px solid #ffae36';
+        document.querySelectorAll('.all-img-slider img:not(#img3)').forEach((e) => e.style.outline = 'none');
 
         if(newTime.method === 'increase') {
 
@@ -146,8 +163,12 @@ const Works = () => {
     }
 
     function displaySlide4(newTime) {
-        console.log('SLIDE 4');
+        // console.log('SLIDE 4');
         imgIdRef.current = 0;
+
+        document.querySelector('.all-img-slider').style.animation = 'slide4-Y 1s ease-in-out forwards';
+        document.querySelector('.all-img-slider #img4').style.outline = '4px solid #ffae36';
+        document.querySelectorAll('.all-img-slider img:not(#img4)').forEach((e) => e.style.outline = 'none');
 
         if(newTime.method === 'increase') {
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide4-up';
@@ -162,8 +183,18 @@ const Works = () => {
     }
 
     function displaySlide5(newTime) {
-        console.log('SLIDE 0');
+        // console.log('SLIDE 0');
         imgIdRef.current = 5;
+
+        document.querySelector('.all-img-slider').style.animation = 'slide5-Y 1s ease-in-out forwards';
+        document.querySelector('.all-img-slider #img5').style.outline = '4px solid #ffae36';
+        document.querySelectorAll('.all-img-slider img:not(#img5)').forEach((e) => e.style.outline = 'none');
+
+        setTimeout(() => {
+            document.querySelector('.all-img-slider').style.animation = 'slide-repeat 0s ease-in-out forwards';
+            document.querySelector('.all-img-slider #img0').style.outline = '4px solid #ffae36';
+            document.querySelectorAll('.all-img-slider img:not(#img0)').forEach((e) => e.style.outline = 'none');
+        }, 1100);
         
         if(newTime.method === 'increase') {
             pSlider.style.animation = '1s ease-in-out 0s 1 normal forwards running slide5-up';
@@ -178,6 +209,16 @@ const Works = () => {
         
     }
 
+    // Change l'image depuis la barre de navigation
+    function changeImg() {
+        imgContainer.style.animation = 'toOpacity1 1s ease forwards';
+
+        setTimeout(() => {
+            imgContainer.style.animation = 'none';
+        }, 1000)
+    }
+
+    // Coupe le timer puis le réactive en fonction du slide choisi 
     function cutCarousel(newTime) {
         clearTimeout(timer);
         console.log('timer coupé');
@@ -335,7 +376,7 @@ const Works = () => {
     }
 
     useEffect(() => {
-        console.log(time);
+        // console.log(time);
 
         if(time === 5) {
             displaySlide1({method: 'increase', id: 5});
@@ -377,10 +418,19 @@ const Works = () => {
 
     return (
         <div className='works-container'>
+            <div className="works-background">
+                <img src={achievementImg} alt="" />
+            </div>  
             <div className="works-all-img">
-                {worksArray[category].map((e) => 
-                    <img src={e.img} alt="" key={e.id}/>
-                    )}
+                <div className="all-img-slider">
+                    <img src={escaliers} alt="" />
+                    <img src={porte} alt="" />
+                    {worksArray[category].map((e) => 
+                        <img src={e.img} alt="" key={e.id} id={e.id}/>
+                        )}
+                    <img src={marchepied} alt="" />
+                    <img src={volets} alt="" />
+                </div>
             </div>
             <div className="works-description">
                 <div className="work-title">
@@ -396,7 +446,7 @@ const Works = () => {
                 <div className="works-img">
                     <div className="img-slider">
                         {worksArray[category].map((e) => 
-                        <img src={e.img} key={e.id}/>
+                        <img src={e.img} key={e.id} />
                         )}
                     </div>
                 </div>
@@ -407,11 +457,11 @@ const Works = () => {
                 </div>
                 <div className="img-nav">
                     <svg width="414" height="25" viewBox="0 0 414 25" fill="none" xmlns="http://www.w3.org/2000/svg" id='circle-nav'>
-                        <circle cx="12.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => cutCarousel({method: 'increase', id: 0})}/>
-                        <circle cx="109.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => cutCarousel({method: 'increase', id: 5})}/>
-                        <circle cx="206.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => cutCarousel({method: 'increase', id: 10})}/>
-                        <circle cx="303.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => cutCarousel({method: 'increase', id: 15})}/>
-                        <circle cx="401.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => cutCarousel({method: 'increase', id: 20})}/>
+                        <circle cx="12.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => {cutCarousel({method: 'increase', id: 0}); changeImg()}}/>
+                        <circle cx="109.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => {cutCarousel({method: 'increase', id: 5}); changeImg()}}/>
+                        <circle cx="206.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => {cutCarousel({method: 'increase', id: 10}); changeImg()}}/>
+                        <circle cx="303.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => {cutCarousel({method: 'increase', id: 15}); changeImg()}}/>
+                        <circle cx="401.5" cy="12.5" r="12.5" fill="#dfdfdf" onClick={() => {cutCarousel({method: 'increase', id: 20}); changeImg()}}/>
                         <line x1="25" y1="12" x2="98" y2="12" stroke="#dfdfdf" strokeWidth="2"/>
                         <line x1="122" y1="12" x2="195" y2="12" stroke="#dfdfdf" strokeWidth="2"/>
                         <line x1="219" y1="12" x2="292" y2="12" stroke="#dfdfdf" strokeWidth="2"/>
@@ -427,7 +477,7 @@ const Works = () => {
                         <line x1="316" y1="12" x2="389" y2="12" stroke="#9B9053" strokeWidth="2" className='filled-line' />
                     </svg>
                 </div>
-            </div>   
+            </div> 
         </div>
     );
 };
