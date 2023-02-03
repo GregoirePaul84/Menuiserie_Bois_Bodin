@@ -4,14 +4,16 @@ import forest from '../Media/Video/forest.mp4';
 import Header from '../Components/Header';
 
 import Loader from './Loader';
+
+import Logo from '../Svg/Logo';
+import topOfPage from '../Media/Icons/arrow-up.png';
+
 import Services from '../Components/Services/Services';
-
-
 import Achievements from '../Components/Achievements/Achievements';
 import About from '../Components/About/About';
 import Contact from '../Components/Contact/Contact';
 import Footer from '../Components/Footer';
-import Logo from '../Svg/Logo';
+
 
 
 const Home = () => {
@@ -24,8 +26,23 @@ const Home = () => {
     const serviceOpacityRef = useRef({isActive: false, value: 999});
     const achievementOpacityRef = useRef({isActive: false, value: 0});
 
+    const home = document.getElementById('home');
+
+    function rideUp() {
+        home.scrollIntoView(({behavior: "smooth"}));
+    }
+
     useEffect(() => {
-        // console.log(scrollY);
+        const topBtn = document.getElementById('top-of-page');
+        console.log(scrollY);
+
+        if(scrollY > 0) {
+            topBtn.style.visibility = 'visible';
+        }
+
+        else {
+            topBtn.style.visibility = 'hidden';
+        }
 
         // Gestion du scroll et de l'opacité sur la section d'ACCUEIL
         if(scrollY >= 0 && scrollY <= 700) {
@@ -58,14 +75,11 @@ const Home = () => {
 
         if (serviceOpacityRef.current.isActive) {
             document.querySelector('.inside-svg').style.opacity = 0 + '.' + serviceOpacityRef.current.value;
-            // console.log(serviceOpacityRef.current.value);
             
             if(serviceOpacityRef.current.value >= 100) {
                 serviceOpacityRef.current = ({isActive: serviceOpacityRef.current.isActive, value: Math.trunc(-scrollY * 1.2 + 1958)});
             }
-            // else if(serviceOpacityRef.current.value === 0) {
-            //     serviceOpacityRef.current = 0;
-            // }
+        
             else {
                 serviceOpacityRef.current = ({isActive: serviceOpacityRef.current.isActive, value: '0' + Math.trunc(-scrollY * 1.2 + 1958)});
             }
@@ -90,14 +104,9 @@ const Home = () => {
         if (achievementOpacityRef.current.isActive) {
             document.querySelector('.works-background img').style.opacity = achievementOpacityRef.current.value;
 
-            console.log(0 + '.' + Math.trunc(scrollY * 1.1 - 1700));
-            // if(Math.trunc(scrollY - 1800) <= 1) {
-            //     return;
-            // }
+            console.log(0 + '.' + Math.trunc(scrollY - 1700));
 
-            achievementOpacityRef.current = ({isActive: achievementOpacityRef.current.isActive, value: 0 + '.' + Math.trunc(scrollY * 1.1 - 1700)});
-            
-            
+            achievementOpacityRef.current = ({isActive: achievementOpacityRef.current.isActive, value: 0 + '.' + Math.trunc(scrollY - 1700)});  
         }
 
         if(scrollY <= 2550) {
@@ -144,7 +153,11 @@ const Home = () => {
             <div className="foreground">
                 <Header />
                 <main>
-                    <section className="home">
+                    <section id="home">
+                        <div id="top-of-page" onClick={() => {rideUp()}}>
+                            <img src={topOfPage} alt=""/>
+                            <p>Haut de page</p>
+                        </div>
                         <div className="home-left-column">
                             <div className="main-info">
                                 <h1>

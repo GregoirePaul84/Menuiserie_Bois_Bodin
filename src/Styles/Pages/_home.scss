@@ -22,10 +22,35 @@
         main {
             height: 100%;
 
-            .home {
+            #home {
                 height: 100vh;
                 width: 100%;
                 display: flex;
+                position: relative;
+
+                #top-of-page {
+                    position: fixed;
+                    z-index: 9;
+                    bottom: 3%;
+                    right: 3%;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        height: 35px;
+                        width: 35px;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        width: 45px;
+                        font-size: 0.8em;
+                        text-align: center;
+                        font-family: 'Arapey', serif;
+                    }
+                }
 
                 .home-left-column {
                     height: 100%;
