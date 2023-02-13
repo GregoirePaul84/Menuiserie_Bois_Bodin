@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState } from 'react';
 
-import achievementImg from '../../Media/Img/main/achievements_img2-2.png';
+import achievementImg from '../../Media/Img/main/pexels-sabrina-martins-14328849.png';
 
 import ambassyImg from '../../Media/Img/Works/swiss_ambassy.gif';
 import marchepied from '../../Media/Img/Works/marchepied.jpg';
