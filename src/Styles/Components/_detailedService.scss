@@ -1,0 +1,54 @@
+.detailed-services {
+    background-color: #595959;
+    width: 175px;
+    height: 175px;
+    pointer-events: none;
+    position: absolute;
+    top: 76px;
+    left: 89px;
+    box-shadow: inset 10px 0 $color_secondary;
+    display: flex;
+    flex-direction: column;
+
+    .detailed-title {
+        height: 25%;
+        width: 100%;
+        margin: 7px 0;
+
+        h5 {
+            font-size: 1.3em;
+            text-align: center;
+            font-style: italic;
+
+            &::after {
+                content: "";
+                display: block;
+                height: 2px;
+                width: 50px;
+                background-color: $color_secondary;
+                margin-top: 5px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .detailed-list {
+        padding-left: 40px;
+        list-style-type: circle;
+
+        li {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.last {
+    top: -145px;
+    width: 175px;
+    height: 175px;
+
+    .detailed-list {
+        margin-top: 20px;
+    }
+}

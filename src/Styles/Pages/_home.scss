@@ -2,31 +2,25 @@
     height: 100vh;
     overflow: hidden;
 
-    h1, h2, h3, h4 {
+    h1, h2, h3, h4, p {
         span {
             color: $color_secondary;
         }
     }
-    
-    .background {
-        height: 100vh;
-        width: 100%;
-        position: absolute;
-        z-index: -1;
-        opacity: 0.75;
-    }
 
     .foreground {
         height: 100%;
+        width: 100%;
 
         main {
             height: 100%;
+            width: 100%;
 
             #home {
                 height: 100vh;
                 width: 100%;
                 display: flex;
-                position: relative;
+                overflow: hidden;
 
                 #top-of-page {
                     position: fixed;
@@ -52,64 +46,15 @@
                     }
                 }
 
-                .home-left-column {
-                    height: 100%;
-                    width: 50%;
-                    padding-top: 17%;
-                    display: flex;
-                    justify-content: end;
-
-                    .main-info {
-                        height: 50%;
-                        width: 65%;
-                        min-width: 465px;
-                        min-height: 267px;
-                        background-color: $transparent_blue;
-                        box-shadow: inset 10px 0 $color_secondary;
-                        padding: 20px 40px 10px 40px;
-                        display: flex;
-                        flex-direction: column;
-
-                        h1 {
-                            font-size: 2.4em;
-                            font-weight: normal;
-                            margin-bottom: 25px;
-                            padding-top: 8px;
-
-                            span {
-                                color: $color_secondary;
-                            }
-                        }
-
-                        p {
-                            font-size: 1.6em;
-                            font-family: 'Arapey', serif;
-                            line-height: 35px;
-                        }
-
-                        .contact-redirection {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            flex-grow: 1;
-
-                            button {
-                                background-color: transparent;
-                                border: none;
-                                cursor: pointer;
-                                font-size: 1.3em;
-                                margin-left: 15px;
-                            }
-                        }
-                    }
-
-                }
                 .home-right-column {
                     height: 100%;
                     width: 50%;
                     padding-top: 17%;
                     display: flex;
-                    justify-content: end;
+                    justify-content: flex-end;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
 
                     .swiper-nav {
                         height: 52%;
@@ -118,14 +63,14 @@
                         flex-direction: column;
                         justify-content: space-evenly;
                         padding: 60px 0;
-
+            
                         .square {
                             height: 18px;
                             width: 18px;
                             background-color: $transparent_blue;
                             cursor: pointer;
                         }
-
+            
                         .square-active {
                             background-color: rgba(194, 184, 135, 0.8);
                             cursor: default;

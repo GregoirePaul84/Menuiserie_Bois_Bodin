@@ -71,10 +71,25 @@
     .products-container {
         width: 75%;
         height: 100%;
-        background-image: url('../../Media/Img/main/pexels-cottonbro-studio-7484794.png');
-        background-position: bottom;
-        background-size: cover;
-        background-repeat: no-repeat;
+        position: relative;
+        // background-image: url('../../Media/Img/main/pexels-cottonbro-studio-7484794_cut.png');
+        // background-position: bottom;
+        // background-size: cover;
+        // background-repeat: no-repeat;
+
+        .products-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
 
         .products-list {
             height: 100%;
@@ -85,7 +100,6 @@
             flex-wrap: wrap;
             align-content: flex-start;
             position: absolute;
-            z-index: -1;
             background-color: #595959;
             transform: scaleY(0);
             transform-origin: bottom;
@@ -95,7 +109,7 @@
                 height: 100px;
                 display: flex;
                 align-items: center;
-                box-shadow: inset 10px 0 #c2b887;
+                box-shadow: inset 13px 0 $color_secondary;
 
                 h3 {
                     padding: 0 45px;

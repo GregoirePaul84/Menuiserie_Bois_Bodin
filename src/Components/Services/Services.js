@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import Products from './Products';
 
+import servicesImg from '../../Media/Img/main/pexels-cottonbro-studio-7484794_cut.png';
 import doorImg from '../../Media/Img/Services/door.png';
 import shutterImg from '../../Media/Img/Services/shutter.png';
 import floorImg from '../../Media/Img/Services/floor.png';
@@ -17,54 +18,105 @@ const achievements = [
         {
             'id': 0,
             'title': 'Escaliers',
-            'svg': stairsImg
+            'svg': stairsImg,
+            'last': false,
+            'detail': [
+                'escalier colimaçon',
+                'escalier droit'
+            ]
         },
         {
             'id': 1,
             'title': 'Parquets',
-            'svg': floorImg
+            'svg': floorImg,
+            'last': false,
+            'detail': [
+                'parquet massif',
+                'parquet chevron'
+            ]
         },
         {
             'id': 2,
             'title': 'Dressings',
-            'svg': dressingImg
+            'svg': dressingImg,
+            'last': false,
+            'detail': [
+                'dressing mural',
+                'dressing lalala'
+            ]
         },
         {
             'id': 3,
             'title': 'Cuisines',
-            'svg': kitchenImg
+            'svg': kitchenImg,
+            'last': false,
+            'detail': [
+                'plan de travail',
+                'cuisine entière'
+            ]
         },
         {
             'id': 4,
             'title': 'Aménagements intérieurs',
-            'svg': insideImg
+            'svg': insideImg,
+            'last': true,
+            'detail': [
+                'table',
+                'chaises',
+                'meuble TV'
+            ]
         },
     ],
     [
         {
             'id': 5,
             'title': 'Fenêtres',
-            'svg': windowImg
+            'svg': windowImg,
+            'last': false,
+            'detail': [
+                'fenêtre classique',
+                'velux'
+            ]
         },
         {
             'id': 6,
             'title': 'Portes',
-            'svg': doorImg
+            'svg': doorImg,
+            'last': false,
+            'detail': [
+                'porte de cave',
+                'porte lourde'
+            ]
         },
         {
             'id': 7,
             'title': 'Portails',
-            'svg': gateimg
+            'svg': gateimg,
+            'last': false,
+            'detail': [
+                'portail d\'entrée',
+                'portail lalala'
+            ]
         },
         {
             'id': 8,
             'title': 'Volets',
-            'svg': shutterImg
+            'svg': shutterImg,
+            'last': false,
+            'detail': [
+                'volets intérieurs',
+                'volets extérieurs'
+            ]
         },
         {
             'id': 9,
             'title': 'Aménagements extérieurs',
-            'svg': exteriorImg
+            'svg': exteriorImg,
+            'last': true,
+            'detail': [
+                'préau',
+                'veranda'
+            ]
         }
     ]
 ];
@@ -167,11 +219,19 @@ const Services = ({scrollY, categoryService, setCategoryService}) => {
                     <div className="products">
                         {achievements[categoryService].map((e) => {
                             return (
-                                <Products key={e.id} img={e.svg} title={e.title}/>      
+                                <Products 
+                                    key={e.id} 
+                                    img={e.svg} 
+                                    title={e.title}
+                                    last={e.last} 
+                                    detail={e.detail} />      
                             )
                         })}
                     </div>
                 : null }
+            </div>
+            <div className="products-img">
+                <img src={servicesImg} alt="bois et travaux de menuiseries" />
             </div>
         </div>
         </>

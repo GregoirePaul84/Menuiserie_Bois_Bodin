@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import forest from '../Media/Video/forest.mp4';
 
 import Header from '../Components/Header';
 
@@ -13,6 +12,7 @@ import Achievements from '../Components/Achievements/Achievements';
 import About from '../Components/About/About';
 import Contact from '../Components/Contact/Contact';
 import Footer from '../Components/Footer';
+import Company from '../Components/Home/Company';
 
 
 
@@ -27,9 +27,33 @@ const Home = () => {
     const achievementOpacityRef = useRef({isActive: false, value: 0});
 
     const home = document.getElementById('home');
+    const homeSlider = document.querySelector('#home .home-slider');
 
     function rideUp() {
         home.scrollIntoView(({behavior: "smooth"}));
+    }
+
+    function changeInfo(index) {
+        console.log(homeSlider);
+        switch(index) {
+            case 1:
+                homeSlider.style.animation = 'homeTranslate0 1s ease-out forwards';
+                document.querySelector('.swiper-nav .square:nth-child(1)').classList.add('square-active');
+                document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(1))').forEach((e) => e.classList.remove('square-active'));
+                break;
+            case 2:
+                homeSlider.style.animation = 'homeTranslate100 1s ease-out forwards';
+                document.querySelector('.swiper-nav .square:nth-child(2)').classList.add('square-active');
+                document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(2))').forEach((e) => e.classList.remove('square-active'));
+                break;
+            case 3:
+                homeSlider.style.animation = 'homeTranslate200 1s ease-out forwards';
+                document.querySelector('.swiper-nav .square:nth-child(3)').classList.add('square-active');
+                document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(3))').forEach((e) => e.classList.remove('square-active'));
+                break;
+            default:
+                console.log('erreur');
+        }
     }
 
     useEffect(() => {
@@ -46,7 +70,7 @@ const Home = () => {
 
         // Gestion du scroll et de l'opacité sur la section d'ACCUEIL
         if(scrollY >= 0 && scrollY <= 700) {
-            console.log('about on');
+            console.log('home on');
             homeOpacityRef.current = ({isActive: true, value: homeOpacityRef.current.value});
         }
         else {
@@ -54,7 +78,7 @@ const Home = () => {
         }
 
         if (homeOpacityRef.current.isActive) {
-            document.querySelector('.background video').style.opacity = 0 + '.' + homeOpacityRef.current.value;
+            document.querySelectorAll('.background').forEach((e) => e.style.opacity = 0 + '.' + homeOpacityRef.current.value);
             
             if(homeOpacityRef.current.value > 100) {
                 homeOpacityRef.current = ({isActive: homeOpacityRef.current.isActive, value: Math.trunc(-scrollY * 1.25 + 999)});
@@ -66,7 +90,7 @@ const Home = () => {
 
         // Gestion du scroll et de l'opacité sur la section A PROPOS
         if(scrollY >= 800 && scrollY <= 1500) {
-            console.log('service on');
+            console.log('about on');
             serviceOpacityRef.current = ({isActive: true, value: serviceOpacityRef.current.value});
         }
         else {
@@ -137,50 +161,20 @@ const Home = () => {
         <>
         <Loader />
         <div className="home-container">
-            <div className="background">
-                <video 
-                    className='home-video'
-                    width="100%" 
-                    height="100%" 
-                    autoPlay muted loop 
-                    // onLoadedData={() => {
-                    //     checkLoading();
-                    // }}
-                    >
-                    <source src={forest} type="video/mp4"/>
-                </video>
-            </div>
             <div className="foreground">
                 <Header />
                 <main>
                     <section id="home">
                         <div id="top-of-page" onClick={() => {rideUp()}}>
-                            <img src={topOfPage} alt=""/>
+                            <img src={topOfPage} alt="redirection vers le haut de page"/>
                             <p>Haut de page</p>
                         </div>
-                        <div className="home-left-column">
-                            <div className="main-info">
-                                <h1>
-                                    <span>M</span>enuiserie <span>B</span>ois <span>B</span>odin
-                                </h1>
-                                <p>
-                                    Votre service de menuiserie pour 
-                                    <br /> 
-                                    clients exigeants.
-                                </p>
-                                <div className="contact-redirection">
-                                    <svg width="35" height="20" viewBox="0 0 61 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M61 15.499C61 15.0447 60.777 14.4648 60.4548 14.1362L47.3041 0.606042C46.5588 -0.155619 45.3522 -0.155619 44.6088 0.606042C43.8635 1.36964 43.8635 2.60492 44.6088 3.36852L54.5228 13.5659L27.3255 13.5659L14.6933 0.571246C13.948 -0.190415 12.7414 -0.190415 11.9979 0.571246C11.2526 1.33484 11.2526 2.57012 11.9979 3.33372L21.9463 13.5659H15.8884L3.25622 0.571246C2.51091 -0.190415 1.3043 -0.190415 0.560892 0.571246C-0.184422 1.33484 -0.184422 2.57012 0.560892 3.33372L12.3696 15.4836L0.558986 27.6334C-0.186329 28.3951 -0.186329 29.6323 0.558986 30.3959C1.3043 31.1576 2.51091 31.1576 3.25432 30.3959L15.8541 17.4322H21.9101L11.996 27.6315C11.2507 28.3931 11.2507 29.6304 11.996 30.394C12.7414 31.1556 13.948 31.1576 14.6914 30.394L27.2912 17.4322L54.5552 17.4322L44.6069 27.6663C43.8616 28.4279 43.8616 29.6652 44.6069 30.4288C45.3522 31.1904 46.5588 31.1904 47.3022 30.4288L60.4548 16.8986C60.817 16.5275 61 16.0152 61 15.499Z" fill="#C2B887"/>
-                                    </svg>
-                                    <button>Demander un devis</button>
-                                </div>            
-                            </div>
-                        </div>
+                        <Company />
                         <div className="home-right-column">
                             <div className="swiper-nav">
-                                <div className="square square-active"></div>
-                                <div className="square"></div>
-                                <div className="square"></div>
+                                <div className="square square-active" onClick={() => changeInfo(1)}></div>
+                                <div className="square" onClick={() => changeInfo(2)}></div>
+                                <div className="square" onClick={() => changeInfo(3)}></div> 
                             </div>
                         </div>
                     </section>

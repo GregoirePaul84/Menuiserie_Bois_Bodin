@@ -53,7 +53,7 @@ const worksArray = [
 let timer;
 let timeCut;
 
-const Works = () => {
+const Works = ({achievementOpacityRef}) => {
 
     const [time, setTime] = useState(1);
     const [category, setCategory] = useState(0);
