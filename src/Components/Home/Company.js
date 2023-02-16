@@ -5,6 +5,7 @@ import carpenter from '../../Media/Img/main/pexels-cottonbro-studio-5089175.jpg'
 import wood from '../../Media/Img/main/pexels-lumn-227577.jpg';
 
 const Company = () => {
+    
     return (
         <div className="home-slider">
             {/* Premier slide */}
@@ -27,9 +28,8 @@ const Company = () => {
                             <span>M</span>enuiserie <span>B</span>ois <span>B</span>odin
                         </h1>
                         <p>
-                            Votre service de menuiserie pour 
-                            <br /> 
-                            clients exigeants.
+                            Bienvenue chez Menuiserie Bois Bodin,
+                            votre créateur de <span>pièces uniques en bois</span> pour vos projets les plus ambitieux.
                         </p>
                         <div className="contact-redirection">
                             <svg width="35" height="20" viewBox="0 0 61 31" fill="none" xmlns="http://www.w3.org/2000/svg">

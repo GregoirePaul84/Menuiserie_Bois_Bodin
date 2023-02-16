@@ -8,7 +8,7 @@ const Loader = ({isLoading, setIsLoading}) => {
         const pageblock = document.querySelector('.home-container');
         const loaderblock = document.querySelector('.loader-container');
         const header = document.getElementsByTagName('header');
-        console.log(header[0]);
+        const homeSlider = document.querySelector('.home-slider');
 
         const leaf1 = document.querySelector('.loader-container svg path:nth-child(11)');
         const leaf2 = document.querySelector('.loader-container svg path:nth-child(12)');
@@ -43,6 +43,8 @@ const Loader = ({isLoading, setIsLoading}) => {
         pageblock.style.height = 'fit-content';
 
         header[0].style.position = 'fixed';
+
+        homeSlider.style.animation = 'homeTranslateAuto 20s ease-in-out infinite forwards';
 
         setTimeout(() => {
             loaderblock.style.display = 'none';

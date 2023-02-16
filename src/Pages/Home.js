@@ -15,7 +15,6 @@ import Footer from '../Components/Footer';
 import Company from '../Components/Home/Company';
 
 
-
 const Home = () => {
 
     // const [isLoading, setIsLoading] = useState(true);
@@ -27,13 +26,13 @@ const Home = () => {
     const achievementOpacityRef = useRef({isActive: false, value: 0});
 
     const home = document.getElementById('home');
-    const homeSlider = document.querySelector('#home .home-slider');
 
     function rideUp() {
         home.scrollIntoView(({behavior: "smooth"}));
     }
 
     function changeInfo(index) {
+        const homeSlider = document.querySelector('#home .home-slider');
         console.log(homeSlider);
         switch(index) {
             case 1:
@@ -126,7 +125,7 @@ const Home = () => {
         }
 
         if (achievementOpacityRef.current.isActive) {
-            document.querySelector('.works-background img').style.opacity = achievementOpacityRef.current.value;
+            // document.querySelector('.works-background img').style.opacity = achievementOpacityRef.current.value;
 
             console.log(0 + '.' + Math.trunc(scrollY - 1700));
 

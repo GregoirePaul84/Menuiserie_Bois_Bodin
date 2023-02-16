@@ -31,20 +31,20 @@
             justify-content: flex-end;
     
             .main-info {
-                height: 55%;
-                width: 65%;
-                min-width: 465px;
-                min-height: 267px;
+                height: 58%;
+                width: 63%;
+                // min-width: 465px;
+                // min-height: 267px;
                 background-color: $transparent_blue;
                 box-shadow: inset 10px 0 $color_secondary;
-                padding: 20px 40px 10px 40px;
+                padding: 17px 40px 10px 40px;
                 display: flex;
                 flex-direction: column;
     
                 h1 {
                     font-size: 2.4em;
                     font-weight: normal;
-                    margin-bottom: 25px;
+                    margin-bottom: 23px;
                     padding-top: 8px;
     
                     span {
@@ -55,7 +55,7 @@
                 p {
                     font-size: 1.3em;
                     font-family: 'Arapey', serif;
-                    line-height: 35px;
+                    line-height: 32px;
                 }
     
                 .contact-redirection {
@@ -74,6 +74,20 @@
                 }
             }
         }
+    }
+}
+
+@keyframes homeTranslateAuto {
+    0%, 28.33% {
+        transform: translateX(0vw);
+    }
+
+    33.33%, 61.66% {
+        transform: translateX(-100vw);
+    }
+
+    66.66%, 94.99% {
+        transform: translateX(-200vw);
     }
 }
 
