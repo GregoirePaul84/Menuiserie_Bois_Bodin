@@ -51,7 +51,8 @@ const Works = () => {
     const [category, setCategory] = useState(0);
     const figure = document.querySelector('.carousel-figure');
     const theta =  2 * Math.PI / 5;
-    let currImage = 0;
+    const imageRef = useRef(0)
+    // let currImage = 0;
 
     function rotateCarousel(e) {
         e.stopPropagation();
@@ -61,13 +62,13 @@ const Works = () => {
             return;
         
         if (t.classList.contains('next')) {
-            currImage++;
+            imageRef.current = imageRef.current + 1;
         }
         else {
-            currImage--;
+            imageRef.current = imageRef.current - 1;
         }
         
-        figure.style.transform = `rotateY(${currImage * -theta}rad)`;
+        figure.style.transform = `rotateY(${imageRef.current * -theta}rad)`;
     }   
 
     return (
