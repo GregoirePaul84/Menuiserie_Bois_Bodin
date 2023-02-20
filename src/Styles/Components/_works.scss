@@ -1,12 +1,31 @@
 .works-container {
     width: 75%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-left: 3%;
+    padding: 2 % 3%;
     position: relative;
     overflow: hidden;
+
+    .works-title {
+        width: 100%;
+        margin-bottom: 10px;
+
+        h3 {
+            font-size: 1.5em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &::after {
+                display: block;
+                content: "";
+                height: 1.5px;
+                width: 10%;
+                background-color: #C2B887;
+                margin-top: 12px;
+            }
+        }
+    }
 
     // Carousel configuration parameters
     $n: 5;
@@ -38,7 +57,12 @@
             transform-origin: 50% 50% (-$apothem);
 
             .rotating-card {
-                p {
+
+                // &:hover img{
+                //     filter: grayscale(1);
+                // }
+
+                .legend {
                     width: 100%;
                     flex-shrink: 0;
                     display: flex;
@@ -56,13 +80,60 @@
                     }
                 }
                 
-                img {
-                    width: 100%;
-                    box-sizing: border-box;
-                    padding: 0 $item-separation / 2;
+                .works-img {
+                    position: relative;
+                    margin: 0 $item-separation / 2;
+
+                    .work-detail {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        z-index: 10;
+                        padding: 5%;
+                        background-color: $transparent_blue;
+                        display: flex;
+                        justify-content: center;
+
+                        .detail-content {
+                            width: 75%;
+                            height: fit-content;
+                            margin-top: 25%;
+
+                            h5 {
+                                font-size: 1.6em;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+    
+                                &::after {
+                                    display: block;
+                                    content: "";
+                                    height: 2px;
+                                    width: 25%;
+                                    background-color: #C2B887;
+                                    margin: 10px 0 20px 0;
+                                }
+                            }
+    
+                            .detail-info, .detail-wood, .detail-size {
+                                display: flex;
+                                align-items: center;
+                                gap: 15px;
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                        box-sizing: border-box;
+                        opacity: 0.9;
+                    }
                     
-                    opacity: 0.85;
                 }
+                
 
                 &:not(:first-of-type) {
                     position: absolute;
