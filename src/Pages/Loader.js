@@ -10,33 +10,11 @@ const Loader = ({isLoading, setIsLoading, setHandleSlide}) => {
         const header = document.getElementsByTagName('header');
         const video = document.getElementsByTagName('video')[0];
 
-        const leaf1 = document.querySelector('.loader-container svg path:nth-child(11)');
-        const leaf2 = document.querySelector('.loader-container svg path:nth-child(12)');
-        const leaf3 = document.querySelector('.loader-container svg path:nth-child(5)');
-        const leaf4 = document.querySelector('.loader-container svg path:nth-child(8)');
-        const leaf5 = document.querySelector('.loader-container svg path:nth-child(6)');
-        const leaf6 = document.querySelector('.loader-container svg path:nth-child(7)');
-        const leaf7 = document.querySelector('.loader-container svg path:nth-child(4)');
-        const leaf8 = document.querySelector('.loader-container svg path:nth-child(3)');
-        const leaf9 = document.querySelector('.loader-container svg path:nth-child(1)');
-        const leaf10 = document.querySelector('.loader-container svg path:nth-child(2)');
-        const leaf11 = document.querySelector('.loader-container svg path:nth-child(13)');
-        const leaf12 = document.querySelector('.loader-container svg path:nth-child(10)');
-        const leaf13 = document.querySelector('.loader-container svg path:nth-child(9)');
+        const leaves = document.querySelectorAll('.loader-container svg path');
 
-        leaf1.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf1';
-        leaf2.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf2';
-        leaf3.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf3';
-        leaf4.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf4';
-        leaf5.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf5';
-        leaf6.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf6';
-        leaf7.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf7';
-        leaf8.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf8';
-        leaf9.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf9';
-        leaf10.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf10';
-        leaf11.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf11';
-        leaf12.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf12';
-        leaf13.style.animation = '3s ease-out 0s 1 normal forwards running move-leaf13';
+        leaves.forEach((leaf, index) => {
+            leaf.style.animation = `3s ease-out 0s 1 normal forwards running move-leaf${index+1}`;
+        });
 
         loaderblock.style.animation = '3s ease-out 0s 1 normal forwards running loader-disappears'; 
 
