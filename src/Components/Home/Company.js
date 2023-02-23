@@ -1,10 +1,18 @@
 import React from 'react';
 
-import forest from '../../Media/Video/forest.mp4';
+import forest from '../../Media/Video/forest2.mp4';
 import carpenter from '../../Media/Img/main/pexels-cottonbro-studio-5089175.jpg';
 import wood from '../../Media/Img/main/pexels-lumn-227577.jpg';
 
-const Company = () => {
+const Company = ({isLoading, setIsLoading}) => {
+
+    function checkLoading() {
+        setTimeout(() => {
+            console.log('video chargée');
+            setIsLoading(false);
+        }, 4000)
+        
+    }
     
     return (
         <div className="home-slider">
@@ -15,9 +23,9 @@ const Company = () => {
                         width="100%" 
                         height="100%" 
                         autoPlay muted loop 
-                        // onLoadedData={() => {
-                        //     checkLoading();
-                        // }}
+                        onLoadedData={() => {
+                            checkLoading();
+                        }}
                         >
                         <source src={forest} type="video/mp4"/>
                     </video>

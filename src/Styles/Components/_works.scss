@@ -7,7 +7,7 @@
 
     .works-title {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
 
         h3 {
             font-size: 1.5em;
@@ -34,7 +34,7 @@
     $viewer-distance: 500px;
 
     // Derived variables
-    $theta: 2 * 3.141592653589793 / $n; 
+    $theta: calc(2 * 3.141592653589793 / $n); 
     $apothem: 482.842712474619px;
 
     .works-carousel {
@@ -82,7 +82,7 @@
                 
                 .works-img {
                     position: relative;
-                    margin: 0 $item-separation / 2;
+                    margin: 0 calc($item-separation / 2);
 
                     .work-detail {
                         position: absolute;

@@ -14,10 +14,12 @@ import Contact from '../Components/Contact/Contact';
 import Footer from '../Components/Footer';
 import Company from '../Components/Home/Company';
 
+let interval;
 
 const Home = () => {
 
-    // const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [handleSlide, setHandleSlide] = useState({'play': false, 'index': 0});
     const [scrollY, setScrollY] = useState(0);
     const [categoryService, setCategoryService] = useState(undefined);
 
@@ -27,25 +29,35 @@ const Home = () => {
 
     const home = document.getElementById('home');
 
+    // Remonte en haut de la page
     function rideUp() {
         home.scrollIntoView(({behavior: "smooth"}));
     }
 
+    // Change le slider selon le temps ou l'action utilisateur
     function changeInfo(index) {
         const homeSlider = document.querySelector('#home .home-slider');
-        console.log(homeSlider);
+        const video = document.getElementsByTagName('video')[0];
+
         switch(index) {
+            case 0: 
+                console.log("page d'accueil");
+                video.pause();
+                break;
             case 1:
+                video.play();
                 homeSlider.style.animation = 'homeTranslate0 1s ease-out forwards';
                 document.querySelector('.swiper-nav .square:nth-child(1)').classList.add('square-active');
                 document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(1))').forEach((e) => e.classList.remove('square-active'));
                 break;
             case 2:
+                video.pause();
                 homeSlider.style.animation = 'homeTranslate100 1s ease-out forwards';
                 document.querySelector('.swiper-nav .square:nth-child(2)').classList.add('square-active');
                 document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(2))').forEach((e) => e.classList.remove('square-active'));
                 break;
             case 3:
+                video.pause();
                 homeSlider.style.animation = 'homeTranslate200 1s ease-out forwards';
                 document.querySelector('.swiper-nav .square:nth-child(3)').classList.add('square-active');
                 document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(3))').forEach((e) => e.classList.remove('square-active'));
@@ -55,9 +67,42 @@ const Home = () => {
         }
     }
 
+    // Change les slide de manière automatique
+    function timer() {
+        let imgIndex = 2;
+
+        interval = setInterval(function() { 
+           if (imgIndex <= 3) { 
+                console.log(imgIndex);
+                changeInfo(imgIndex);
+                imgIndex++;
+           }
+           else { 
+                imgIndex = 1;
+           }
+        }, 5000);
+    }
+
+    // Arrête le timer lors du choix de slide manuel
+    function stopTimer() {
+        clearInterval(interval);
+        changeInfo(handleSlide.index)
+    }
+
+    useEffect(() => {
+                
+        if(handleSlide.play) {
+            console.log('yes');
+           timer();
+        }
+        else {
+            stopTimer();
+        }
+    }, [handleSlide])
+
     useEffect(() => {
         const topBtn = document.getElementById('top-of-page');
-        console.log(scrollY);
+        // console.log(scrollY);
 
         if(scrollY > 0) {
             topBtn.style.visibility = 'visible';
@@ -158,7 +203,7 @@ const Home = () => {
 
     return (
         <>
-        <Loader />
+        <Loader isLoading={isLoading} setIsLoading={setIsLoading} setHandleSlide={setHandleSlide} />
         <div className="home-container">
             <div className="foreground">
                 <Header />
@@ -168,12 +213,12 @@ const Home = () => {
                             <img src={topOfPage} alt="redirection vers le haut de page"/>
                             <p>Haut de page</p>
                         </div>
-                        <Company />
+                        <Company isLoading={isLoading} setIsLoading={setIsLoading}/>
                         <div className="home-right-column">
                             <div className="swiper-nav">
-                                <div className="square square-active" onClick={() => changeInfo(1)}></div>
-                                <div className="square" onClick={() => changeInfo(2)}></div>
-                                <div className="square" onClick={() => changeInfo(3)}></div> 
+                                <div className="square square-active" onClick={() => setHandleSlide({'play': false, 'index': 1})}></div>
+                                <div className="square" onClick={() => setHandleSlide({'play': false, 'index': 2})}></div>
+                                <div className="square" onClick={() => setHandleSlide({'play': false, 'index': 3})}></div> 
                             </div>
                         </div>
                     </section>

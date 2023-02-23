@@ -228,10 +228,8 @@ const Contact = () => {
                                 id='intOthers'
                                 {...register('intOthers')}/>
                             <label htmlFor="intOthers">Autre (préciser)</label>
-                            <input type="text" />
                         </div>
-
-                        {/* <textarea name="" id="" cols="20" rows="10"></textarea> */}
+                        <textarea name="" id="" cols="20" rows="10"></textarea>
                     </div>
                 </div>
 
