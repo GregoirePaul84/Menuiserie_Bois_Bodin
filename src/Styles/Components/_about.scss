@@ -74,8 +74,8 @@
         position: relative;
 
         .about-content {
-            height: 45%;
-            width: 32%;
+            height: auto;
+            width: 30%;
             min-width: 360px;
             max-width: 400px;
             background-color: $transparent_blue;
@@ -87,7 +87,7 @@
             opacity: 0;
 
             h3 {
-                height: 32%;
+                height: 100px;
                 width: 100%;
                 position: relative;
                 display: flex;
@@ -115,10 +115,11 @@
             }
 
             .arrow-text {
-                height: 68%;
+                height: calc(100% - 100px);
                 width: 100%;
                 display: flex;
                 padding: 25px 20%;
+                margin-bottom: 25px;
 
                 svg {
                     position: relative;

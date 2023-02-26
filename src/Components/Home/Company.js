@@ -11,7 +11,6 @@ const Company = ({isLoading, setIsLoading}) => {
             console.log('video chargée');
             setIsLoading(false);
         }, 4000)
-        
     }
     
     return (

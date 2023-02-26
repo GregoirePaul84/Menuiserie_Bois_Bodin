@@ -198,7 +198,7 @@
 
     to {
         opacity: 0;
-        transform: translate(25px, -40px);
+        transform: translate(-23px, 14px);
     }
 }
 
@@ -210,7 +210,7 @@
 
     to {
         opacity: 0;
-        transform: translate(9px, -40px);
+        transform: translate(23px, 14px);
     }
 }
 
@@ -222,7 +222,7 @@
 
     to {
         opacity: 0;
-        transform: translate(40px, -15px);
+        transform: translate(-40px, -5px);
     }
 }
 
@@ -234,7 +234,7 @@
 
     to {
         opacity: 0;
-        transform: translate(-16px, -40px);
+        transform: translate(-33px, -20px);
     }
 }
 
@@ -246,7 +246,7 @@
 
     to {
         opacity: 0;
-        transform: translate(-29px, -40px);
+        transform: translate(26px, -11px);
     }
 }
 
@@ -270,7 +270,7 @@
 
     to {
         opacity: 0;
-        transform: translate(-38px, -40px);
+        transform: translate(-22px, -16px);
     }
 }
 
@@ -282,7 +282,7 @@
 
     to {
         opacity: 0;
-        transform: translate(-40px, -5px);
+        transform: translate(-16px, -40px);
     }
 }
 
@@ -294,7 +294,7 @@
 
     to {
         opacity: 0;
-        transform: translate(-23px, 14px);
+        transform: translate(-20px, -16px);
     }
 }
 
@@ -306,7 +306,7 @@
 
     to {
         opacity: 0;
-        transform: translate(23px, 14px);
+        transform: translate(16px, -16px);
     }
 }
 
@@ -318,7 +318,7 @@
 
     to {
         opacity: 0;
-        transform: translate(40px, 0px);
+        transform: translate(15px, -20px);
     }
 }
 
@@ -330,7 +330,7 @@
 
     to {
         opacity: 0;
-        transform: translate(20px, -10px);
+        transform: translate(9px, -40px);
     }
 }
 
@@ -342,9 +342,11 @@
 
     to {
         opacity: 0;
-        transform: translate(-20px, -10px);
+        transform: translate(40px, 0px);
     }
 }
+
+
 
 @keyframes loader-disappears {
     from {

@@ -31,10 +31,10 @@
             // justify-content: flex-end;
     
             .main-info {
-                height: 58%;
+                height: auto;
+                min-height: 275px;
                 width: 32%;
-                // min-width: 465px;
-                // min-height: 267px;
+                min-width: 300px;
                 margin-left: 15%;
                 background-color: $transparent_blue;
                 box-shadow: inset 10px 0 $color_secondary;
@@ -45,7 +45,7 @@
                 h1 {
                     font-size: 2.4em;
                     font-weight: normal;
-                    margin-bottom: 23px;
+                    margin-bottom: 25px;
                     padding-top: 8px;
     
                     span {
@@ -57,6 +57,7 @@
                     font-size: 1.3em;
                     font-family: 'Arapey', serif;
                     line-height: 32px;
+                    margin-bottom: 25px;
                 }
     
                 .contact-redirection {
@@ -64,6 +65,7 @@
                     justify-content: center;
                     align-items: center;
                     flex-grow: 1;
+                    margin-bottom: 25px;
     
                     button {
                         background-color: transparent;
