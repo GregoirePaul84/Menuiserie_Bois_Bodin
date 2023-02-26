@@ -1,7 +1,7 @@
 .works-container {
     width: 75%;
     height: 100%;
-    padding: 2 % 3%;
+    padding: 2% 3% 0 3%;
     position: relative;
     overflow: hidden;
 
@@ -10,6 +10,7 @@
         margin-bottom: 20px;
 
         h3 {
+            height: 40px;
             font-size: 1.5em;
             text-align: center;
             display: flex;
@@ -38,7 +39,7 @@
     $apothem: 482.842712474619px;
 
     .works-carousel {
-        height: fit-content;
+        height: calc(100% - 60px);
         width: 100%;
         padding: 20px;
         perspective: $viewer-distance;
@@ -154,7 +155,7 @@
         nav {
             display: flex;
             justify-content: center;
-            margin: 40px 0 0;
+            margin: 32px 0 0;
             
             button {
                 flex: 0 0 auto;
