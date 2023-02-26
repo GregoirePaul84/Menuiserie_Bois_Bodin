@@ -67,15 +67,12 @@
             height: 5px;
             margin-left: 5px;
             background: $color_secondary;
-            // position: absolute;
-            // bottom: 10px;
-            // right: -5px;
             box-sizing: border-box;
             animation: animloader 1s linear infinite;
         }
     }
 
-    svg {
+    #main-logo {
         overflow: visible;
 
         path {
@@ -86,91 +83,91 @@
         
     }
     
-    svg path:nth-child(1) {
+    #main-logo path:nth-child(1) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 0.2s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(2) {
+    #main-logo path:nth-child(2) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 0.4s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(3) {
+    #main-logo path:nth-child(3) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 0.6s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(4) {
+    #main-logo path:nth-child(4) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 0.8s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(5) {
+    #main-logo path:nth-child(5) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 2.2s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(6) {
+    #main-logo path:nth-child(6) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 1s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(7) {
+    #main-logo path:nth-child(7) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 1.2s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(8) {
+    #main-logo path:nth-child(8) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 1.4s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(9) {
+    #main-logo path:nth-child(9) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 1.6s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(10) {
+    #main-logo path:nth-child(10) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 1.8s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(11) {
+    #main-logo path:nth-child(11) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 2s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(12) {
+    #main-logo path:nth-child(12) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay:  2.4s;
         animation-fill-mode: forwards;
     }
     
-    svg path:nth-child(13) {
+    #main-logo path:nth-child(13) {
         animation: 2s ease-in-out blink-leaf;
         animation-iteration-count: 1;
         animation-delay: 2.4s;
