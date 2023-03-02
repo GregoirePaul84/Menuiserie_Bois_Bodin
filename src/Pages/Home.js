@@ -15,11 +15,15 @@ import Footer from '../Components/Footer';
 import Company from '../Components/Home/Company';
 
 let interval;
+let timeout;
 
 const Home = () => {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [handleSlide, setHandleSlide] = useState({'play': false, 'index': 0});
+    const [isEntered, setIsEntered] = useState(false);
+    const [slideActive, setSlideActive] = useState(false);
+    const [slideIndex, setSlideIndex] = useState(1);
+    const [handleSlide, setHandleSlide] = useState({from: 'slide1', to: 'slide1'})
     const [scrollY, setScrollY] = useState(0);
     const [categoryService, setCategoryService] = useState(undefined);
 
@@ -34,75 +38,152 @@ const Home = () => {
         home.scrollIntoView(({behavior: "smooth"}));
     }
 
-    // Change le slider selon le temps ou l'action utilisateur
-    function changeInfo(index) {
-        const homeSlider = document.querySelector('#home .home-slider');
-        const video = document.getElementsByTagName('video')[0];
-
-        switch(index) {
-            case 0: 
-                console.log("page d'accueil");
-                video.pause();
-                break;
-            case 1:
-                video.play();
-                homeSlider.style.animation = 'homeTranslate0 1s ease-out forwards';
-                document.querySelector('.swiper-nav .square:nth-child(1)').classList.add('square-active');
-                document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(1))').forEach((e) => e.classList.remove('square-active'));
-                break;
-            case 2:
-                video.pause();
-                homeSlider.style.animation = 'homeTranslate100 1s ease-out forwards';
-                document.querySelector('.swiper-nav .square:nth-child(2)').classList.add('square-active');
-                document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(2))').forEach((e) => e.classList.remove('square-active'));
-                break;
-            case 3:
-                video.pause();
-                homeSlider.style.animation = 'homeTranslate200 1s ease-out forwards';
-                document.querySelector('.swiper-nav .square:nth-child(3)').classList.add('square-active');
-                document.querySelectorAll('.swiper-nav .square:not(.square:nth-child(3))').forEach((e) => e.classList.remove('square-active'));
-                break;
-            default:
-                console.log('erreur');
-        }
-    }
-
-    // Change les slide de manière automatique
-    function timer() {
-        let imgIndex = 2;
-
-        interval = setInterval(function() { 
-           if (imgIndex <= 3) { 
-                console.log(imgIndex);
-                changeInfo(imgIndex);
-                imgIndex++;
-           }
-           else { 
-                imgIndex = 1;
-           }
-        }, 5000);
-    }
-
-    // Arrête le timer lors du choix de slide manuel
-    function stopTimer() {
+    function resetSlide(slide1 , slide2) {
         clearInterval(interval);
-        changeInfo(handleSlide.index)
+        clearTimeout(timeout);
+        console.log(interval);
+        console.log(timeout);
+
+        setSlideActive(false);
+        console.log('slide coupé');
+
+        timeout = setTimeout(() => {
+            console.log('slide réactivé');
+            setSlideActive(true);
+            setHandleSlide({from: slide1, to: slide2});
+        }, 7000)
     }
+
+    // Gestion de l
+    useEffect(() => {
+        const slider = document.querySelector('#home .home-slider');
+        const video = document.getElementsByTagName('video');
+        const square1 = document.querySelector('.swiper-nav .square:nth-child(1)');
+        const square2 = document.querySelector('.swiper-nav .square:nth-child(2)');
+        const square3 = document.querySelector('.swiper-nav .square:nth-child(3)');
+        console.log(handleSlide);
+
+        // Slide 1 depuis slide 2
+        function slide1from2() {
+            slider.style.animation = 'slide1from2 1.5s ease-out 1 forwards';
+            video[0].play();
+            square1.classList.add('square-active');
+            square2.classList.remove('square-active');
+            square3.classList.remove('square-active');
+        }
+
+        // Slide 1 depuis slide 3
+        function slide1from3() {
+            slider.style.animation = 'slide1from3 1.5s ease-out 1 forwards';
+            video[0].play();
+            square1.classList.add('square-active');
+            square2.classList.remove('square-active');
+            square3.classList.remove('square-active');
+        }
+
+        // Slide 2 depuis slide 1
+        function slide2from1() {
+            slider.style.animation = 'slide2from1 1.5s ease-out 1 forwards';
+            video[0].pause();
+            square1.classList.remove('square-active');
+            square2.classList.add('square-active');
+            square3.classList.remove('square-active');
+        }
+
+        // Slide 2 depuis slide 3
+        function slide2from3() {
+            slider.style.animation = 'slide2from3 1.5s ease-out 1 forwards';
+            video[0].pause();
+            square1.classList.remove('square-active');
+            square2.classList.add('square-active');
+            square3.classList.remove('square-active');
+        }
+  
+        // Slide 3 depuis slide 1
+        function slide3from1() {
+            slider.style.animation = 'slide3from1 1.5s ease-out 1 forwards';
+            video[0].pause();
+            square1.classList.remove('square-active');
+            square2.classList.remove('square-active');
+            square3.classList.add('square-active');
+        }
+
+        // Slide 3 depuis slide 2
+        function slide3from2() {
+            slider.style.animation = 'slide3from2 1.5s ease-out 1 forwards';
+            video[0].pause();
+            square1.classList.remove('square-active');
+            square2.classList.remove('square-active');
+            square3.classList.add('square-active');
+        }
+
+        if(handleSlide.from === 'slide2' && handleSlide.to === 'slide1')
+            slide1from2();
+        
+        if(handleSlide.from === 'slide1' && handleSlide.to === 'slide2')
+           slide2from1();
+
+        if(handleSlide.from === 'slide2' && handleSlide.to === 'slide3')
+           slide3from2();
+
+        if(handleSlide.from === 'slide3' && handleSlide.to === 'slide1')
+           slide1from3();
+           
+        if(handleSlide.from === 'slide1' && handleSlide.to === 'slide3')
+           slide3from1();
+
+        if(handleSlide.from === 'slide3' && handleSlide.to === 'slide2')
+           slide2from3();
+    
+    }, [handleSlide]);
 
     useEffect(() => {
-                
-        if(handleSlide.play) {
-            console.log('yes');
-           timer();
+        if(!isEntered) {
+            document.getElementsByTagName('video')[0].pause();
         }
         else {
-            stopTimer();
+            setSlideActive(true);
         }
-    }, [handleSlide])
+
+        if(handleSlide.to === 'slide3' && slideIndex === 1) {
+            setHandleSlide({from: 'slide3', to: 'slide1'});
+        }
+        if(handleSlide.to === 'slide1' && slideIndex === 2) {
+            setHandleSlide({from: 'slide1', to: 'slide2'});
+        }
+        if(handleSlide.to === 'slide2' && slideIndex === 3) {
+            setHandleSlide({from: 'slide2', to: 'slide3'});
+        }
+
+    }, [isEntered, slideIndex])
+
+    useEffect(() => {
+        console.log('=== Slide index ===');
+        console.log(slideIndex);
+
+        console.log('=== Slide Active ===');
+        console.log(slideActive);
+        if(!slideActive) {
+            return;
+        }
+        else {
+            interval = setInterval(function() { 
+
+                if (slideIndex < 3) { 
+                    setSlideIndex((slideIndex) => slideIndex + 1);
+                }
+                else { 
+                    setSlideIndex(1);
+                }
+            }, 7000);
+        }
+       
+        return () => clearInterval(interval);
+    }, [slideActive, slideIndex]);
+
 
     useEffect(() => {
         const topBtn = document.getElementById('top-of-page');
-        // console.log(scrollY);
 
         if(scrollY > 0) {
             topBtn.style.visibility = 'visible';
@@ -203,7 +284,7 @@ const Home = () => {
 
     return (
         <>
-        <Loader isLoading={isLoading} setIsLoading={setIsLoading} setHandleSlide={setHandleSlide} />
+        <Loader isLoading={isLoading} setIsEntered={setIsEntered} setHandleSlide={setHandleSlide} />
         <div className="home-container">
             <div className="foreground">
                 <Header />
@@ -216,9 +297,9 @@ const Home = () => {
                         <Company isLoading={isLoading} setIsLoading={setIsLoading}/>
                         <div className="home-right-column">
                             <div className="swiper-nav">
-                                <div className="square square-active" onClick={() => setHandleSlide({'play': false, 'index': 1})}></div>
-                                <div className="square" onClick={() => setHandleSlide({'play': false, 'index': 2})}></div>
-                                <div className="square" onClick={() => setHandleSlide({'play': false, 'index': 3})}></div> 
+                                <div className="square square-active" onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide1'}); resetSlide('slide1', 'slide2')}}></div>
+                                <div className="square" onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide2'}); resetSlide('slide2', 'slide3')}}></div>
+                                <div className="square" onClick={() => {setHandleSlide({from: handleSlide.to, to: 'slide3'}); resetSlide('slide3', 'slide1')}}></div> 
                             </div>
                         </div>
                     </section>

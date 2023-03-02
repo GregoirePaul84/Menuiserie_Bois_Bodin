@@ -84,46 +84,62 @@
     }
 }
 
-@keyframes homeTranslateAuto {
-    0%, 28.33% {
-        transform: translateX(0vw);
-    }
-
-    33.33%, 61.66% {
+// Slide 1 depuis slide 2
+@keyframes slide1from2 {
+    from {
         transform: translateX(-100vw);
     }
+    to {
+        transform: translateX(0);
+    }
+}
 
-    66.66%, 94.99% {
+// Slide 2 depuis slide 1
+@keyframes slide2from1 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100vw);
+    }
+}
+
+// Slide 3 depuis slide 2
+@keyframes slide3from2 {
+    from {
+        transform: translateX(-100vw);
+    }
+    to {
+        transform: translateX(-200vw);
+    }
+}
+
+// Slide 1 depuis slide 3
+@keyframes slide1from3 {
+    from {
+        transform: translateX(-200vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+// Slide 3 depuis slide 1
+@keyframes slide3from1 {
+    from {
+        transform: translateX(0);
+    }
+    to {
         transform: translateX(-200vw);
     }
 }
 
-@keyframes homeTranslate0 {
+// Slide 2 depuis slide 3
+@keyframes slide2from3 {
     from {
-        transform: translateX(-100vw);
-    }
-
-    to {
-        transform: translateX(0vw);
-    }
-}
-
-@keyframes homeTranslate100 {
-    from {
-        transform: translateX(0vw);
-    }
-
-    to {
-        transform: translateX(-100vw);
-    }
-}
-
-@keyframes homeTranslate200 {
-    from {
-        transform: translateX(-100vw);
-    }
-    
-    to {
         transform: translateX(-200vw);
+    }
+    to {
+        transform: translateX(-100vw);
     }
 }

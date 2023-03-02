@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Svg/Logo';
 
-const Loader = ({isLoading, setIsLoading, setHandleSlide}) => {
+const Loader = ({isLoading, setIsEntered}) => {
     // const button = document.querySelector('.loader-container button');
 
     function enterWebsite() {    
@@ -22,7 +22,7 @@ const Loader = ({isLoading, setIsLoading, setHandleSlide}) => {
         header[0].style.position = 'fixed';
         video.play();
 
-        setHandleSlide({'play': true, 'index': 1});
+        setIsEntered(true);
 
         setTimeout(() => {
             loaderblock.style.display = 'none';
