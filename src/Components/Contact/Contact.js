@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -7,6 +7,31 @@ import * as yup from 'yup';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+
+    const [checkboxes, setCheckboxes] = useState(
+        [
+            {
+                stairs: false,
+                floor: false,
+                dressing: false,
+                kitchen: false,
+                inside: false,
+                intOthers: false
+            },
+            {
+                windows: false,
+                doors: false,
+                gate: false,
+                shutters: false,
+                outside: false,
+                outOthers: false
+            }
+        ]
+    );
+
+    useEffect(() => {
+        console.log(checkboxes);
+    }, [checkboxes])
 
     const schema = yup
         .object(
@@ -32,35 +57,60 @@ const Contact = () => {
         resolver: yupResolver(schema)
     });
 
-    function onSubmit(data, r) {
-        alert('votre demande a bien été envoyée !');
+    function resetForm() {
+
+        document.getElementById("contact-form").reset();
+
+        setCheckboxes(
+            [
+                {
+                    stairs: false,
+                    floor: false,
+                    dressing: false,
+                    kitchen: false,
+                    inside: false,
+                    intOthers: false
+                },
+                {
+                    windows: false,
+                    doors: false,
+                    gate: false,
+                    shutters: false,
+                    outside: false,
+                    outOthers: false
+                }
+            ]
+        )
+    }
+
+    function onSubmit(data) {
+        
         const templateId = process.env.REACT_APP_TEMPLATE_ID;
         const serviceId = process.env.REACT_APP_SERVICE_ID;
         let insideWork = [];
         let outsideWork = [];
 
         // Checkboxes travaux d'intérieur
-        if(data.stairs) insideWork.push('escaliers');
-        if(data.floor) insideWork.push('parquet');
-        if(data.kitchen) insideWork.push('cuisine');
-        if(data.dressing) insideWork.push('dressing');
-        if(data.inside) insideWork.push("aménagements intérieur");
-        if(data.intOthers) insideWork.push('autre (intérieur)');
+        if(checkboxes[0].stairs) insideWork.push('escaliers');   
+        if(checkboxes[0].floor) insideWork.push('parquet');     
+        if(checkboxes[0].kitchen) insideWork.push('cuisine');
+        if(checkboxes[0].dressing) insideWork.push('dressing');
+        if(checkboxes[0].inside) insideWork.push("aménagements intérieur");
+        if(checkboxes[0].intOthers) insideWork.push('autre (intérieur)');
         if(insideWork.length === 0) insideWork = ["aucun travaux d'intérieur demandé"];
 
         // Checkboxes travaux d'extérieur
-        if(data.windows) outsideWork.push('fenêtres');
-        if(data.doors) outsideWork.push('portes');
-        if(data.gate) outsideWork.push('portail');
-        if(data.shutters) outsideWork.push('volets');
-        if(data.outside) outsideWork.push("aménagements extérieur");
-        if(data.outOthers) outsideWork.push('autre (extérieur)');
+        if(checkboxes[1].windows) outsideWork.push('fenêtres');
+        if(checkboxes[1].doors) outsideWork.push('portes');
+        if(checkboxes[1].gate) outsideWork.push('portail');
+        if(checkboxes[1].shutters) outsideWork.push('volets');
+        if(checkboxes[1].outside) outsideWork.push("aménagements extérieur");
+        if(checkboxes[1].outOthers) outsideWork.push('autre (extérieur)');
         if(outsideWork.length === 0) outsideWork = ["aucun travaux d'extérieur demandé"];
 
         insideWork = JSON.stringify(insideWork);
         outsideWork = JSON.stringify(outsideWork);
 
-        console.log(data);
         console.log(insideWork);
         
         insideWork = insideWork.replace('[', '').replace(/"/g, '').replace(']', '');
@@ -81,24 +131,30 @@ const Contact = () => {
 
             // Travaux demandés
             insideWork: insideWork,
-            outsideWork: outsideWork,
-            reply_to: r.target.reset()
+            outsideWork: outsideWork
         })
+
+        resetForm();
+
     };
 
     function sendFeedback(serviceId, templateId, variables) {
-        emailjs
+        if (window.confirm('Êtes-vous sûr(e) de vouloir envoyer le message ?')) {
+            emailjs
             .send(serviceId, templateId, variables, process.env.REACT_APP_EMAILJS_KEY)
             .then((res) => {
+                alert('votre demande a bien été envoyée !');
                 console.log('Email envoyé !');
             })
             .catch((err) => {
                 console.error('Erreur');
             })
+        }
+        
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} id='contact-form'>
             <h4>Informations personnelles</h4>
             <div className="left-column">
                 <div className='input-container'>
@@ -128,8 +184,8 @@ const Contact = () => {
                     {errors.email && <p className='error-msg'>{errors.email.message}</p>}
                     <input
                         type="email"
-                        id="mail"
-                        name="mail"
+                        id="email"
+                        name="email"
                         placeholder='Votre e-mail'
                         {...register('email')}
                         />
@@ -185,7 +241,16 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='stairs' 
                                 id='stairs'
-                                {...register('stairs')}
+                                // {...register('stairs')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0], stairs : !checkboxes[0].stairs},
+                                            {...checkboxes[1]}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
                                 />
                             <label htmlFor="stairs">Escalier</label>
                         </div>
@@ -194,7 +259,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='floor' 
                                 id='floor'
-                                {...register('floor')}/>
+                                // {...register('floor')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0], floor : !checkboxes[0].floor},
+                                            {...checkboxes[1]}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                />
                             <label htmlFor="floor">Parquet</label>
                         </div>
                         <div>
@@ -202,7 +277,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='dressing' 
                                 id='dressing'
-                                {...register('dressing')}/>
+                                // {...register('dressing')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0], dressing : !checkboxes[0].dressing},
+                                            {...checkboxes[1]}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                />
                             <label htmlFor="dressing">Dressing</label>
                         </div>
                         <div>
@@ -210,7 +295,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='kitchen' 
                                 id='kitchen'
-                                {...register('kitchen')}/>
+                                // {...register('kitchen')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0], kitchen : !checkboxes[0].kitchen},
+                                            {...checkboxes[1]}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                />
                             <label htmlFor="kitchen">Cuisine</label>
                         </div>
                         <div>
@@ -218,7 +313,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='inside' 
                                 id='inside'
-                                {...register('inside')}/>
+                                // {...register('inside')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0], inside : !checkboxes[0].inside},
+                                            {...checkboxes[1]}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                />
                             <label htmlFor='inside'>Aménagement intérieur</label>
                         </div>
                         <div>
@@ -226,7 +331,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='intOthers' 
                                 id='intOthers'
-                                {...register('intOthers')}/>
+                                // {...register('intOthers')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0], intOthers : !checkboxes[0].intOthers},
+                                            {...checkboxes[1]}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                />
                             <label htmlFor="intOthers">Autre (préciser)</label>
                         </div>
                         <textarea name="" id="" cols="20" rows="10"></textarea>
@@ -241,7 +356,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='windows'
                                 id='windows'
-                                {...register('windows')} />
+                                // {...register('windows')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0]},
+                                            {...checkboxes[1], windows : !checkboxes[1].windows}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                 />
                             <label htmlFor="windows">Fenêtres</label>
                         </div>
                         <div>
@@ -249,7 +374,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='doors' 
                                 id='doors'
-                                {...register('doors')} />
+                                // {...register('doors')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0]},
+                                            {...checkboxes[1], doors : !checkboxes[1].doors}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                 />
                             <label htmlFor='doors'>Portes</label>
                         </div>
                         <div>
@@ -257,7 +392,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='gate' 
                                 id='gate'
-                                {...register('gate')} />
+                                // {...register('gate')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0]},
+                                            {...checkboxes[1], gate : !checkboxes[1].gate}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                 />
                             <label htmlFor="gate">Portail</label>
                         </div>
                         <div>
@@ -265,7 +410,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='shutters' 
                                 id='shutters'
-                                {...register('shutters')} />
+                                // {...register('shutters')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0]},
+                                            {...checkboxes[1], shutters : !checkboxes[1].shutters}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                 />
                             <label htmlFor="shutters">Volets</label>
                         </div>
                         <div>
@@ -273,7 +428,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='outside' 
                                 id='outside'
-                                {...register('outside')} />
+                                // {...register('outside')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0]},
+                                            {...checkboxes[1], outside : !checkboxes[1].outside}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                 />
                             <label htmlFor="outside">Aménagement extérieur</label>
                         </div>
                         <div>
@@ -281,7 +446,17 @@ const Contact = () => {
                                 type="checkbox" 
                                 name='outOthers'
                                 id='outOthers'
-                                {...register('outOthers')} />
+                                // {...register('outOthers')}
+                                onClick={() => 
+                                    setCheckboxes(
+                                        [
+                                            {...checkboxes[0]},
+                                            {...checkboxes[1], outOthers : !checkboxes[1].outOthers}
+                                        ]
+                                    )
+                                }
+                                // defaultChecked={false} 
+                                 />
                             <label htmlFor="outOthers">Autre (préciser)</label>
                         </div>
 

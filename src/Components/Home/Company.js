@@ -35,8 +35,11 @@ const Company = ({isLoading, setIsLoading}) => {
                             <span>M</span>enuiserie <span>B</span>ois <span>B</span>odin
                         </h1>
                         <p>
-                            Bienvenue chez Menuiserie Bois Bodin,
-                            votre créateur de <span>pièces uniques en bois</span> pour vos projets les plus ambitieux.
+                            Découvrez l'excellence de nos 
+                            <strong>
+                                <span> menuiseries bois sur-mesure, </span>
+                            </strong> 
+                            alliant modernité et savoir-faire traditionnel.
                         </p>
                         <div className="contact-redirection">
                             <svg width="35" height="20" viewBox="0 0 61 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,8 +87,15 @@ const Company = ({isLoading, setIsLoading}) => {
                             <span>S</span>avoir-<span>f</span>aire
                         </h1>
                         <p>
-                            Faites confiance à votre menuisier pour vos rénovations et réalisations qui 
-                            <span> durent dans le temps</span>.
+                            Appréciez notre savoir-faire en technique de 
+                            <strong>
+                                <span> fabrication traditionnelle </span>
+                            </strong>
+                            et 
+                            <strong>
+                                <span> rénovation de monuments historiques </span>
+                            </strong>
+                            pour la réalisation de vos projets.
                         </p>
                         <div className="contact-redirection">
                             <svg width="35" height="20" viewBox="0 0 61 31" fill="none" xmlns="http://www.w3.org/2000/svg">

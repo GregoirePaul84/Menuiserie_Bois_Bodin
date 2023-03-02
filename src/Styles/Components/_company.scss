@@ -11,7 +11,7 @@
         flex-shrink: 0;
     
         .background {
-            height: 100vh;
+            height: 100%;
             width: 100%;
             position: absolute;
             z-index: -1;
@@ -54,10 +54,14 @@
                 }
     
                 p {
-                    font-size: 1.3em;
+                    font-size: 1.4em;
                     font-family: 'Arapey', serif;
                     line-height: 32px;
                     margin-bottom: 25px;
+
+                    strong {
+                        font-weight: normal;
+                    }
                 }
     
                 .contact-redirection {
