@@ -19,27 +19,51 @@ const Achievements = ({scrollY}) => {
 
         const inside = document.getElementById('achievement-inside');
         const outside = document.getElementById('achievement-outside');
+        const renovation = document.getElementById('achievement-renovation');
 
         if(category === 0) {
             inside.style.color = '#C2B887';
             outside.style.color = 'inherit';
+            renovation.style.color = 'inherit';
 
             inside.classList.add('active-nav');
             inside.classList.remove('inactive-nav');
 
             outside.classList.add('inactive-nav');
             outside.classList.remove('active-nav');
+
+            renovation.classList.add('inactive-nav');
+            renovation.classList.remove('active-nav');
         }
 
         if(category === 1) {
             inside.style.color = 'inherit';
             outside.style.color = '#C2B887';
+            renovation.style.color = 'inherit';
 
             inside.classList.remove('active-nav');
             inside.classList.add('inactive-nav');
 
             outside.classList.remove('inactive-nav');
             outside.classList.add('active-nav');
+
+            renovation.classList.add('inactive-nav');
+            renovation.classList.remove('active-nav');
+        }
+
+        if(category === 2) {
+            inside.style.color = 'inherit';
+            outside.style.color = 'inherit';
+            renovation.style.color = '#C2B887';
+
+            inside.classList.remove('active-nav');
+            inside.classList.add('inactive-nav');
+
+            outside.classList.remove('active-nav');
+            outside.classList.add('inactive-nav');
+
+            renovation.classList.add('active-nav');
+            renovation.classList.remove('inactive-nav');
         }
     }, [category]);
 
@@ -62,6 +86,7 @@ const Achievements = ({scrollY}) => {
                     <ul>
                         <li id='achievement-inside' onClick={() => setCategory(0)}>Menuiserie intérieure</li>
                         <li id='achievement-outside' onClick={() => setCategory(1)}>Menuiserie extérieure</li>
+                        <li id='achievement-renovation' onClick={() => setCategory(2)}>Rénovation de monuments</li>
                     </ul>     
                 </div>
             </div>

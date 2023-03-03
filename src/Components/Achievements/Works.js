@@ -14,6 +14,13 @@ import img8 from '../../Media/Img/Works/img8.jpg';
 import img9 from '../../Media/Img/Works/img9.jpeg';
 import img10 from '../../Media/Img/Works/img10.jpg';
 
+// Images travaux de rénovations
+import img11 from '../../Media/Img/Works/img11.jpg';
+import img12 from '../../Media/Img/Works/img12.jpg';
+import img13 from '../../Media/Img/Works/img13.jpg';
+import img14 from '../../Media/Img/Works/img14.jpg';
+import img15 from '../../Media/Img/Works/img15.jpg';
+
 const worksArray = [
     // Intérieur
     [
@@ -150,6 +157,74 @@ const worksArray = [
                 }
             ]
         }
+    ],
+    // Rénovations
+    [
+        {
+            'id' : 'img11',
+            'img' : img11,
+            'legend' : 'Légende 1',
+            'detail' : [
+                {
+                    'name': 'Table longue',
+                    'context': 'fabrication d\'une table de cuisine',
+                    'wood': 'pin sylvestre',
+                    'size': '2 x 1.2 m'
+                }
+            ]
+        },
+        {
+            'id' : 'img12',
+            'img' : img12,
+            'legend' : 'Légende 2',
+            'detail' : [
+                {
+                    'name': 'Cloison',
+                    'context': 'fabrication d\'une cloison',
+                    'wood': 'pin sylvestre',
+                    'size': '2 x 1.5 m'
+                }
+            ]
+        },
+        {
+            'id' : 'img13',
+            'img' : img13,
+            'legend' : 'Légende 3',
+            'detail' : [
+                {
+                    'name': 'Cloison',
+                    'context': 'fabrication d\'une cloison',
+                    'wood': 'pin sylvestre',
+                    'size': '2 x 1.5 m'
+                }
+            ]
+        },
+        {
+            'id' : 'img14',
+            'img' : img14,
+            'legend' : 'Légende 4',
+            'detail' : [
+                {
+                    'name': 'Cloison',
+                    'context': 'fabrication d\'une cloison',
+                    'wood': 'pin sylvestre',
+                    'size': '2 x 1.5 m'
+                }
+            ]
+        },
+        {
+            'id' : 'img15',
+            'img' : img15,
+            'legend' : 'Légende 5',
+            'detail' : [
+                {
+                    'name': 'Porte de cave',
+                    'context': 'fabrication d\'une porte de cave à vin',
+                    'wood': 'chêne massif',
+                    'size': '2 x 1 m'
+                }
+            ]
+        }
     ]
     
 ];
@@ -187,8 +262,11 @@ const Works = ({category, setCategory}) => {
             <div className="works-title">
                 {(category === 0) ? 
                     <h3>Menuiseries intérieures</h3>
-                    :
+                    : (category === 1) ? 
                     <h3>Menuiseries extérieures</h3>
+                    : (category === 2) ? 
+                    <h3>Rénovation de monuments</h3>
+                    : null
                 }
             </div>    
             <div className="works-carousel">  
