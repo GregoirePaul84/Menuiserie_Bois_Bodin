@@ -32,7 +32,14 @@ const Achievements = ({scrollY}) => {
         }
 
         if(category === 1) {
-            return;
+            inside.style.color = 'inherit';
+            outside.style.color = '#C2B887';
+
+            inside.classList.remove('active-nav');
+            inside.classList.add('inactive-nav');
+
+            outside.classList.remove('inactive-nav');
+            outside.classList.add('active-nav');
         }
     }, [category]);
 
@@ -53,8 +60,8 @@ const Achievements = ({scrollY}) => {
                 </div>
                 <div className="achievements-nav">
                     <ul>
-                        <li id='achievement-inside'>Menuiserie intérieure</li>
-                        <li id='achievement-outside'>Menuiserie extérieure</li>
+                        <li id='achievement-inside' onClick={() => setCategory(0)}>Menuiserie intérieure</li>
+                        <li id='achievement-outside' onClick={() => setCategory(1)}>Menuiserie extérieure</li>
                     </ul>     
                 </div>
             </div>

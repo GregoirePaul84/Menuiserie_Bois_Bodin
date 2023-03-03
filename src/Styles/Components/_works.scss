@@ -6,11 +6,11 @@
     overflow: hidden;
 
     .works-title {
+        height: 40px;
         width: 100%;
         margin-bottom: 20px;
 
         h3 {
-            height: 40px;
             font-size: 1.5em;
             text-align: center;
             display: flex;
@@ -51,6 +51,7 @@
         }
         
         figure {
+            height: 80%;
             margin: 0;
             width: $item-width;
             transform-style: preserve-3d;
@@ -59,11 +60,10 @@
 
             .rotating-card {
 
-                // &:hover img{
-                //     filter: grayscale(1);
-                // }
+                height: 100%;
 
                 .legend {
+                    height: 41px;
                     width: 100%;
                     flex-shrink: 0;
                     display: flex;
@@ -82,6 +82,7 @@
                 }
                 
                 .works-img {
+                    height: calc(100% - 41px);
                     position: relative;
                     margin: 0 calc($item-separation / 2);
 
@@ -128,6 +129,7 @@
                     }
 
                     img {
+                        height: 100%;
                         width: 100%;
                         box-sizing: border-box;
                         opacity: 0.9;
@@ -152,14 +154,17 @@
             }
         }
 
-        nav {
+        .carousel-nav {
+            height: calc(20% - 32px);
             display: flex;
+            align-items: center;
             justify-content: center;
-            margin: 32px 0 0;
+            margin: 32px 0 0 0;
             
             button {
-                flex: 0 0 auto;
-                margin: 0 5px;
+                height: 40px;
+                width: 85px;
+                margin: 0 7px;
                 cursor: pointer;
                 color: #fff;
                 background: none;

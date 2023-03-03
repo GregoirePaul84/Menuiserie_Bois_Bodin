@@ -51,7 +51,7 @@ const Home = () => {
             console.log('slide réactivé');
             setSlideActive(true);
             setHandleSlide({from: slide1, to: slide2});
-        }, 7000)
+        }, 9000)
     }
 
     // Gestion de l
@@ -66,6 +66,7 @@ const Home = () => {
         // Slide 1 depuis slide 2
         function slide1from2() {
             slider.style.animation = 'slide1from2 1.5s ease-out 1 forwards';
+            video[0].currentTime = 0;
             video[0].play();
             square1.classList.add('square-active');
             square2.classList.remove('square-active');
@@ -75,6 +76,7 @@ const Home = () => {
         // Slide 1 depuis slide 3
         function slide1from3() {
             slider.style.animation = 'slide1from3 1.5s ease-out 1 forwards';
+            video[0].currentTime = 0;
             video[0].play();
             square1.classList.add('square-active');
             square2.classList.remove('square-active');
@@ -154,15 +156,11 @@ const Home = () => {
         if(handleSlide.to === 'slide2' && slideIndex === 3) {
             setHandleSlide({from: 'slide2', to: 'slide3'});
         }
-
+        // eslint-disable-next-line
     }, [isEntered, slideIndex])
 
     useEffect(() => {
-        console.log('=== Slide index ===');
-        console.log(slideIndex);
-
-        console.log('=== Slide Active ===');
-        console.log(slideActive);
+        
         if(!slideActive) {
             return;
         }

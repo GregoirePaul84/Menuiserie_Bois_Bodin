@@ -1,12 +1,18 @@
-import React, {useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
-import achievementImg from '../../Media/Img/main/pexels-sabrina-martins-14328849.png';
-
+// Images travaux d'intérieur
 import img1 from '../../Media/Img/Works/img1.jpg';
 import img2 from '../../Media/Img/Works/img2.jpg';
 import img3 from '../../Media/Img/Works/img3.jpg';
 import img4 from '../../Media/Img/Works/img4.jpg';
 import img5 from '../../Media/Img/Works/img5.jpg';
+
+// Images travaux d'extérieur
+import img6 from '../../Media/Img/Works/img6.jpg';
+import img7 from '../../Media/Img/Works/img7.jpg';
+import img8 from '../../Media/Img/Works/img8.jpg';
+import img9 from '../../Media/Img/Works/img9.jpeg';
+import img10 from '../../Media/Img/Works/img10.jpg';
 
 const worksArray = [
     // Intérieur
@@ -63,7 +69,6 @@ const worksArray = [
                 }
             ]
         },
-        ,
         {
             'id' : 'img5',
             'img' : img5,
@@ -76,24 +81,89 @@ const worksArray = [
                     'size': '2 x 1 m'
                 }
             ]
-        },
+        }
     ],
     // Extérieur
     [
-
+        {
+            'id' : 'img6',
+            'img' : img6,
+            'legend' : 'Légende 1',
+            'detail' : [
+                {
+                    'name': 'Table longue',
+                    'context': 'fabrication d\'une table de cuisine',
+                    'wood': 'pin sylvestre',
+                    'size': '2 x 1.2 m'
+                }
+            ]
+        },
+        {
+            'id' : 'img7',
+            'img' : img7,
+            'legend' : 'Légende 2',
+            'detail' : [
+                {
+                    'name': 'Cloison',
+                    'context': 'fabrication d\'une cloison',
+                    'wood': 'pin sylvestre',
+                    'size': '2 x 1.5 m'
+                }
+            ]
+        },
+        {
+            'id' : 'img8',
+            'img' : img8,
+            'legend' : 'Légende 3',
+            'detail' : [
+                {
+                    'name': 'Cloison',
+                    'context': 'fabrication d\'une cloison',
+                    'wood': 'pin sylvestre',
+                    'size': '2 x 1.5 m'
+                }
+            ]
+        },
+        {
+            'id' : 'img9',
+            'img' : img9,
+            'legend' : 'Légende 4',
+            'detail' : [
+                {
+                    'name': 'Cloison',
+                    'context': 'fabrication d\'une cloison',
+                    'wood': 'pin sylvestre',
+                    'size': '2 x 1.5 m'
+                }
+            ]
+        },
+        {
+            'id' : 'img10',
+            'img' : img10,
+            'legend' : 'Légende 5',
+            'detail' : [
+                {
+                    'name': 'Porte de cave',
+                    'context': 'fabrication d\'une porte de cave à vin',
+                    'wood': 'chêne massif',
+                    'size': '2 x 1 m'
+                }
+            ]
+        }
     ]
     
 ];
 
 
-const Works = () => {
+const Works = ({category, setCategory}) => {
 
-    const [category, setCategory] = useState(0);
     const [displayDetail, setDisplayDetail] = useState({img: undefined, isActive: false});
     const figure = document.querySelector('.carousel-figure');
     const theta =  2 * Math.PI / 5;
     const imageRef = useRef(0)
     // let currImage = 0;
+
+    console.log(worksArray);
 
     function rotateCarousel(e) {
         e.stopPropagation();

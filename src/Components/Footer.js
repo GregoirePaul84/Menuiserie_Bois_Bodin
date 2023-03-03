@@ -48,7 +48,21 @@ const Footer = () => {
                 </div>
             </div>
             <div className='signature'>
-                <h4></h4>
+                <div>
+                    <p>© 2022 - Menuiserie Bois Bodin </p>
+                </div>
+                <div className="terms">
+                    <p>Conditions générales de vente</p>
+                    <span> | </span>
+                    <p>Mentions légales</p>
+                </div>
+                <div>
+                    <a href="mailto:gregoirepaulet84@gmail.com">
+                        <p>
+                            <span>Site développé par Grégoire Paulet</span>
+                        </p>
+                    </a>
+                </div>
             </div>
         </footer>
     );

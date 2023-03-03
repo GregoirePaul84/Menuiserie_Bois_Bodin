@@ -1,6 +1,5 @@
 footer {
-    height: fit-content;
-    min-height: 300px;
+    height: 300px;
     width: 100%;
     background-color: $color_tertiary;
     display: flex;
@@ -8,7 +7,7 @@ footer {
     flex-wrap: wrap;
 
     .footer-column {
-        height: 200px;
+        height: 240px;
         width: 20%;
 
         h4 {
@@ -46,7 +45,26 @@ footer {
     }
 
     .signature {
-        height: 15%;
+        height: 60px;
         width: 100%;
+        margin: 0 7%;
+        border-top: 1px solid rgba(194, 184, 135, 0.7);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.95em;
+
+        div:nth-child(1) p, div:nth-child(2) p, div:nth-child(2) span{
+            color: #CCCCCC;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin: 0 5px;
+            }
+        }
     }
 }
