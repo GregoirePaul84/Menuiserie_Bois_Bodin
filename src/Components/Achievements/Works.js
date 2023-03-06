@@ -238,7 +238,6 @@ const Works = ({category, setCategory}) => {
     const imageRef = useRef(0)
     // let currImage = 0;
 
-    console.log(worksArray);
 
     function rotateCarousel(e) {
         e.stopPropagation();

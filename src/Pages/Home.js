@@ -29,7 +29,7 @@ const Home = () => {
 
     const homeOpacityRef = useRef({isActive: true, value: 999});
     const serviceOpacityRef = useRef({isActive: false, value: 999});
-    const achievementOpacityRef = useRef({isActive: false, value: 0});
+    // const achievementOpacityRef = useRef({isActive: false, value: 0});
 
     const home = document.getElementById('home');
 
@@ -38,11 +38,10 @@ const Home = () => {
         home.scrollIntoView(({behavior: "smooth"}));
     }
 
+    // Stop le slide automatique pendant 9 secondes
     function resetSlide(slide1 , slide2) {
         clearInterval(interval);
         clearTimeout(timeout);
-        console.log(interval);
-        console.log(timeout);
 
         setSlideActive(false);
         console.log('slide coupé');
@@ -54,14 +53,13 @@ const Home = () => {
         }, 9000)
     }
 
-    // Gestion de l
+    // Gère l'affichage des slides selon la position de ceux-ci
     useEffect(() => {
         const slider = document.querySelector('#home .home-slider');
         const video = document.getElementsByTagName('video');
         const square1 = document.querySelector('.swiper-nav .square:nth-child(1)');
         const square2 = document.querySelector('.swiper-nav .square:nth-child(2)');
         const square3 = document.querySelector('.swiper-nav .square:nth-child(3)');
-        console.log(handleSlide);
 
         // Slide 1 depuis slide 2
         function slide1from2() {
@@ -182,6 +180,7 @@ const Home = () => {
 
     useEffect(() => {
         const topBtn = document.getElementById('top-of-page');
+        console.log(scrollY);
 
         if(scrollY > 0) {
             topBtn.style.visibility = 'visible';
@@ -193,7 +192,6 @@ const Home = () => {
 
         // Gestion du scroll et de l'opacité sur la section d'ACCUEIL
         if(scrollY >= 0 && scrollY <= 700) {
-            console.log('home on');
             homeOpacityRef.current = ({isActive: true, value: homeOpacityRef.current.value});
         }
         else {
@@ -213,7 +211,6 @@ const Home = () => {
 
         // Gestion du scroll et de l'opacité sur la section A PROPOS
         if(scrollY >= 800 && scrollY <= 1500) {
-            console.log('about on');
             serviceOpacityRef.current = ({isActive: true, value: serviceOpacityRef.current.value});
         }
         else {
@@ -239,22 +236,22 @@ const Home = () => {
             }
         }
 
-        // Gestion du scroll et de l'opacité sur la section A PROPOS
-        if(scrollY >= 1800 && scrollY <= 2400) {
-            console.log('achievements on');
-            achievementOpacityRef.current = ({isActive: true, value: achievementOpacityRef.current.value});
-        }
-        else {
-            achievementOpacityRef.current = ({isActive: false, value: achievementOpacityRef.current.value});
-        }
+        // // Gestion du scroll et de l'opacité sur la section A PROPOS
+        // if(scrollY >= 1800 && scrollY <= 2400) {
+        //     console.log('achievements on');
+        //     achievementOpacityRef.current = ({isActive: true, value: achievementOpacityRef.current.value});
+        // }
+        // else {
+        //     achievementOpacityRef.current = ({isActive: false, value: achievementOpacityRef.current.value});
+        // }
 
-        if (achievementOpacityRef.current.isActive) {
-            // document.querySelector('.works-background img').style.opacity = achievementOpacityRef.current.value;
+        // if (achievementOpacityRef.current.isActive) {
+        //     // document.querySelector('.works-background img').style.opacity = achievementOpacityRef.current.value;
 
-            console.log(0 + '.' + Math.trunc(scrollY - 1700));
+        //     console.log(0 + '.' + Math.trunc(scrollY - 1700));
 
-            achievementOpacityRef.current = ({isActive: achievementOpacityRef.current.isActive, value: 0 + '.' + Math.trunc(scrollY - 1700)});  
-        }
+        //     achievementOpacityRef.current = ({isActive: achievementOpacityRef.current.isActive, value: 0 + '.' + Math.trunc(scrollY - 1700)});  
+        // }
 
         if(scrollY <= 2550) {
             document.querySelector('.contact-title svg').classList.remove('diamond-active');

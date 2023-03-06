@@ -1,29 +1,43 @@
 header {
-    height: 15%;
+    height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 25px;
     background-color: $transparent_blue;
     z-index: 10;
 
     .logo-container {
+        height: 100%;
+        width: 20%;
+        min-width: 200px;
         display: flex;
         align-items: center;
         opacity: 0.75;
 
         svg {
             display: block;
-            height: 75%;
+            height: 80%;
+            width: 50%;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            width: 60%;
+            color: $color-secondary;
+            padding-left: 10px;
         }
     }
 
-    nav {
+    #desktop-nav {
+        height: 100%;
+        width: 80%;
         display: flex;
         align-items: center;
         justify-content: flex-end;
         font-size: 1.5em;
-        width: 80%;
+        
 
         ul {
             list-style-type: none;

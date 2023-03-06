@@ -31,19 +31,19 @@
             .diamond-active rect{
 
                 &:nth-child(1) {
-                    animation: diamondActive 1s linear forwards 1.40s;
+                    animation: opa0to1 1s linear forwards 1.40s;
                 }
                 &:nth-child(2) {
-                    animation: diamondActive 1s linear forwards 1.05s;
+                    animation: opa0to1 1s linear forwards 1.05s;
                 }
                 &:nth-child(3) {
-                    animation: diamondActive 1s linear forwards 0.7s;
+                    animation: opa0to1 1s linear forwards 0.7s;
                 }
                 &:nth-child(4) {
-                    animation: diamondActive 1s linear forwards 0.35s;
+                    animation: opa0to1 1s linear forwards 0.35s;
                 }
                 &:nth-child(5) {
-                    animation: diamondActive 1s linear forwards 0s;
+                    animation: opa0to1 1s linear forwards 0s;
                 }
             }
         }
@@ -72,10 +72,6 @@
         width: 75%;
         height: 100%;
         position: relative;
-        // background-image: url('../../Media/Img/main/pexels-cottonbro-studio-7484794_cut.png');
-        // background-position: bottom;
-        // background-size: cover;
-        // background-repeat: no-repeat;
 
         .products-img {
             position: absolute;

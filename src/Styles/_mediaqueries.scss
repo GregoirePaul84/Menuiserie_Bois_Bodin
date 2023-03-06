@@ -1,0 +1,30 @@
+/* Tablettes (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    #root {
+        header {
+            #desktop-nav {
+                display: none;
+            }
+
+            .hamburger-menu {
+                position: relative;
+
+                #tablet-nav {
+                    position: absolute;
+                    left: -86px;
+                    background-color: #121C27;
+
+                    li {
+                        padding: 13px 28px;
+
+                        &:active {
+                            background-color: $color-secondary;
+                        }
+                    }
+                }
+            }
+           
+        }
+    }
+    
+}
