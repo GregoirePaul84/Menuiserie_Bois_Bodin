@@ -1,5 +1,5 @@
-/* Tablettes (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Grande tablettes (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 1024px) {
     #root {
         header {
             #desktop-nav {
@@ -23,8 +23,188 @@
                     }
                 }
             }
-           
+        }     
+    }
+}
+
+/* Petites tablettes (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 768px) {
+    #root {
+
+        section {
+            min-height: auto;
+        }
+        
+        .home-left-column {
+            background-color: rgba(18, 28, 39, 0.6);
+            justify-content: center;
+
+            .main-info {
+                height: 285px;
+                width: 80%;
+                min-height: auto;
+                min-width: auto;
+                margin: 0;
+                padding: 0;
+                background: none;
+                box-shadow: none;
+
+                h1 {
+                    text-align: center;
+                }
+            }
+        }  
+
+        #about, #services, #achievements, #contact {
+            min-height: 800px;
+            flex-direction: column;
+
+            .about-container, .services-container, .achievements-container, .contact-container {
+                height: 140px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 25px;
+                border: none;
+
+                .about-title, .services-title, .achievements-title, .contact-title {
+                    height: 100%;
+                    width: 35%;
+                    min-width: 200px;
+                    margin: 0;
+                }
+
+                .contact-logo {
+                    display: none;
+                }
+            }
+
+            .about-nav, .services-nav, .achievements-nav {
+                height: 100%;
+                width: 65%;
+                padding: 0;
+
+                ul {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+
+                    li {
+                        margin: 0;
+                        height: 50%;
+                    }
+                }
+            }
+
+            .achievements-nav {
+
+                ul {
+                    flex-direction: row;
+
+                    li {
+                        height: auto;
+                        width: 230px;
+                    }
+                }
+            }
+
+            .contact-nav {
+                height: 100%;
+                width: 65%;
+                display: flex;
+                align-items: center;
+
+                h4 {
+                    display: none;
+                }
+
+                ul {
+                    height: 100%;
+                    width: 100%;
+                    padding: 0 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    li {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .about-img-container, .products-container, .works-container {
+                height: calc(100% - 160px);
+                width: 100%;
+
+                .products-list {
+                    margin-left: 5%;
+                    min-width: 480px;
+                    width: 72%;
+
+                    .product-card:nth-child(2) .detailed-services {
+                        top: 91px;
+                        left: -22px;
+                    }
+    
+                    .product-card:nth-child(4) .detailed-services {
+                        top: 91px;
+                        left: -22px;
+                    }
+                }
+                
+            }
+
+            .about-content {
+                .content-title {
+                    height: 140px;
+                }
+
+                .arrow-text {
+                    height: calc(100% - 140px);
+                }
+            }
+
+            .form-container {
+                width: 100%;
+
+                #contact-form {
+                    margin: 0 5%;
+
+                    .inside-choices, .outside-choices {
+                        width: 40%;
+                    }
+                }
+            }
         }
     }
-    
+}
+
+/* Mobiles (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 480px) {
+    #root {
+        header {
+            #desktop-nav {
+                display: none;
+            }
+
+            .hamburger-menu {
+                position: relative;
+
+                #tablet-nav {
+                    position: absolute;
+                    left: -86px;
+                    background-color: #121C27;
+
+                    li {
+                        padding: 13px 28px;
+
+                        &:active {
+                            background-color: $color-secondary;
+                        }
+                    }
+                }
+            }
+        }     
+    }
 }

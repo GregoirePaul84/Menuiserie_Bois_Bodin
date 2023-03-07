@@ -71,7 +71,8 @@ const Header = () => {
             <div className='logo-container'>
                 <Logo />
                 <h3>
-                    Menuiserie Bois <br />
+                    Menuiserie <br />
+                    Bois <br />
                     Bodin
                 </h3>
             </div>

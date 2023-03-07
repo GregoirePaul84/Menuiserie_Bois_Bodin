@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import background from '../../Media/Img/main/about_img2.png';
+import background from '../../Media/Img/main/about_img3.jpg';
 
 const Inside = ({scrollY}) => {
 

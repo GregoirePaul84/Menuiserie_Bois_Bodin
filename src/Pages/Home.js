@@ -236,23 +236,6 @@ const Home = () => {
             }
         }
 
-        // // Gestion du scroll et de l'opacité sur la section A PROPOS
-        // if(scrollY >= 1800 && scrollY <= 2400) {
-        //     console.log('achievements on');
-        //     achievementOpacityRef.current = ({isActive: true, value: achievementOpacityRef.current.value});
-        // }
-        // else {
-        //     achievementOpacityRef.current = ({isActive: false, value: achievementOpacityRef.current.value});
-        // }
-
-        // if (achievementOpacityRef.current.isActive) {
-        //     // document.querySelector('.works-background img').style.opacity = achievementOpacityRef.current.value;
-
-        //     console.log(0 + '.' + Math.trunc(scrollY - 1700));
-
-        //     achievementOpacityRef.current = ({isActive: achievementOpacityRef.current.isActive, value: 0 + '.' + Math.trunc(scrollY - 1700)});  
-        // }
-
         if(scrollY <= 2550) {
             document.querySelector('.contact-title svg').classList.remove('diamond-active');
         }
