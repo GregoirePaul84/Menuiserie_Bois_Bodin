@@ -1,5 +1,5 @@
 footer {
-    height: 300px;
+    height: auto;
     width: 100%;
     background-color: $color_tertiary;
     display: flex;
@@ -7,8 +7,10 @@ footer {
     flex-wrap: wrap;
 
     .footer-column {
-        height: 240px;
+        height: auto;
+        min-height: 300px;
         width: 20%;
+        margin-bottom: 20px;
 
         h4 {
             font-weight: normal;
@@ -45,8 +47,9 @@ footer {
     }
 
     .signature {
-        height: 60px;
+        height: auto;
         width: 100%;
+        padding: 20px 0;
         margin: 0 7%;
         border-top: 1px solid rgba(194, 184, 135, 0.7);
         display: flex;

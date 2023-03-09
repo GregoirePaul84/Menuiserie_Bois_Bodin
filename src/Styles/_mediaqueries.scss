@@ -177,6 +177,20 @@
                 }
             }
         }
+
+        footer {
+            height: auto;
+            
+            .footer-column {
+                height: auto;
+                min-height: 300px;
+            }
+
+            .signature {
+                height: auto;
+                padding: 12px 0;
+            }
+        }
     }
 }
 

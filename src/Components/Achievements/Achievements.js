@@ -18,13 +18,16 @@ const Achievements = ({scrollY}) => {
     useEffect(() => {
 
         const inside = document.getElementById('achievement-inside');
+        const insideSpan = document.querySelector('#achievement-inside span');
         const outside = document.getElementById('achievement-outside');
+        const outsideSpan = document.querySelector('#achievement-outside span');
         const renovation = document.getElementById('achievement-renovation');
+        const renovationSpan = document.querySelector('#achievement-renovation span');
 
         if(category === 0) {
-            inside.style.color = '#C2B887';
-            outside.style.color = 'inherit';
-            renovation.style.color = 'inherit';
+            insideSpan.style.color = '#C2B887';
+            outsideSpan.style.color = 'inherit';
+            renovationSpan.style.color = 'inherit';
 
             inside.classList.add('active-nav');
             inside.classList.remove('inactive-nav');
@@ -37,9 +40,9 @@ const Achievements = ({scrollY}) => {
         }
 
         if(category === 1) {
-            inside.style.color = 'inherit';
-            outside.style.color = '#C2B887';
-            renovation.style.color = 'inherit';
+            insideSpan.style.color = 'inherit';
+            outsideSpan.style.color = '#C2B887';
+            renovationSpan.style.color = 'inherit';
 
             inside.classList.remove('active-nav');
             inside.classList.add('inactive-nav');
@@ -52,9 +55,9 @@ const Achievements = ({scrollY}) => {
         }
 
         if(category === 2) {
-            inside.style.color = 'inherit';
-            outside.style.color = 'inherit';
-            renovation.style.color = '#C2B887';
+            insideSpan.style.color = 'inherit';
+            outsideSpan.style.color = 'inherit';
+            renovationSpan.style.color = '#C2B887';
 
             inside.classList.remove('active-nav');
             inside.classList.add('inactive-nav');
@@ -84,9 +87,15 @@ const Achievements = ({scrollY}) => {
                 </div>
                 <div className="achievements-nav">
                     <ul>
-                        <li id='achievement-inside' onClick={() => setCategory(0)}>Menuiserie intérieure</li>
-                        <li id='achievement-outside' onClick={() => setCategory(1)}>Menuiserie extérieure</li>
-                        <li id='achievement-renovation' onClick={() => setCategory(2)}>Rénovation de monuments</li>
+                        <li id='achievement-inside' onClick={() => setCategory(0)}>
+                            <span>Menuiserie intérieure</span>
+                        </li>
+                        <li id='achievement-outside' onClick={() => setCategory(1)}>
+                            <span>Menuiserie extérieure</span>
+                        </li>
+                        <li id='achievement-renovation' onClick={() => setCategory(2)}>
+                            <span>Rénovation de monuments</span>
+                        </li>
                     </ul>     
                 </div>
             </div>

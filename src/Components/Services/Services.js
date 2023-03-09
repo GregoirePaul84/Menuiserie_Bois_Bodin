@@ -128,7 +128,9 @@ const Services = ({scrollY, categoryService, setCategoryService}) => {
     useEffect(() => {
 
         const inside = document.getElementById('service-inside');
+        const insideSpan = document.querySelector('#service-inside span');
         const outside = document.getElementById('service-outside');
+        const outsideSpan = document.querySelector('#service-outside span');
 
         document.querySelector('.products-list').style.animation = 'none'; 
 
@@ -137,8 +139,8 @@ const Services = ({scrollY, categoryService, setCategoryService}) => {
                 document.querySelector('.products-list').style.animation = 'productsUp 1.5s ease-out forwards'; 
                 document.querySelectorAll('.product-card').forEach((e) => e.style.animation = 'contentAppears 2s ease-out forwards 1.5s');
 
-                inside.style.color = '#C2B887';
-                outside.style.color = 'inherit';
+                insideSpan.style.color = '#C2B887';
+                outsideSpan.style.color = 'inherit';
 
                 inside.classList.add('active-nav');
                 inside.classList.remove('inactive-nav');
@@ -151,8 +153,8 @@ const Services = ({scrollY, categoryService, setCategoryService}) => {
                 document.querySelector('.products-list').style.animation = 'productsUp 1.5s ease-out forwards'; 
                 document.querySelectorAll('.product-card').forEach((e) => e.style.animation = 'contentAppears 2s ease-out forwards 1.5s');
 
-                outside.style.color = '#C2B887';
-                inside.style.color = 'inherit';
+                outsideSpan.style.color = '#C2B887';
+                insideSpan.style.color = 'inherit';
 
                 outside.classList.add('active-nav');
                 outside.classList.remove('inactive-nav');
@@ -193,10 +195,10 @@ const Services = ({scrollY, categoryService, setCategoryService}) => {
             <div className="services-nav">
                 <ul>
                     <li onClick={() => setCategoryService(0)} id='service-inside'>
-                        Menuiserie intérieure
+                        <span>Menuiserie intérieure</span>
                     </li>
                     <li onClick={() => setCategoryService(1)} id='service-outside'>
-                        Menuiserie extérieure
+                        <span>Menuiserie extérieure</span>
                     </li>
                 </ul>
             </div>

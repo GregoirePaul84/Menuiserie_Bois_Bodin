@@ -30,16 +30,19 @@ const About = ({scrollY}) => {
         const h3 = document.querySelector('.content-title h3');
         const arrowText = document.querySelector('.arrow-text');
         const story = document.getElementById('story');
+        const storySpan = document.querySelector('#story span');
         const company = document.getElementById('company');
+        const companySpan = document.querySelector('#company span');
         const values = document.getElementById('values');
+        const valuesSpan = document.querySelector('#values span');
 
         h3.classList.remove('content-appears'); 
         arrowText.style.animation = "none";
 
         if(homeNav === 'story') {
-            story.style.color = '#C2B887';
-            company.style.color = 'inherit';
-            values.style.color = 'inherit';
+            storySpan.style.color = '#C2B887';
+            companySpan.style.color = 'inherit';
+            valuesSpan.style.color = 'inherit';
 
             story.classList.add('active-nav');
             story.classList.remove('inactive-nav');
@@ -52,9 +55,9 @@ const About = ({scrollY}) => {
         }
 
         if(homeNav === 'company') {
-            story.style.color = 'inherit';
-            company.style.color = '#C2B887';
-            values.style.color = 'inherit';
+            storySpan.style.color = 'inherit';
+            companySpan.style.color = '#C2B887';
+            valuesSpan.style.color = 'inherit';
 
             story.classList.add('inactive-nav');
             story.classList.remove('active-nav');
@@ -67,9 +70,9 @@ const About = ({scrollY}) => {
         }
 
         if(homeNav === 'values') {
-            story.style.color = 'inherit';
-            values.style.color = '#C2B887';
-            company.style.color = 'inherit';
+            storySpan.style.color = 'inherit';
+            valuesSpan.style.color = '#C2B887';
+            companySpan.style.color = 'inherit';
 
             story.classList.add('inactive-nav');
             story.classList.remove('active-nav');
@@ -106,13 +109,13 @@ const About = ({scrollY}) => {
                 <div className="about-nav">
                     <ul>
                         <li onClick={() => {setHomeNav('story')}} id='story'>
-                            L'histoire
+                            <span>L'histoire</span>
                         </li>
                         <li onClick={() => {setHomeNav('company')}} id='company'>
-                            La société
+                            <span>La société</span>
                         </li>
                         <li onClick={() => {setHomeNav('values')}} id='values'>
-                            Les valeurs
+                            <span>Les valeurs</span>
                         </li>
                     </ul>     
                 </div>
