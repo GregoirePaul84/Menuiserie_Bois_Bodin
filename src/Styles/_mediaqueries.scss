@@ -223,20 +223,30 @@
         }     
 
         #about {
-            .about-nav {
-                display: flex;
-                justify-content: center;
-                ul {
-                    flex-wrap: nowrap;
+            .about-container {
+                .about-title {
+                    min-width: 140px;
+                }
+                .about-nav {
+                    display: flex;
+                    justify-content: center;
+                    ul {
+                        flex-wrap: nowrap;
+                    }
                 }
             }
+            
         }
 
         #services {
-
-            .services-nav {
-                display: flex;
-                justify-content: center;
+            .services-container {
+                .services-title {
+                    min-width: 140px;
+                }
+                .services-nav {
+                    display: flex;
+                    justify-content: center;
+                }
             }
 
             .products-container {
@@ -252,17 +262,15 @@
 
                             &:nth-child(2) {
                                 justify-content: flex-end;
-                                padding-right: 5%;
                             }
 
                             &:nth-child(4) {
                                 justify-content: flex-end;
-                                padding-right: 5%;
                             }
 
                             .product-img {
-                                height: 65px;
-                                width: 65px;
+                                height: 60px;
+                                width: 60px;
                             }
 
                             .product-title {
@@ -282,24 +290,50 @@
         }
 
         #achievements {
-            .achievements-nav {
-                display: flex;
-                justify-content: center;
-                ul {
-                    flex-direction: column;
-                    flex-wrap: nowrap;
-                    justify-content: space-evenly;
-
-                    li {
-                        width: auto;
-                        margin: 5px 0;
-                    }
+            .achievements-container{
+                height: auto;
+                min-height: 140px;
+                .achievements-title{
+                    min-width: 160px;
                 }
-                
+
+                .achievements-nav {
+                    display: flex;
+                    justify-content: center;
+                    ul {
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        justify-content: space-evenly;
+                        padding: 0 8%;
+    
+                        li {
+                            width: auto;
+                            margin: 5px 0;
+                        }
+                    }
+                    
+                }
             }
         }
 
         #contact {
+            .contact-container {
+                .contact-title {
+                    min-width: 160px;
+                }
+
+                .contact-nav {
+                    ul {
+                        li {
+                            svg {
+                                height: 23px;
+                                width: 23px;
+                            }
+                        }
+                    }
+                }
+            }
+
             .form-container {
 
                 #contact-form {
@@ -348,6 +382,22 @@
 
             .signature {
                 margin-top: 10px;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+
+                .terms {
+                    p:nth-child(1) {
+                        width: 45%;
+                    }
+                    span {
+                        width: 10%;
+                        text-align: center;
+                    }
+                    p:nth-child(3) {
+                        width: 45%;
+                    }
+                }
             }
         }
     }

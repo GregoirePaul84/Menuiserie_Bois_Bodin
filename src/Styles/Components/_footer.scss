@@ -8,7 +8,7 @@ footer {
 
     .footer-column {
         height: auto;
-        min-height: 300px;
+        min-height: 250px;
         width: 20%;
         margin-bottom: 20px;
 
@@ -42,6 +42,7 @@ footer {
             img {
                 height: 35px;
                 width: 35px;
+                cursor: pointer;
             }
         }
     }
@@ -56,6 +57,7 @@ footer {
         justify-content: space-between;
         align-items: center;
         font-size: 0.95em;
+        gap: 20px;
 
         div:nth-child(1) p, div:nth-child(2) p, div:nth-child(2) span{
             color: #CCCCCC;
@@ -64,6 +66,15 @@ footer {
         .terms {
             display: flex;
             align-items: center;
+
+            p {
+                text-align: center;
+                cursor: pointer;
+
+                &:hover {
+                    color: $color-secondary;
+                }
+            }
 
             span {
                 margin: 0 5px;
