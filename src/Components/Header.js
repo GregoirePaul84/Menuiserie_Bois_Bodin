@@ -87,7 +87,7 @@ const Header = () => {
             </nav>
             :
             <div className="hamburger-menu">
-                <svg width="45" height="70" viewBox="0 0 81 71" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => setMenuActive(!menuActive)}>
+                <svg width="33" height="50" viewBox="0 0 81 71" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => setMenuActive(!menuActive)}>
                     <path d="M0 0H81V11.7711H0V0Z" fill="#C2B887" fillOpacity="0.8"/>
                     <path d="M0 29.5211H81V41.4789H0V29.5211Z" fill="#C2B887" fillOpacity="0.8"/>
                     <path d="M0 59.2289H81V71H0V59.2289Z" fill="#C2B887" fillOpacity="0.8"/>
