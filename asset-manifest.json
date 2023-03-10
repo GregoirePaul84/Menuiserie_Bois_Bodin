@@ -1,15 +1,22 @@
 {
   "files": {
-    "main.css": "/Menuiserie_Bois_Bodin/static/css/main.8645cc44.css",
-    "main.js": "/Menuiserie_Bois_Bodin/static/js/main.8c89be21.js",
+    "main.css": "/Menuiserie_Bois_Bodin/static/css/main.29959cf4.css",
+    "main.js": "/Menuiserie_Bois_Bodin/static/js/main.60c2d848.js",
     "static/media/forest2.mp4": "/Menuiserie_Bois_Bodin/static/media/forest2.2d743d3ab9d81899c504.mp4",
     "static/media/img5.jpg": "/Menuiserie_Bois_Bodin/static/media/img5.372b9dc0060b574b3963.jpg",
-    "static/media/about_img2.png": "/Menuiserie_Bois_Bodin/static/media/about_img2.d7bc768bf1ae7de0d309.png",
-    "static/media/pexels-sabrina-martins-14328849.png": "/Menuiserie_Bois_Bodin/static/media/pexels-sabrina-martins-14328849.9eb4bd368a6bc527e3ad.png",
+    "static/media/img10.jpg": "/Menuiserie_Bois_Bodin/static/media/img10.b527216968210da25d78.jpg",
     "static/media/img2.jpg": "/Menuiserie_Bois_Bodin/static/media/img2.cd7fc8cd5ef07edf98e8.jpg",
+    "static/media/img14.jpg": "/Menuiserie_Bois_Bodin/static/media/img14.5c647462e397fc80e56f.jpg",
     "static/media/pexels-cottonbro-studio-7484794_cut.png": "/Menuiserie_Bois_Bodin/static/media/pexels-cottonbro-studio-7484794_cut.c647eb3eed1bcc78c7a8.png",
+    "static/media/img8.jpg": "/Menuiserie_Bois_Bodin/static/media/img8.ec550f336fff6893c154.jpg",
+    "static/media/img13.jpg": "/Menuiserie_Bois_Bodin/static/media/img13.1e1b7936fced2b3efaaa.jpg",
     "static/media/img4.jpg": "/Menuiserie_Bois_Bodin/static/media/img4.4be414c1b9d26f0dd14b.jpg",
+    "static/media/img11.jpg": "/Menuiserie_Bois_Bodin/static/media/img11.5f04f7d8b5e2f2aaf2ec.jpg",
+    "static/media/img7.jpg": "/Menuiserie_Bois_Bodin/static/media/img7.7b104d54a636951a0334.jpg",
+    "static/media/img12.jpg": "/Menuiserie_Bois_Bodin/static/media/img12.d14751985612fc21086d.jpg",
+    "static/media/img6.jpg": "/Menuiserie_Bois_Bodin/static/media/img6.9d49cdfde0d8a7e8c95f.jpg",
     "static/media/gate.png": "/Menuiserie_Bois_Bodin/static/media/gate.e198961b66bb700be145.png",
+    "static/media/img15.jpg": "/Menuiserie_Bois_Bodin/static/media/img15.8c081aafaae7c582b2b2.jpg",
     "static/media/exterior.png": "/Menuiserie_Bois_Bodin/static/media/exterior.fd160c912cda23f9826c.png",
     "static/media/pexels-lumn-227577.jpg": "/Menuiserie_Bois_Bodin/static/media/pexels-lumn-227577.59900524a1747da93dee.jpg",
     "static/media/img3.jpg": "/Menuiserie_Bois_Bodin/static/media/img3.7dfc237ccdd8f2616b22.jpg",
@@ -19,16 +26,18 @@
     "static/media/door.png": "/Menuiserie_Bois_Bodin/static/media/door.e60557289612d84e3b4a.png",
     "static/media/window.png": "/Menuiserie_Bois_Bodin/static/media/window.f25bf8c750e0c39d0e58.png",
     "static/media/shutter.png": "/Menuiserie_Bois_Bodin/static/media/shutter.1d34e33869d62a074a99.png",
+    "static/media/about_img3.jpg": "/Menuiserie_Bois_Bodin/static/media/about_img3.f5f8da018b097bec4fe5.jpg",
     "static/media/kitchen.jpg": "/Menuiserie_Bois_Bodin/static/media/kitchen.3b9c3a405ccd7f335ef8.jpg",
     "static/media/interior.jpg": "/Menuiserie_Bois_Bodin/static/media/interior.1c10a76cfd4060bdb3a6.jpg",
+    "static/media/img9.jpeg": "/Menuiserie_Bois_Bodin/static/media/img9.e4456d0a0b622aeecc15.jpeg",
     "static/media/stairs.jpg": "/Menuiserie_Bois_Bodin/static/media/stairs.19b2882feaa62d530fe6.jpg",
     "static/media/dressing.jpg": "/Menuiserie_Bois_Bodin/static/media/dressing.32d5ddb9680a27382a4b.jpg",
     "index.html": "/Menuiserie_Bois_Bodin/index.html",
-    "main.8645cc44.css.map": "/Menuiserie_Bois_Bodin/static/css/main.8645cc44.css.map",
-    "main.8c89be21.js.map": "/Menuiserie_Bois_Bodin/static/js/main.8c89be21.js.map"
+    "main.29959cf4.css.map": "/Menuiserie_Bois_Bodin/static/css/main.29959cf4.css.map",
+    "main.60c2d848.js.map": "/Menuiserie_Bois_Bodin/static/js/main.60c2d848.js.map"
   },
   "entrypoints": [
-    "static/css/main.8645cc44.css",
-    "static/js/main.8c89be21.js"
+    "static/css/main.29959cf4.css",
+    "static/js/main.60c2d848.js"
   ]
 }
