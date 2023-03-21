@@ -96,7 +96,7 @@ const Inside = ({scrollY}) => {
             <line x1="1086" y1="1100" x2="1145" y2="1108" stroke="#C2B887" strokeWidth="0.5"/>
             <line x1="1350" y1="1076" x2="1288" y2="1068" stroke="#C2B887" strokeWidth="0.5"/>
 
-            <image href={background} height="1920" width="1330"/>
+            <image href={background} height="1920" width="1330" preserveAspectRatio="xMinYMin slice"/>
         </svg>
     );
 };

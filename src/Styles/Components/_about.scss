@@ -1,9 +1,9 @@
 #about {
-    height: calc(100vh);
+    height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: center;
     overflow: hidden;
     position: relative;
 
@@ -81,14 +81,10 @@
     }
     
     .about-img-container {
-        height: 100%;
         width: 75%;
         position: relative;
 
         .about-content {
-            position: absolute;
-            top: 0;
-            left: 0;
 
             .content-title {
                 height: 200px;
@@ -134,6 +130,7 @@
                 justify-content: flex-end;
                 padding: 0 15%;
                 opacity: 0;
+                padding-bottom: 140px;
 
                 svg {
                     height: 20px;
