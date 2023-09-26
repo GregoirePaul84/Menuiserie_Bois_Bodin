@@ -236,8 +236,6 @@ const Works = ({category, setCategory}) => {
     const figure = document.querySelector('.carousel-figure');
     const theta =  2 * Math.PI / 5;
     const imageRef = useRef(0)
-    // let currImage = 0;
-
 
     function rotateCarousel(e) {
         e.stopPropagation();
@@ -306,7 +304,13 @@ const Works = ({category, setCategory}) => {
                             </div>
                             : null
                             }
-                            <img src={e.img} key={e.id} />
+                            <a
+                                href={e.img}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img src={e.img} key={e.id}/>
+                            </a>
                         </div>
                     </div>
                     )}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import Logo from '../Svg/Logo';
 
@@ -61,10 +61,6 @@ const Header = () => {
         }
             
     }
-
-    useEffect(() => {
-        console.log(menuActive);
-    }, [menuActive]);
 
     return (
         <header>

@@ -1,0 +1,28 @@
+#success-container {
+    padding: 0 5%;
+    
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin: 25px 0;
+
+        svg {
+            height: 100px;
+            width: 100px;
+        }
+
+        span {
+            color: $color_secondary;
+        }
+    }
+
+    .success-txt {
+        text-align: center;
+
+        h3 {
+            margin-bottom: 20px;
+        }
+    }
+}

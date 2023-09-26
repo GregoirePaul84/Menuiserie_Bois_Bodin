@@ -42,7 +42,7 @@ const achievements = [
             'last': false,
             'detail': [
                 'dressing mural',
-                'dressing lalala'
+                'dressing sur roues'
             ]
         },
         {

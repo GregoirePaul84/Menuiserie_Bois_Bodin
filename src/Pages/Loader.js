@@ -8,7 +8,6 @@ const Loader = ({isLoading, setIsEntered}) => {
         const pageblock = document.querySelector('.home-container');
         const loaderblock = document.querySelector('.loader-container');
         const header = document.getElementsByTagName('header');
-        const video = document.getElementsByTagName('video')[0];
 
         const leaves = document.querySelectorAll('.loader-container svg path');
 
@@ -20,7 +19,6 @@ const Loader = ({isLoading, setIsEntered}) => {
 
         pageblock.style.height = 'fit-content';
         header[0].style.position = 'fixed';
-        video.play();
 
         setIsEntered(true);
 

@@ -97,6 +97,7 @@
                         background-color: $transparent_blue;
                         display: flex;
                         justify-content: center;
+                        pointer-events: none;
 
                         .detail-content {
                             width: 75%;
@@ -132,7 +133,8 @@
                         height: 100%;
                         width: 100%;
                         box-sizing: border-box;
-                        opacity: 0.9;
+                        opacity: 0.95;
+                        cursor: pointer;
                     }
                     
                 }

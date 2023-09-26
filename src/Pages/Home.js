@@ -44,10 +44,8 @@ const Home = () => {
         clearTimeout(timeout);
 
         setSlideActive(false);
-        console.log('slide coupé');
 
         timeout = setTimeout(() => {
-            console.log('slide réactivé');
             setSlideActive(true);
             setHandleSlide({from: slide1, to: slide2});
         }, 9000)
@@ -56,7 +54,6 @@ const Home = () => {
     // Gère l'affichage des slides selon la position de ceux-ci
     useEffect(() => {
         const slider = document.querySelector('#home .home-slider');
-        const video = document.getElementsByTagName('video');
         const square1 = document.querySelector('.swiper-nav .square:nth-child(1)');
         const square2 = document.querySelector('.swiper-nav .square:nth-child(2)');
         const square3 = document.querySelector('.swiper-nav .square:nth-child(3)');
@@ -64,8 +61,6 @@ const Home = () => {
         // Slide 1 depuis slide 2
         function slide1from2() {
             slider.style.animation = 'slide1from2 1.5s ease-out 1 forwards';
-            video[0].currentTime = 0;
-            video[0].play();
             square1.classList.add('square-active');
             square2.classList.remove('square-active');
             square3.classList.remove('square-active');
@@ -74,8 +69,6 @@ const Home = () => {
         // Slide 1 depuis slide 3
         function slide1from3() {
             slider.style.animation = 'slide1from3 1.5s ease-out 1 forwards';
-            video[0].currentTime = 0;
-            video[0].play();
             square1.classList.add('square-active');
             square2.classList.remove('square-active');
             square3.classList.remove('square-active');
@@ -84,7 +77,6 @@ const Home = () => {
         // Slide 2 depuis slide 1
         function slide2from1() {
             slider.style.animation = 'slide2from1 1.5s ease-out 1 forwards';
-            video[0].pause();
             square1.classList.remove('square-active');
             square2.classList.add('square-active');
             square3.classList.remove('square-active');
@@ -93,7 +85,6 @@ const Home = () => {
         // Slide 2 depuis slide 3
         function slide2from3() {
             slider.style.animation = 'slide2from3 1.5s ease-out 1 forwards';
-            video[0].pause();
             square1.classList.remove('square-active');
             square2.classList.add('square-active');
             square3.classList.remove('square-active');
@@ -102,7 +93,6 @@ const Home = () => {
         // Slide 3 depuis slide 1
         function slide3from1() {
             slider.style.animation = 'slide3from1 1.5s ease-out 1 forwards';
-            video[0].pause();
             square1.classList.remove('square-active');
             square2.classList.remove('square-active');
             square3.classList.add('square-active');
@@ -111,7 +101,6 @@ const Home = () => {
         // Slide 3 depuis slide 2
         function slide3from2() {
             slider.style.animation = 'slide3from2 1.5s ease-out 1 forwards';
-            video[0].pause();
             square1.classList.remove('square-active');
             square2.classList.remove('square-active');
             square3.classList.add('square-active');
@@ -138,10 +127,7 @@ const Home = () => {
     }, [handleSlide]);
 
     useEffect(() => {
-        if(!isEntered) {
-            document.getElementsByTagName('video')[0].pause();
-        }
-        else {
+        if(isEntered) {
             setSlideActive(true);
         }
 
@@ -171,7 +157,7 @@ const Home = () => {
                 else { 
                     setSlideIndex(1);
                 }
-            }, 7000);
+            }, 6000);
         }
        
         return () => clearInterval(interval);
@@ -180,7 +166,6 @@ const Home = () => {
 
     useEffect(() => {
         const topBtn = document.getElementById('top-of-page');
-        console.log(scrollY);
 
         if(scrollY > 0) {
             topBtn.style.visibility = 'visible';
@@ -191,23 +176,23 @@ const Home = () => {
         }
 
         // Gestion du scroll et de l'opacité sur la section d'ACCUEIL
-        if(scrollY >= 0 && scrollY <= 700) {
-            homeOpacityRef.current = ({isActive: true, value: homeOpacityRef.current.value});
-        }
-        else {
-            homeOpacityRef.current = ({isActive: false, value: homeOpacityRef.current.value});
-        }
+        // if(scrollY >= 0 && scrollY <= 700) {
+        //     homeOpacityRef.current = ({isActive: true, value: homeOpacityRef.current.value});
+        // }
+        // else {
+        //     homeOpacityRef.current = ({isActive: false, value: homeOpacityRef.current.value});
+        // }
 
-        if (homeOpacityRef.current.isActive) {
-            document.querySelectorAll('.background').forEach((e) => e.style.opacity = 0 + '.' + homeOpacityRef.current.value);
+        // if (homeOpacityRef.current.isActive) {
+        //     document.querySelectorAll('.background').forEach((e) => e.style.opacity = 0 + '.' + homeOpacityRef.current.value);
             
-            if(homeOpacityRef.current.value > 100) {
-                homeOpacityRef.current = ({isActive: homeOpacityRef.current.isActive, value: Math.trunc(-scrollY * 1.25 + 999)});
-            }
-            else {
-                homeOpacityRef.current = ({isActive: homeOpacityRef.current.isActive, value: '0' + Math.trunc(-scrollY * 1.25 + 999)});
-            }
-        }
+        //     if(homeOpacityRef.current.value > 100) {
+        //         homeOpacityRef.current = ({isActive: homeOpacityRef.current.isActive, value: Math.trunc(-scrollY * 1.25 + 999)});
+        //     }
+        //     else {
+        //         homeOpacityRef.current = ({isActive: homeOpacityRef.current.isActive, value: '0' + Math.trunc(-scrollY * 1.25 + 999)});
+        //     }
+        // }
 
         // Gestion du scroll et de l'opacité sur la section A PROPOS
         if(scrollY >= 800 && scrollY <= 1500) {
@@ -218,7 +203,6 @@ const Home = () => {
         }
 
         if (serviceOpacityRef.current.isActive) {
-            document.querySelector('.inside-svg').style.opacity = 0 + '.' + serviceOpacityRef.current.value;
             
             if(serviceOpacityRef.current.value >= 100) {
                 serviceOpacityRef.current = ({isActive: serviceOpacityRef.current.isActive, value: Math.trunc(-scrollY * 1.2 + 1958)});

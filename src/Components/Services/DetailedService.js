@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DetailedService = ({last, title, detail}) => {
-    console.log(detail);
+
     return (
         <div className={(last ? 'detailed-services last' : 'detailed-services')}>
             <div className="detailed-title">

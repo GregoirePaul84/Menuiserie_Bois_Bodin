@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 
-import Inside from './Inside';
+import chairs from '../../Media/Img/main/IMG_6662.jpg';
 
 const About = ({scrollY}) => {
 
@@ -121,7 +121,9 @@ const About = ({scrollY}) => {
                 </div>
             </div>   
             <div className='about-img-container'>
-                <Inside scrollY={scrollY} />  
+                <div className="background">
+                    <img src={chairs} alt="" />
+                </div>
                 {(homeNav === 'story') ? 
                     <div className="about-content">
                         <div className="content-title">

@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+
+    const navigate = useNavigate();
 
     const [checkboxes, setCheckboxes] = useState(
         [
@@ -28,10 +31,6 @@ const Contact = () => {
             }
         ]
     );
-
-    useEffect(() => {
-        console.log(checkboxes);
-    }, [checkboxes])
 
     const schema = yup
         .object(
@@ -110,8 +109,6 @@ const Contact = () => {
 
         insideWork = JSON.stringify(insideWork);
         outsideWork = JSON.stringify(outsideWork);
-
-        console.log(insideWork);
         
         insideWork = insideWork.replace('[', '').replace(/"/g, '').replace(']', '');
         outsideWork = outsideWork.replace('[', '').replace(/"/g, '').replace(']', '');
@@ -143,11 +140,10 @@ const Contact = () => {
             emailjs
             .send(serviceId, templateId, variables, process.env.REACT_APP_EMAILJS_KEY)
             .then((res) => {
-                alert('votre demande a bien été envoyée !');
-                console.log('Email envoyé !');
+                navigate('/success');
             })
             .catch((err) => {
-                console.error('Erreur');
+                alert(err);
             })
         }
         
