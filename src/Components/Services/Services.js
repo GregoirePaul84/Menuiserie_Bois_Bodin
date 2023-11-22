@@ -18,48 +18,54 @@ const achievements = [
         {
             'id': 0,
             'title': 'Escaliers',
+            'anchor': 'stairs',
             'svg': stairsImg,
-            'last': false,
             'detail': [
-                'escalier colimaçon',
-                'escalier droit'
+                'quart tournant',
+                'rampe sur rampe',
+                'hélicoïdal',
+                'échelle de meunier',
+                'autres'
             ]
         },
         {
             'id': 1,
             'title': 'Parquets',
+            'anchor': 'floors',
             'svg': floorImg,
-            'last': false,
             'detail': [
-                'parquet massif',
-                'parquet chevron'
+                'parquet de Versailles',
+                'pointe de hongrie',
+                'autres'
             ]
         },
         {
             'id': 2,
-            'title': 'Dressings',
-            'svg': dressingImg,
-            'last': false,
+            'title': 'Lambris & Moulurations',
+            'anchor': 'lambris',
+            'svg': kitchenImg,
             'detail': [
-                'dressing mural',
-                'dressing sur roues'
+                'reproduction de moulurations',
+                'lambris',
+                'autres'
             ]
         },
         {
             'id': 3,
-            'title': 'Cuisines',
-            'svg': kitchenImg,
-            'last': false,
+            'title': 'Portes',
+            'anchor': 'doors',
+            'svg': doorImg,
             'detail': [
-                'plan de travail',
-                'cuisine entière'
+                'restauration de portes',
+                'fabrication de portes',
+                'autres'
             ]
         },
         {
             'id': 4,
-            'title': 'Aménagements intérieurs',
+            'title': 'Autres',
+            'anchor': 'others_int',
             'svg': insideImg,
-            'last': true,
             'detail': [
                 'table',
                 'chaises',
@@ -69,50 +75,50 @@ const achievements = [
     ],
     [
         {
-            'id': 5,
+            'id': 0,
             'title': 'Fenêtres',
+            'anchor': 'windows',
             'svg': windowImg,
-            'last': false,
             'detail': [
                 'fenêtre classique',
                 'velux'
             ]
         },
         {
-            'id': 6,
+            'id': 1,
             'title': 'Portes',
+            'anchor': 'doors',
             'svg': doorImg,
-            'last': false,
             'detail': [
                 'porte de cave',
                 'porte lourde'
             ]
         },
         {
-            'id': 7,
+            'id': 2,
             'title': 'Portails',
+            'anchor': 'gates',
             'svg': gateimg,
-            'last': false,
             'detail': [
                 'portail d\'entrée',
                 'portail lalala'
             ]
         },
         {
-            'id': 8,
+            'id': 3,
             'title': 'Volets',
+            'anchor': 'shutters',
             'svg': shutterImg,
-            'last': false,
             'detail': [
                 'volets intérieurs',
                 'volets extérieurs'
             ]
         },
         {
-            'id': 9,
+            'id': 4,
             'title': 'Aménagements extérieurs',
+            'anchor': 'others_ext',
             'svg': exteriorImg,
-            'last': true,
             'detail': [
                 'préau',
                 'veranda'
@@ -123,8 +129,6 @@ const achievements = [
 
 const Services = ({scrollY, categoryService, setCategoryService}) => {
 
-    // const [category, setCategory] = useState(0);
-
     useEffect(() => {
 
         const inside = document.getElementById('service-inside');
@@ -132,7 +136,8 @@ const Services = ({scrollY, categoryService, setCategoryService}) => {
         const outside = document.getElementById('service-outside');
         const outsideSpan = document.querySelector('#service-outside span');
 
-        document.querySelector('.products-list').style.animation = 'none'; 
+        document.querySelector('.products-list').style.animation = 'none';
+        document.querySelectorAll('.product-card').forEach((e) => e.style.animation = 'none');
 
         setTimeout(() => {
             if(categoryService === 0) {
@@ -223,9 +228,10 @@ const Services = ({scrollY, categoryService, setCategoryService}) => {
                             return (
                                 <Products 
                                     key={e.id} 
+                                    id={e.id}
+                                    anchor={e.anchor}
                                     img={e.svg} 
                                     title={e.title}
-                                    last={e.last} 
                                     detail={e.detail} />      
                             )
                         })}

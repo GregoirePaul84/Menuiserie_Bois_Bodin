@@ -1,7 +1,7 @@
 .detailed-services {
     background-color: $light_gray;
     width: 175px;
-    height: 175px;
+    height: auto;
     pointer-events: none;
     position: absolute;
     top: 76px;
@@ -34,7 +34,7 @@
     }
 
     .detailed-list {
-        padding-left: 40px;
+        padding: 10px 0 10px 40px;
         list-style-type: circle;
 
         li {
@@ -45,11 +45,5 @@
 
 .last {
     top: -145px;
-    width: 175px;
-    height: 175px;
-
-    .detailed-list {
-        margin-top: 20px;
-    }
 }
 

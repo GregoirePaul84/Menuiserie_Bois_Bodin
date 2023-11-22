@@ -1,9 +1,9 @@
 import React from 'react';
 
-const DetailedService = ({last, title, detail}) => {
+const DetailedService = ({id, title, detail}) => {
 
     return (
-        <div className={(last ? 'detailed-services last' : 'detailed-services')}>
+        <div className={(id === 4 ? 'detailed-services last' : 'detailed-services')}>
             <div className="detailed-title">
                 <h5>{title}</h5>
             </div>

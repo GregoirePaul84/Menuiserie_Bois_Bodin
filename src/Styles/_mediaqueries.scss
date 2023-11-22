@@ -56,7 +56,7 @@
         }  
 
         #about, #services, #achievements, #contact {
-            min-height: 800px;
+            min-height: 870px;
             flex-direction: column;
 
             .about-container, .services-container, .achievements-container, .contact-container {
@@ -186,6 +186,22 @@
                 }
             }
         }
+
+        .all-services-nav {
+            width: 115px;
+
+            ul li {
+                font-size: 0.9em;
+
+                span {
+                    margin-left: 27px;
+                }
+            }
+        }
+
+        .all-services-content {
+            width: calc(100% - 115px);
+        }
     }
 }
 
@@ -266,11 +282,11 @@
             .products-container {
                 .products-list {
                     min-width: auto;
-                    width: 90%;
-                    margin: 0 5%;
+                    width: 94%;
+                    margin: 0 3%;
 
                     .products {
-                        padding: 0 5%;
+                        padding: 0 3%;
 
                         .product-card {
 
@@ -285,10 +301,6 @@
                             .product-img {
                                 height: 60px;
                                 width: 60px;
-                            }
-
-                            .product-title {
-                                min-width: auto;
                             }
                         }
                     }

@@ -67,9 +67,12 @@ const Header = () => {
             <div className='logo-container'>
                 <Logo />
                 <h3>
-                    Menuiserie <br />
-                    Bois <br />
-                    Bodin
+                    <span>M</span>
+                    enuiserie <br />
+                    <span>B</span>
+                    ois <br />
+                    <span>B</span>
+                    odin
                 </h3>
             </div>
             {(window.innerWidth > 1024) ? 

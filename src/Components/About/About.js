@@ -7,6 +7,19 @@ const About = ({scrollY}) => {
 
     const [homeNav, setHomeNav] = useState(undefined);
 
+    function handleNav(anchor) {
+        const serviceSection = document.getElementById('transition-services');
+        const contactSection = document.getElementById('transition-contact');
+
+        if(anchor === 'services') {
+            serviceSection.scrollIntoView(({behavior: "smooth"}));
+        }
+
+        if(anchor === 'contact') {
+            contactSection.scrollIntoView(({behavior: "smooth"}));
+        }
+    }
+
     useEffect(() => {
 
         if(scrollY <= 100) {
@@ -31,57 +44,90 @@ const About = ({scrollY}) => {
         const arrowText = document.querySelector('.arrow-text');
         const story = document.getElementById('story');
         const storySpan = document.querySelector('#story span');
-        const company = document.getElementById('company');
-        const companySpan = document.querySelector('#company span');
-        const values = document.getElementById('values');
-        const valuesSpan = document.querySelector('#values span');
+        const expertise = document.getElementById('expertise');
+        const expertiseSpan = document.querySelector('#expertise span');
+        const service = document.getElementById('service');
+        const serviceSpan = document.querySelector('#service span');
+        const engagements = document.getElementById('engagements');
+        const engagementsSpan = document.querySelector('#engagements span');
 
         h3.classList.remove('content-appears'); 
         arrowText.style.animation = "none";
 
         if(homeNav === 'story') {
             storySpan.style.color = '#C2B887';
-            companySpan.style.color = 'inherit';
-            valuesSpan.style.color = 'inherit';
+            expertiseSpan.style.color = 'inherit';
+            serviceSpan.style.color = 'inherit';
+            engagementsSpan.style.color = 'inherit';
 
             story.classList.add('active-nav');
             story.classList.remove('inactive-nav');
 
-            company.classList.add('inactive-nav');
-            company.classList.remove('active-nav');
+            expertise.classList.add('inactive-nav');
+            expertise.classList.remove('active-nav');
 
-            values.classList.add('inactive-nav');
-            values.classList.remove('active-nav');
+            service.classList.add('inactive-nav');
+            service.classList.remove('active-nav');
+
+            engagements.classList.add('inactive-nav');
+            engagements.classList.remove('active-nav');
         }
 
-        if(homeNav === 'company') {
+        if(homeNav === 'expertise') {
             storySpan.style.color = 'inherit';
-            companySpan.style.color = '#C2B887';
-            valuesSpan.style.color = 'inherit';
+            expertiseSpan.style.color = '#C2B887';
+            serviceSpan.style.color = 'inherit';
+            engagementsSpan.style.color = 'inherit';
 
             story.classList.add('inactive-nav');
             story.classList.remove('active-nav');
 
-            company.classList.add('active-nav');
-            company.classList.remove('inactive-nav');
+            expertise.classList.add('active-nav');
+            expertise.classList.remove('inactive-nav');
 
-            values.classList.add('inactive-nav');
-            values.classList.remove('active-nav');
+            service.classList.add('inactive-nav');
+            service.classList.remove('active-nav');
+
+            engagements.classList.add('inactive-nav');
+            engagements.classList.remove('active-nav');
         }
 
-        if(homeNav === 'values') {
+        if(homeNav === 'service') {
             storySpan.style.color = 'inherit';
-            valuesSpan.style.color = '#C2B887';
-            companySpan.style.color = 'inherit';
+            serviceSpan.style.color = '#C2B887';
+            expertiseSpan.style.color = 'inherit';
+            engagementsSpan.style.color = 'inherit';
 
             story.classList.add('inactive-nav');
             story.classList.remove('active-nav');
 
-            company.classList.add('inactive-nav');
-            company.classList.remove('active-nav');
+            expertise.classList.add('inactive-nav');
+            expertise.classList.remove('active-nav');
 
-            values.classList.add('active-nav');
-            values.classList.remove('inactive-nav');
+            service.classList.add('active-nav');
+            service.classList.remove('inactive-nav');
+
+            engagements.classList.add('inactive-nav');
+            engagements.classList.remove('active-nav');
+        }
+
+        if(homeNav === 'engagements') {
+            storySpan.style.color = 'inherit';
+            serviceSpan.style.color = 'inherit';
+            expertiseSpan.style.color = 'inherit';
+            engagementsSpan.style.color = '#C2B887';
+
+            story.classList.add('inactive-nav');
+            story.classList.remove('active-nav');
+
+            expertise.classList.add('inactive-nav');
+            expertise.classList.remove('active-nav');
+
+            service.classList.add('inactive-nav');
+            service.classList.remove('active-nav');
+
+            engagements.classList.add('active-nav');
+            engagements.classList.remove('inactive-nav');
         }
 
         setTimeout(() => {
@@ -109,13 +155,16 @@ const About = ({scrollY}) => {
                 <div className="about-nav">
                     <ul>
                         <li onClick={() => {setHomeNav('story')}} id='story'>
-                            <span>L'histoire</span>
+                            <span>Notre histoire</span>
                         </li>
-                        <li onClick={() => {setHomeNav('company')}} id='company'>
-                            <span>La société</span>
+                        <li onClick={() => {setHomeNav('expertise')}} id='expertise'>
+                            <span>Notre expertise</span>
                         </li>
-                        <li onClick={() => {setHomeNav('values')}} id='values'>
-                            <span>Les valeurs</span>
+                        <li onClick={() => {setHomeNav('service')}} id='service'>
+                            <span>Nos services</span>
+                        </li>
+                        <li onClick={() => {setHomeNav('engagements')}} id='engagements'>
+                            <span>Nos engagements</span>
                         </li>
                     </ul>     
                 </div>
@@ -128,88 +177,97 @@ const About = ({scrollY}) => {
                     <div className="about-content">
                         <div className="content-title">
                             <h3>
-                                <span>L' </span>Histoire
+                                <span>N</span>otre <span>h</span>istoire
                             </h3>
                         </div>
                         <div className="arrow-text">
-                            <svg width="61" height="21" viewBox="0 0 61 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M61 15.499C61 15.0447 60.777 14.4648 60.4548 14.1362L47.3041 0.606042C46.5588 -0.155619 45.3522 -0.155619 44.6088 0.606042C43.8635 1.36964 43.8635 2.60492 44.6088 3.36852L54.5228 13.5659L27.3255 13.5659L14.6933 0.571246C13.948 -0.190415 12.7414 -0.190415 11.9979 0.571246C11.2526 1.33484 11.2526 2.57012 11.9979 3.33372L21.9463 13.5659H15.8884L3.25622 0.571246C2.51091 -0.190415 1.3043 -0.190415 0.560892 0.571246C-0.184422 1.33484 -0.184422 2.57012 0.560892 3.33372L12.3696 15.4836L0.558986 27.6334C-0.186329 28.3951 -0.186329 29.6323 0.558986 30.3959C1.3043 31.1576 2.51091 31.1576 3.25432 30.3959L15.8541 17.4322H21.9101L11.996 27.6315C11.2507 28.3931 11.2507 29.6304 11.996 30.394C12.7414 31.1556 13.948 31.1576 14.6914 30.394L27.2912 17.4322L54.5552 17.4322L44.6069 27.6663C43.8616 28.4279 43.8616 29.6652 44.6069 30.4288C45.3522 31.1904 46.5588 31.1904 47.3022 30.4288L60.4548 16.8986C60.817 16.5275 61 16.0152 61 15.499Z" fill="#C2B887"/>
-                            </svg>
+                            <h4>Bienvenue chez <strong><span>M</span>enuiserie <span>B</span>ois <span>B</span>odin !</strong></h4>
+                            <div className="text-separation">
+                                <div className="colored-line"></div>
+                            </div>
                             <p>
-                                <strong>Menuiserie Bois Bodin </strong>
-                                est née d'un menuisier passionné, Samy Bodin, qui a parcouru la France et le monde pendant plus de 10 ans pour <span>perfectionner son art</span>. 
+                                Fondé en janvier 2023 par Samy Bodin, <strong>Menuiserie Bois Bodin</strong> est une entreprise qui puise sa force dans une décennie d'expérience personnelle en menuiserie. Nous sommes fiers de mettre notre passion pour le bois et notre expertise <span>au service de nos clients.</span>
                             </p>
                             <div className="text-separation">
                                 <div className="colored-line"></div>
                             </div>
                             <p>
-                                Fort de son expérience en 
-                                <span>
-                                    <strong> rénovation de monuments historiques</strong>
-                                </span> et en 
-                                <span>
-                                    <strong> fabrication traditionnelle</strong>
-                                </span>
-                                , Samy est fier d'ouvrir son atelier dans sa région natale à <strong>Chemillé-en-Anjou</strong> pour vous accompagner dans vos projets les plus ambitieux partout en France.
+                                Avec une <span>carrière de 10 ans en menuiserie</span>, Samy Bodin a développé une passion inébranlable pour le bois et l'artisanat. L'ouverture de <strong>Menuiserie Bois Bodin</strong> marque le début d'une nouvelle aventure, combinant une riche expérience et un engagement envers l'excellence. 
                             </p>
                         </div>    
                     </div>
-                    :(homeNav === 'company') ? 
+                    :(homeNav === 'expertise') ? 
                         <div className="about-content">
                             <div className="content-title">
                                 <h3>
-                                    <span>L</span>a 
-                                    <span> S</span>ociété
+                                    <span>N</span>otre 
+                                    <span> e</span>xpertise
                                 </h3>
                             </div>
                             <div className="arrow-text">
-                                <svg width="61" height="21" viewBox="0 0 61 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M61 15.499C61 15.0447 60.777 14.4648 60.4548 14.1362L47.3041 0.606042C46.5588 -0.155619 45.3522 -0.155619 44.6088 0.606042C43.8635 1.36964 43.8635 2.60492 44.6088 3.36852L54.5228 13.5659L27.3255 13.5659L14.6933 0.571246C13.948 -0.190415 12.7414 -0.190415 11.9979 0.571246C11.2526 1.33484 11.2526 2.57012 11.9979 3.33372L21.9463 13.5659H15.8884L3.25622 0.571246C2.51091 -0.190415 1.3043 -0.190415 0.560892 0.571246C-0.184422 1.33484 -0.184422 2.57012 0.560892 3.33372L12.3696 15.4836L0.558986 27.6334C-0.186329 28.3951 -0.186329 29.6323 0.558986 30.3959C1.3043 31.1576 2.51091 31.1576 3.25432 30.3959L15.8541 17.4322H21.9101L11.996 27.6315C11.2507 28.3931 11.2507 29.6304 11.996 30.394C12.7414 31.1556 13.948 31.1576 14.6914 30.394L27.2912 17.4322L54.5552 17.4322L44.6069 27.6663C43.8616 28.4279 43.8616 29.6652 44.6069 30.4288C45.3522 31.1904 46.5588 31.1904 47.3022 30.4288L60.4548 16.8986C60.817 16.5275 61 16.0152 61 15.499Z" fill="#C2B887"/>
-                                </svg>
                                 <p>
-                                    <strong>Menuiserie Bois Bodin</strong> est spécialisée dans la conception et la fabrication de produits en bois sur mesure pour les particuliers et les professionnels. 
+                                    Fort de notre expérience, nous avons acquis une compréhension profonde des subtilités de la menuiserie bois. Nous sommes spécialisés dans la <strong><span>restauration du patrimoine</span></strong> et la <strong><span>création de menuiserie sur mesure</span></strong>, en utilisant des techniques traditionnelles et des matériaux de qualité. 
                                 </p>
                                 <div className="text-separation">
                                     <div className="colored-line"></div>
                                 </div>
                                 <p>
-                                    Nous mettons notre expertise à votre disposition pour réaliser tous types de projets, qu'il s'agisse de la création de meubles sur mesure, de la rénovation d'escaliers, de la fabrication de portes, fenêtres et parquets, ou encore de la reproduction et la restauration de menuiseries anciennes dans le respect des traditions.
-                                </p>
-                                <div className="text-separation">
-                                    <div className="colored-line"></div>
-                                </div>
-                                <p>
-                                    Attachés aux techniques artisanales, nous travaillons avec des matériaux de qualité pour garantir une durabilité et une finition irréprochable de nos produits. Nous sommes à l'écoute de nos clients pour comprendre leurs besoins et leur proposer des solutions personnalisées et adaptées à leur budget. Avec notre entreprise, vous êtes assuré de bénéficier d'un travail de qualité, réalisé avec passion et savoir-faire.
+                                    Attachés aux techniques artisanales, nous garantissons une <span>durabilité</span> et une <span>finition irréprochable</span> de nos produits. Nous sommes à l'écoute de nos clients pour comprendre leurs besoins et leur proposer des solutions personnalisées et adaptées à leur budget. Avec <strong>Menuiserie Bois Bodin</strong>, vous êtes assuré de bénéficier d'un travail de qualité, réalisé avec passion et savoir-faire.
                                 </p>
                             </div>    
                         </div>
-                    : (homeNav === 'values') ?
+                    : (homeNav === 'service') ?
                         <div className="about-content">
                             <div className="content-title">
                                 <h3>
-                                    <span>L</span>es
-                                    <span> V</span>aleurs
+                                    <span>N</span>os
+                                    <span> s</span>ervices
                                 </h3>
                             </div>
                             <div className="arrow-text">
-                                <svg width="61" height="21" viewBox="0 0 61 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M61 15.499C61 15.0447 60.777 14.4648 60.4548 14.1362L47.3041 0.606042C46.5588 -0.155619 45.3522 -0.155619 44.6088 0.606042C43.8635 1.36964 43.8635 2.60492 44.6088 3.36852L54.5228 13.5659L27.3255 13.5659L14.6933 0.571246C13.948 -0.190415 12.7414 -0.190415 11.9979 0.571246C11.2526 1.33484 11.2526 2.57012 11.9979 3.33372L21.9463 13.5659H15.8884L3.25622 0.571246C2.51091 -0.190415 1.3043 -0.190415 0.560892 0.571246C-0.184422 1.33484 -0.184422 2.57012 0.560892 3.33372L12.3696 15.4836L0.558986 27.6334C-0.186329 28.3951 -0.186329 29.6323 0.558986 30.3959C1.3043 31.1576 2.51091 31.1576 3.25432 30.3959L15.8541 17.4322H21.9101L11.996 27.6315C11.2507 28.3931 11.2507 29.6304 11.996 30.394C12.7414 31.1556 13.948 31.1576 14.6914 30.394L27.2912 17.4322L54.5552 17.4322L44.6069 27.6663C43.8616 28.4279 43.8616 29.6652 44.6069 30.4288C45.3522 31.1904 46.5588 31.1904 47.3022 30.4288L60.4548 16.8986C60.817 16.5275 61 16.0152 61 15.499Z" fill="#C2B887"/>
-                                </svg>
-                                <p>
-                                    Chez <strong> Menuiserie Bois Bodin</strong>
-                                        , nous sommes attachés aux techniques artisanales et travaillons avec des matériaux de qualité pour garantir une durabilité et une finition irréprochable de nos produits.
-                                </p>
-                                <div className="text-separation">
-                                    <div className="colored-line"></div>
-                                </div>
-                                <p>
-                                    Nous mettons notre expertise à votre disposition pour réaliser tous types de projets, qu'il s'agisse de la création de meubles sur mesure, de la rénovation d'escaliers, de la fabrication de portes, fenêtres et parquets, ou encore de la reproduction et la restauration de menuiseries anciennes dans le respect des traditions.
-                                </p>
-                                {/* <p>
-                                    Attachés aux techniques artisanales, nous travaillons avec des matériaux de qualité pour garantir une durabilité et une finition irréprochable de nos produits. Nous sommes à l'écoute de nos clients pour comprendre leurs besoins et leur proposer des solutions personnalisées et adaptées à leur budget. Avec notre entreprise, vous êtes assuré de bénéficier d'un travail de qualité, réalisé avec passion et savoir-faire.
-                                </p> */}
+                                <ul>
+                                    <li>
+                                        <h5>Restauration du Patrimoine :</h5>
+                                        <p>Nous apportons une touche de respect historique à chaque projet, en préservant l'essence même des éléments en bois anciens.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Menuiserie sur Mesure :</h5>
+                                        <p>Chaque pièce que nous créons est unique, conçue spécialement pour s'adapter à vos besoins et à votre esthétique.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Conseils et Expertise :</h5>
+                                        <p>Notre expérience nous permet de vous conseiller judicieusement sur les meilleures pratiques en <strong>menuiserie</strong> et sur les choix de matériaux.</p>
+                                    </li>
+                                </ul>
+                                <button className='about-btn' onClick={() => handleNav('services')}>
+                                    Découvrir
+                                </button>
                             </div>        
                         </div>
+                    : (homeNav === 'engagements') ?
+                    <div className="about-content">
+                        <div className="content-title">
+                            <h3>
+                                <span>N</span>os
+                                <span> e</span>ngagements
+                            </h3>
+                        </div>
+                        <div className="arrow-text">
+                            <p>
+                                Le bois est notre passion, et nous nous engageons à utiliser des matériaux durables tout en préservant l'artisanat traditionnel. Notre objectif est de créer des pièces qui <span>durent dans le temps et qui transmettent un héritage</span>. 
+                            </p>
+                            <div className="text-separation">
+                                <div className="colored-line"></div>
+                            </div>
+                            <h5 className='about-contact'>Contactez nous !</h5>
+                            <p>
+                                Découvrez comment <strong>Menuiserie Bois Bodin</strong> peut donner vie à vos projets en bois. <span>Contactez-nous dès aujourd'hui</span> pour discuter de vos besoins ou pour obtenir un devis personnalisé. Nous sommes impatients de collaborer avec vous pour préserver le patrimoine et créer des pièces uniques en bois. 
+                            </p>
+                            <button className='about-btn' onClick={() => handleNav('contact')}>
+                                Nous contacter
+                            </button>
+                        </div>        
+                    </div>
                     : null
                 }  
             </div>

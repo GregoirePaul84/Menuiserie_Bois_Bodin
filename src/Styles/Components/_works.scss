@@ -100,7 +100,8 @@
                         pointer-events: none;
 
                         .detail-content {
-                            width: 75%;
+                            width: 100%;
+                            padding: 0 5%;
                             height: fit-content;
                             margin-top: 25%;
 
@@ -122,6 +123,7 @@
     
                             .detail-info, .detail-wood, .detail-size {
                                 display: flex;
+                                flex-direction: column;
                                 align-items: center;
                                 gap: 15px;
                                 margin-bottom: 20px;
