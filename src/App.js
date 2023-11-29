@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/menuiserie_bois_bodin/' element={<Home />}></Route>
-        <Route path='/all_services/:string' element={<AllServices />}></Route>
-        <Route path='/success' element={<Success />}></Route>
+        <Route path='/menuiserie_bois_bodin/all_services/:string' element={<AllServices />}></Route>
+        <Route path='/menuiserie_bois_bodin/success' element={<Success />}></Route>
       </Routes>
     </Router>
     

@@ -41,7 +41,7 @@ const Products = ({id, anchor, img, title, detail}) => {
                 : null
             }
             <a
-                href={`/all_services/${anchor}`}
+                href={`/menuiserie_bois_bodin/all_services/${anchor}`}
                 target="_blank"
                 rel="noreferrer"
             >
