@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Menuiserie_Bois_Bodin/static/css/main.683ae62b.css",
-    "main.js": "/Menuiserie_Bois_Bodin/static/js/main.b6ebbddf.js",
+    "main.js": "/Menuiserie_Bois_Bodin/static/js/main.1ea0a386.js",
     "static/media/img5.jpg": "/Menuiserie_Bois_Bodin/static/media/img5.372b9dc0060b574b3963.jpg",
     "static/media/quart_tournant_3.jpg": "/Menuiserie_Bois_Bodin/static/media/quart_tournant_3.30e9eeb3e6498087d793.jpg",
     "static/media/img10.jpg": "/Menuiserie_Bois_Bodin/static/media/img10.b527216968210da25d78.jpg",
@@ -49,10 +49,10 @@
     "static/media/rampe_1.jpg": "/Menuiserie_Bois_Bodin/static/media/rampe_1.3be97b5d314aaa02ac4e.jpg",
     "index.html": "/Menuiserie_Bois_Bodin/index.html",
     "main.683ae62b.css.map": "/Menuiserie_Bois_Bodin/static/css/main.683ae62b.css.map",
-    "main.b6ebbddf.js.map": "/Menuiserie_Bois_Bodin/static/js/main.b6ebbddf.js.map"
+    "main.1ea0a386.js.map": "/Menuiserie_Bois_Bodin/static/js/main.1ea0a386.js.map"
   },
   "entrypoints": [
     "static/css/main.683ae62b.css",
-    "static/js/main.b6ebbddf.js"
+    "static/js/main.1ea0a386.js"
   ]
 }
