@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 
-import chairs from '../../Media/Img/main/IMG_6662.jpg';
+import chairs from '../../Media/Img/main/IMG_5793.webp';
 
 const About = ({scrollY}) => {
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import car from '../../Media/Img/main/IMG_5196.jpg';
-import carpenter from '../../Media/Img/main/pexels-cottonbro-studio-5089175.jpg';
-import wood from '../../Media/Img/main/pexels-lumn-227577.jpg';
+import car from '../../Media/Img/main/IMG_5790.webp';
+import carpenter from '../../Media/Img/main/IMG_5791.webp';
+import wood from '../../Media/Img/main/IMG_5792.webp';
 
 const Company = ({setIsLoading}) => {
 

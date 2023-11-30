@@ -43,8 +43,12 @@ const Footer = () => {
                     Rejoignez votre entreprise sur les réseaux sociaux !
                 </p>
                 <div className="social-networks">
-                    <img src={instagram} alt="" />
-                    <img src={facebook} alt="" />
+                    <a href="https://www.instagram.com/menuiserie_bois_bodin/?hl=fr" target="_blank" rel="noopener noreferrer">
+                        <img src={instagram} alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com/people/Menuiserie-Bois-Bodin/100088037667738/" target="_blank" rel="noopener noreferrer">
+                        <img src={facebook} alt="Facebook" />
+                    </a>
                 </div>
             </div>
             <div className='signature'>
@@ -52,7 +56,9 @@ const Footer = () => {
                     <p>© 2022 - Menuiserie Bois Bodin </p>
                 </div>
                 <div className="terms">
-                    <p>Conditions générales de vente</p>
+                    <a href="/menuiserie_bois_bodin/cgv" target="_blank" rel="noreferrer">
+                        <p>Conditions générales de vente</p>
+                    </a>
                     <span> | </span>
                     <p>Mentions légales</p>
                 </div>

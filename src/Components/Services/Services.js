@@ -1,13 +1,12 @@
 import React, { useEffect} from 'react';
 import Products from './Products';
 
-import servicesImg from '../../Media/Img/main/pexels-cottonbro-studio-7484794_cut.png';
+import servicesImg from '../../Media/Img/Services/transparent_img.webp';
 import doorImg from '../../Media/Img/Services/door.png';
 import shutterImg from '../../Media/Img/Services/shutter.png';
 import floorImg from '../../Media/Img/Services/floor.png';
 import stairsImg from '../../Media/Img/Services/stairs.jpg';
 import kitchenImg from '../../Media/Img/Services/kitchen.jpg';
-import dressingImg from '../../Media/Img/Services/dressing.jpg';
 import insideImg from '../../Media/Img/Services/interior.jpg';
 import gateimg from '../../Media/Img/Services/gate.png';
 import exteriorImg from '../../Media/Img/Services/exterior.png';

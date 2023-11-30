@@ -1,25 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import stairs1 from '../../Media/Img/Services/All_Services/quart_tournant_1.jpg';
-import stairs2 from '../../Media/Img/Services/All_Services/quart_tournant_2.jpg';
-import stairs3 from '../../Media/Img/Services/All_Services/quart_tournant_3.jpg';
-import stairs4 from '../../Media/Img/Services/All_Services/rampe_1.jpg';
-import stairs5 from '../../Media/Img/Services/All_Services/rampe_2.jpg';
+import stairs1 from '../../Media/Img/Services/All_Services/quart_tournant_1.webp';
+import stairs2 from '../../Media/Img/Services/All_Services/quart_tournant_2.webp';
 
-import floor1 from '../../Media/Img/Services/All_Services/floor_1.jpg';
-import floor2 from '../../Media/Img/Services/All_Services/floor_2.jpeg';
-import floor3 from '../../Media/Img/Services/All_Services/floor_3.jpg';
-import floor4 from '../../Media/Img/Services/All_Services/floor_4.jpg';
+import stairs3 from '../../Media/Img/Services/All_Services/quart_tournant_3.webp';
+import stairs4 from '../../Media/Img/Services/All_Services/quart_tournant_4.webp';
+import stairs5 from '../../Media/Img/Services/All_Services/quart_tournant_3.webp';
+import stairs6 from '../../Media/Img/Services/All_Services/quart_tournant_6.webp';
 
-import lambris1 from '../../Media/Img/Services/All_Services/lambris_1.jpg';
-import lambris2 from '../../Media/Img/Services/All_Services/lambris_2.jpg';
-import lambris3 from '../../Media/Img/Services/All_Services/lambris_3.jpg';
+import stairs7 from '../../Media/Img/Services/All_Services/rampe_1.webp';
+import stairs8 from '../../Media/Img/Services/All_Services/rampe_2.webp';
 
-import mouluration1 from '../../Media/Img/Services/All_Services/mouluration_1.jpg';
-import mouluration2 from '../../Media/Img/Services/All_Services/mouluration_2.jpg';
+import floor1 from '../../Media/Img/Services/All_Services/floor_1.webp';
+import floor2 from '../../Media/Img/Services/All_Services/floor_2.webp';
+import floor3 from '../../Media/Img/Services/All_Services/floor_3.webp';
+import floor4 from '../../Media/Img/Services/All_Services/floor_4.webp';
+import floor5 from '../../Media/Img/Services/All_Services/floor_5.webp';
 
-import mouluration4 from '../../Media/Img/Services/All_Services/mouluration_4.jpg';
+import lambris1 from '../../Media/Img/Services/All_Services/lambris_1.webp';
+import lambris2 from '../../Media/Img/Services/All_Services/lambris_2.webp';
+import lambris3 from '../../Media/Img/Services/All_Services/lambris_3.webp';
+
+import mouluration1 from '../../Media/Img/Services/All_Services/mouluration_1.webp';
+import mouluration2 from '../../Media/Img/Services/All_Services/mouluration_2.webp';
+
+import mouluration4 from '../../Media/Img/Services/All_Services/mouluration_4.webp';
+
+import window1 from '../../Media/Img/Services/All_Services/window_1.webp';
 
 const allServicesPictures = [
     // Escalier un quart tournant
@@ -42,17 +50,32 @@ const allServicesPictures = [
             img: stairs3,
             alt: 'Fabrication d\'un escalier quart tournant en chêne'
         },
+        {
+            id: 1,
+            img: stairs4,
+            alt: 'Fabrication d\'un escalier quart tournant en chêne'
+        },
+        {
+            id: 2,
+            img: stairs5,
+            alt: 'Fabrication d\'un escalier quart tournant en chêne'
+        },
+        {
+            id: 3,
+            img: stairs6,
+            alt: 'Fabrication d\'un escalier quart tournant en chêne'
+        },
     ],
     // Rampe sur rampe
     [
         {
             id: 0,
-            img: stairs4,
+            img: stairs7,
             alt: 'Fabrication d\'un escalier rampe sur rampe en frêne'
         },
         {
             id: 1,
-            img: stairs5,
+            img: stairs8,
             alt: 'Fabrication d\'un escalier rampe sur rampe en frêne'
         },
     ],
@@ -81,6 +104,11 @@ const allServicesPictures = [
             img: floor4,
             alt: 'Restauration du parquet en pointe de Hongrie à l\'ambassade de Suisse'
         },
+        {
+            id: 1,
+            img: floor5,
+            alt: 'Restauration du parquet en pointe de Hongrie à l\'ambassade de Suisse'
+        },
     ],
     // Lambris
     [
@@ -100,7 +128,7 @@ const allServicesPictures = [
             alt: 'Restauration d\'un lambris en chêne dans une église'
         },
     ],
-    // Moulurations
+    // Fabrication de mouluration et d'une fausse porte
     [
         {
             id: 0,
@@ -112,23 +140,20 @@ const allServicesPictures = [
             img: mouluration2,
             alt: 'Moulurations'
         },
-    ],
-    // Fabrication de mouluration et d'une fausse porte
-    [
         {
-            id: 0,
+            id: 3,
             img: mouluration4,
             alt: 'Fabrication de moulurations et d\'une fausse porte'
         },
     ],
     // Portes et fenêtres
-    // [
-    //     {
-    //         id: 0,
-    //         img: mouluration4,
-    //         alt: 'Fabrication de moulurations et d\'une fausse porte'
-    //     },
-    // ],
+    [
+        {
+            id: 0,
+            img: window1,
+            alt: 'Restauration des fenêtres d\'un hôtel particulier à paris.'
+        },
+    ],
 ]
 
 const AllServices = () => {
@@ -363,20 +388,10 @@ const AllServices = () => {
                         })}
                     </div>
                     <div className="all-services-subtitle">
-                        <h3>Moulurations</h3>
-                    </div>
-                    <div className="all-services-img-container">
-                        {allServicesPictures[6].map((picture) => {
-                            return(
-                                <img key={picture.id} src={picture.img} alt={picture.alt} />
-                            )
-                        })}
-                    </div>
-                    <div className="all-services-subtitle">
                         <h3>Fabrication de mouluration et d'une fausse porte</h3>
                     </div>
                     <div className="all-services-img-container">
-                        {allServicesPictures[7].map((picture) => {
+                        {allServicesPictures[6].map((picture) => {
                             return(
                                 <img key={picture.id} src={picture.img} alt={picture.alt} />
                             )
@@ -390,13 +405,13 @@ const AllServices = () => {
                     <div className="all-services-subtitle">
                         <h3><strong><span>Restauration de fenêtres</span></strong> d'un hôtel particulier à Paris. </h3>
                     </div>
-                    {/* <div className="all-services-img-container">
-                        {allServicesPictures[5].map((picture) => {
+                    <div className="all-services-img-container">
+                        {allServicesPictures[7].map((picture) => {
                             return(
                                 <img key={picture.id} src={picture.img} alt={picture.alt} />
                             )
                         })}
-                    </div> */}
+                    </div>
                 </section>
             </div>
         </div>

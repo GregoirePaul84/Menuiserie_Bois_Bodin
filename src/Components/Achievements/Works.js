@@ -1,18 +1,18 @@
 import React, { useRef, useState } from 'react';
 
 // Images travaux d'intérieur
-import img1 from '../../Media/Img/Works/img1.jpg';
-import img2 from '../../Media/Img/Works/img2.jpg';
-import img3 from '../../Media/Img/Works/img3.jpg';
-import img4 from '../../Media/Img/Works/img4.jpg';
-import img5 from '../../Media/Img/Works/img5.jpg';
+import img1 from '../../Media/Img/Works/img1.webp';
+import img2 from '../../Media/Img/Works/img2.webp';
+import img3 from '../../Media/Img/Works/img3.webp';
+import img4 from '../../Media/Img/Works/img4.webp';
+import img5 from '../../Media/Img/Works/img5.webp';
 
 // Images travaux d'extérieur
-import img6 from '../../Media/Img/Works/img6.jpg';
-import img7 from '../../Media/Img/Works/img7.jpg';
-import img8 from '../../Media/Img/Works/img8.jpg';
-import img9 from '../../Media/Img/Works/img9.jpeg';
-import img10 from '../../Media/Img/Works/img10.jpg';
+import img6 from '../../Media/Img/Works/img6.webp';
+import img7 from '../../Media/Img/Works/img7.webp';
+import img8 from '../../Media/Img/Works/img8.webp';
+import img9 from '../../Media/Img/Works/img9.webp';
+import img10 from '../../Media/Img/Works/img10.webp';
 
 // Images travaux de rénovations
 import img11 from '../../Media/Img/Works/img11.jpg';
@@ -27,55 +27,55 @@ const worksArray = [
         {
             'id' : 'img1',
             'img' : img1,
-            'legend' : 'Double porte',
+            'legend' : 'Moulurations et porte',
             'detail' : [
                 {
-                    'name': 'Double porte',
-                    'context': 'fabrication d\'une double porte',
+                    'name': 'Moulurations et porte',
+                    'context': 'Fabrication et pose d\'une fausse porte avec reproduction de moulurations.',
                 }
             ]
         },
         {
             'id' : 'img2',
             'img' : img2,
-            'legend' : 'Moulures et porte',
+            'legend' : 'Restauration de lambris',
             'detail' : [
                 {
-                    'name': 'Moulures et porte',
-                    'context': 'Réalisation de moulurations au mur et fabrication d\'une fausse porte',
+                    'name': 'Restauration de lambris',
+                    'context': 'Restauration de lambris, réalisation de greffes, remplacement des pièces usées.',
                 }
             ]
         },
         {
             'id' : 'img3',
             'img' : img3,
-            'legend' : 'Portes à galandages',
+            'legend' : 'Escalier quart tournant',
             'detail' : [
                 {
-                    'name': 'Portes à galandages',
-                    'context': 'Fabrication de 2 portes à galandages sur mesure',
+                    'name': 'Escalier quart tournant',
+                    'context': 'Fabrication et pose d\'un escalier en chêne.',
                 }
             ]
         },
         {
             'id' : 'img4',
             'img' : img4,
-            'legend' : 'Arche à porte coulissante',
+            'legend' : 'Escalier rampe sur rampe',
             'detail' : [
                 {
-                    'name': 'Arche à porte coulissante',
-                    'context': 'Fabrication d\'une arche à porte coulissante et meubles de rangement',
+                    'name': 'Escalier rampe sur rampe',
+                    'context': 'Fabrication et pose d\'un escalier avec avec palier.',
                 }
             ]
         },
         {
             'id' : 'img5',
             'img' : img5,
-            'legend' : 'Légende 5',
+            'legend' : 'Porte à galandage sur mesure',
             'detail' : [
                 {
-                    'name': 'Porte de cave',
-                    'context': 'fabrication d\'une porte de cave à vin',
+                    'name': 'Porte à galandage sur mesure',
+                    'context': 'Réalisation d\'une porte à galandage avec habillage cintré.',
                 }
             ]
         }
@@ -85,55 +85,55 @@ const worksArray = [
         {
             'id' : 'img6',
             'img' : img6,
-            'legend' : 'Fenêtres et portes',
+            'legend' : 'Fenêtres',
             'detail' : [
                 {
-                    'name': 'Fenêtres et portes',
-                    'context': 'Pose de portes et fenêtres avec dépose des habillages',
+                    'name': 'Fenêtres',
+                    'context': 'Fabrication de fenêtres en chêne.',
                 }
             ]
         },
         {
             'id' : 'img7',
             'img' : img7,
-            'legend' : 'Légende 2',
+            'legend' : 'Restauration de fenêtres',
             'detail' : [
                 {
-                    'name': 'Cloison',
-                    'context': 'fabrication d\'une cloison',
+                    'name': 'Restauration de fenêtres',
+                    'context': 'Greffes, intégration de joints tubulaires mise en jeu.',
                 }
             ]
         },
         {
             'id' : 'img8',
             'img' : img8,
-            'legend' : 'Légende 3',
+            'legend' : 'Porte de cave',
             'detail' : [
                 {
-                    'name': 'Cloison',
-                    'context': 'fabrication d\'une cloison',
+                    'name': 'Porte de cave',
+                    'context': 'Réalisation d\'une porte de cave sur pivot en chêne.',
                 }
             ]
         },
         {
             'id' : 'img9',
             'img' : img9,
-            'legend' : 'Légende 4',
+            'legend' : 'Pose de fenêtres',
             'detail' : [
                 {
-                    'name': 'Cloison',
-                    'context': 'fabrication d\'une cloison',
+                    'name': 'Pose de fenêtres',
+                    'context': 'Remplacement de menuiseries, démontage des habillages tout en les conservant pour pouvoir les réutiliser. ',
                 }
             ]
         },
         {
             'id' : 'img10',
             'img' : img10,
-            'legend' : 'Légende 5',
+            'legend' : 'Œil de bœuf',
             'detail' : [
                 {
-                    'name': 'Porte de cave',
-                    'context': 'fabrication d\'une porte de cave à vin',
+                    'name': 'Œil de bœuf',
+                    'context': 'Restauration d\'un œil de bœuf sur le clocher d\'une église. Greffe, changement des pièces usagées.',
                 }
             ]
         }
